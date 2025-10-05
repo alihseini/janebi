@@ -6,7 +6,7 @@ const TopHeader: React.FC = () => {
     <div className={styles.topHeader}>
       <p>
         <span>ارسال رایگان </span>با اولین خرید از جانبی با کد :{' '}
-        <span>aaaa</span>
+        <span>FREE007</span>
       </p>
     </div>
   );
