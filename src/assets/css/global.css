@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", "IranSans", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #222;
+}
+
+.custom-icon div {
+
+  height: fit-content !important;
+
+  width: fit-content !important;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+.custom-icon path,
+
+.custom-icon polygon {
+
+  fill: inherit !important;
+
+}
