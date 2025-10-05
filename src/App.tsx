@@ -1,12 +1,16 @@
+import React from 'react';
+import { RouterProvider } from 'react-router';
+import { router } from './routers/router';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import './assets/css/global.css'
+const queryClient = new QueryClient();
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div>
-      app
-    </div>
-  )
-}
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
+};
 
-export default App
+export default App;
