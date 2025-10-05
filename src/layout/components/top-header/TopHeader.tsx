@@ -1,9 +1,13 @@
-import React from "react";
+import React from 'react';
+import styles from './TopHeader.module.css';
 
 const TopHeader: React.FC = () => {
   return (
-    <div>
-      <p>Welcome to our store! Call us at +98 912 000 0000</p>
+    <div className={styles.topHeader}>
+      <p>
+        <span>ارسال رایگان </span>با اولین خرید از جانبی با کد :{' '}
+        <span>aaaa</span>
+      </p>
     </div>
   );
 };
