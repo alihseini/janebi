@@ -2,14 +2,12 @@ import React from 'react';
 import { Outlet } from 'react-router';
 import TopHeader from './components/top-header/TopHeader';
 import MainHeader from './components/main-header/MainHeader';
-import Navbar from './components/navbar/NavBar';
 
 const MainLayout: React.FC = () => {
   return (
     <div>
       <TopHeader />
       <MainHeader />
-      <Navbar />
       <main>
         <Outlet />
       </main>
