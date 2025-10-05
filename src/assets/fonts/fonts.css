@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'dana-bold';
+  src: url('./dana/dana-bold.woff2') format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dana-light';
+  src: url('./dana/dana-light.woff2') format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dana-regular';
+  src: url('./dana/dana-regular.woff2') format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dana-semibold';
+  src: url('./dana/dana-semibold.woff2') format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dana-fanum-light';
+  src: url('./dana-fanum/dana-fanum-light.woff2') format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dana-fanum-medium';
+  src: url('./dana-fanum/dana-fanum-medium.woff2') format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dana-fanum-regular';
+  src: url('./dana-fanum/dana-fanum-regular.woff2') format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dana-fanum-semibold';
+  src: url('./dana-fanum/dana-fanum-semibold.woff2') format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dana-fanum-light';
+  src: url('./dana-fanum/dana-fanum-light.woff2') format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'fa-light-300';
+    src: url('./fa-light-300.woff2') format('woff2');
+}
