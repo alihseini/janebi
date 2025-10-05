@@ -6,14 +6,14 @@ import Navbar from './components/navbar/NavBar';
 
 const MainLayout: React.FC = () => {
   return (
-    <div className="app-container">
+    <div>
       <TopHeader />
       <MainHeader />
       <Navbar />
-      <main className="main-content">
+      <main>
         <Outlet />
       </main>
-      <footer className="footer">
+      <footer>
         <p>© 2025 My Shop. All rights reserved.</p>
       </footer>
     </div>
