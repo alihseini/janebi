@@ -3,13 +3,17 @@ import styles from './MainHeader.module.css';
 import Input from '../../../shared/components/input/Input';
 import Button from '../../../shared/components/button/Button';
 import Icons from '../../../shared/icons';
+import ShortDrawer from '../../../shared/components/shortDrawer/ShortDrawer';
 
 const MainHeader: React.FC = () => {
   const [search, setSearch] = useState('');
+  const [isLoginHovered, setIsLoginHovered] = useState(false);
+
   return (
     <div className={styles.fullHeader}>
       <div className={styles.mainHeader}>
         <img src="/src/assets/images/janebi-logo.svg" alt="logo" />
+
         <div className={styles.mainHeaderSearch}>
           <div className={styles.searchDiv}>
             <Input
@@ -22,26 +26,33 @@ const MainHeader: React.FC = () => {
             />
             <Button svgSrc="bx-search" className={styles.searchButton} />
           </div>
-          <div>
-            <Button text="تست" />
-            <Button text="تست" />
-            <Button text="تست" />
-            <Button text="تست" />
-            <Button text="تست" />
-            <Button text="تست" />
-          </div>
         </div>
-        <div className={styles.mainHeaderLogin}>
+
+        <div
+          className={styles.mainHeaderLogin}
+          onMouseEnter={() => setIsLoginHovered(true)}
+          onMouseLeave={() => setIsLoginHovered(false)}
+        >
           <Icons name="bx-user" size={40} color="#999999" />
           <div>
             <p>خوش آمدی</p>
             <Button text="ورود به حساب کاربری" />
           </div>
+
+          <ShortDrawer
+            items={[
+              { text: 'ورود / ثبت نام', svgSrc: 'bx-log-in' },
+              { text: 'پیگیری سفارشات',svgSrc:'bx-cart-add' },
+            ]}
+            isVisible={isLoginHovered}
+          />
         </div>
+
         <div className={styles.mainHeaderCart}>
           <Button svgSrc="bx-cart" size={40} />
         </div>
       </div>
+
       <div className={styles.navBar}>
         <Button
           text="دسته بندی محصولات"
