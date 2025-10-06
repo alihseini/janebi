@@ -9,7 +9,7 @@ interface ShortDrawerProps {
     onClick?: () => void;
     svgSrc?: string;
   }[];
-  isVisible: boolean; // کنترل نمایش
+  isVisible: boolean;
 }
 
 const ShortDrawer: React.FC<ShortDrawerProps> = ({ items, isVisible }) => {
