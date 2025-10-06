@@ -38,8 +38,6 @@ const Icons: React.FC<IconProps> = ({
     }
   }, [name]);
 
-  console.log(name)
-
   if (!iconSrc) {
     return <span></span>;
   }
