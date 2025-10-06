@@ -1,0 +1,19 @@
+.button {
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease, fill 0.2s ease;
+}
+
+.button svg {
+  transition: fill 0.2s ease;
+  cursor: pointer;
+}
+
+.button:hover svg {
+  fill: black; /* تغییر رنگ SVG هنگام هاور */
+}

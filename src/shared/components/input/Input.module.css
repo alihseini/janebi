@@ -1,0 +1,19 @@
+.input {
+  background-color: var(--light-gray);
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  padding: 5px 8px;
+  transition: all 1s;
+  outline: 1px var(--light-gray) solid;
+}
+
+.input:focus {
+  outline: 1px var(--light-gray) solid;
+  background-color: white;
+}
+
+.input::placeholder {
+  color: var(--dark-gray);
+}
