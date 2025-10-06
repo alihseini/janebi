@@ -9,6 +9,8 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   className?: string;
   size?: number;
+  color?: string;
+  fontSize?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -18,18 +20,18 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
   className,
   size,
+  color = 'gray',
+  fontSize,
 }) => {
   return (
     <button
       type={type}
       onClick={onClick}
-      className={`${styles.button} ${className ? className : ''}`}
+      className={`${styles.button} ${className || ''}`}
+      style={{ color, fontSize }}
     >
-      {svgSrc ? (
-        <Icons name={svgSrc} size={size ? size : 30} color="gray" />
-      ) : (
-        text
-      )}
+      {svgSrc && <Icons name={svgSrc} size={size ?? 30} color={color} />}
+      {text && <span>{text}</span>}
     </button>
   );
 };

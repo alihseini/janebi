@@ -17,3 +17,11 @@
 .button:hover svg {
   fill: black; /* تغییر رنگ SVG هنگام هاور */
 }
+
+.textOnly {
+  color: var(--dark-gray);
+}
+
+.textOnly:hover {
+  color: black;
+}
