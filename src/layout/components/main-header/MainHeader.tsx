@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './MainHeader.module.css';
 import Input from '../../../shared/components/input/Input';
 import Button from '../../../shared/components/button/Button';
+import Icons from '../../../shared/icons';
 
 const MainHeader: React.FC = () => {
   const [search, setSearch] = useState('');
@@ -31,7 +32,7 @@ const MainHeader: React.FC = () => {
           </div>
         </div>
         <div className={styles.mainHeaderLogin}>
-          <Button svgSrc="bx-user" size={40} className={styles.loginButton} />
+          <Icons name="bx-user" size={40} color="#999999" />
           <div>
             <p>خوش آمدی</p>
             <Button text="ورود به حساب کاربری" />
