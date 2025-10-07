@@ -5,9 +5,9 @@ import {
   Route,
   Navigate,
 } from 'react-router';
-import Layout from '../layout/Layout';
+import Layout from '../layout';
 
-const Landing = lazy(() => import('../features/landing/Landing'));
+const Landing = lazy(() => import('../features/landing'));
 
 export const router = createBrowserRouter(
   createRoutesFromElements(

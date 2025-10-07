@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './MainHeader.module.css';
+import styles from './styles.module.css';
 import Input from '../../../shared/components/input/Input';
 import Button from '../../../shared/components/button/Button';
 import Icons from '../../../shared/icons';
@@ -42,7 +42,7 @@ const MainHeader: React.FC = () => {
           <ShortDrawer
             items={[
               { text: 'ورود / ثبت نام', svgSrc: 'bx-log-in' },
-              { text: 'پیگیری سفارشات',svgSrc:'bx-cart-add' },
+              { text: 'پیگیری سفارشات', svgSrc: 'bx-cart-add' },
             ]}
             isVisible={isLoginHovered}
           />

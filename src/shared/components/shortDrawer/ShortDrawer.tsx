@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ShortDrawer.module.css';
+import styles from './styles.module.css';
 import Button from '../button/Button';
 
 interface ShortDrawerProps {
@@ -19,7 +19,7 @@ const ShortDrawer: React.FC<ShortDrawerProps> = ({ items, isVisible }) => {
         <Button
           key={index}
           text={item.text}
-          fontSize='0.9rem'
+          fontSize="0.9rem"
           svgSrc={item.svgSrc}
           color={item.color || '#333'}
           onClick={item.onClick}
