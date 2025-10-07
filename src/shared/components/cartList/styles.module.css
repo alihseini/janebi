@@ -1,0 +1,36 @@
+.cartList {
+  height: fit-content;
+  background-color: white;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.upperCartList {
+  display: flex;
+  justify-content: space-between;
+  height: 20%;
+}
+
+.upperCartList p {
+  font-size: 1.5rem;
+}
+
+.allCarts {
+  display: flex;
+  height: 80%;
+}
+
+.cartList::-webkit-scrollbar {
+  height: 6px;
+}
+
+.cartList::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}

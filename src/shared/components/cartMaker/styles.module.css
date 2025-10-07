@@ -1,0 +1,25 @@
+.cart {
+  margin: 30px 30px;
+  width: 200px;
+  flex: 0 0 auto;
+  position: relative;
+  padding: 30px;
+  transition: all 0.3s ease-in;
+  border-radius: 5px;
+}
+
+.cart:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.cart img {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+}
+
+.price {
+  position: absolute;
+  bottom: 5px;
+}
