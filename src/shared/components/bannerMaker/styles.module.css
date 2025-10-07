@@ -1,0 +1,35 @@
+.bannerContainer {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 15px;
+  padding: 10px 0;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* مخفی کردن اسکرول‌بار */
+.bannerContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.bannerItem {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bannerItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bannerItem:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}

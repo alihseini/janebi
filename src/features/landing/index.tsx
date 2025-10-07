@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageSwiper from './components/imageSweaper/imageSwiper';
+import ImageSwiper from './components/imageSwiper/imageSwiper';
 import styles from './styles.module.css';
 import { fetchProducts } from './services/services';
 import { useQuery } from '@tanstack/react-query';
