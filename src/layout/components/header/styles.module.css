@@ -91,9 +91,9 @@
 .navBar {
   display: flex;
   gap: 50px;
-  padding: 0 10px;
+  padding: 0 15px;
   width: 100%;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-start;
   background-color: white;
   transition: all 0.4s ease-in-out;
@@ -115,4 +115,6 @@
 .categoriButton {
   background-color: var(--primary-color);
   color: #fff !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
