@@ -3,8 +3,8 @@ import ImageSwiper from './components/imageSwiper/imageSwiper';
 import styles from './styles.module.css';
 import { fetchProducts } from './services/services';
 import { useQuery } from '@tanstack/react-query';
-import CardList from '../../shared/components/cardList/CardList';
 import BannerMaker from '../../shared/components/bannerMaker/bannerMaker';
+import CardList from '../../shared/components/cardList/cardList';
 
 const images = [
   'https://janebi.com/janebi/9fd2/files/normal/496502.jpg',
