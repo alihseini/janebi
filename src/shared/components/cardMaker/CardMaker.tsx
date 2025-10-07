@@ -12,14 +12,14 @@ interface Product {
   rating: { rate: number; count: number };
 }
 
-interface CartMakerProps {
+interface CardMakerProps {
   product: Product;
   onClick?: () => void;
 }
 
-const CartMaker: React.FC<CartMakerProps> = ({ product }) => {
+const CardMaker: React.FC<CardMakerProps> = ({ product }) => {
   return (
-    <div className={styles.cart}>
+    <div className={styles.card}>
       <img src={product?.image} alt="img" />
       <p>{shortenTitle(product?.title)}</p>
       <span className={styles.price}>قیمت: ${product?.price}</span>
@@ -27,4 +27,4 @@ const CartMaker: React.FC<CartMakerProps> = ({ product }) => {
   );
 };
 
-export default CartMaker;
+export default CardMaker;

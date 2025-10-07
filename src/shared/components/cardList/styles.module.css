@@ -1,4 +1,4 @@
-.cartList {
+.cardList {
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -7,34 +7,34 @@
   margin: 20px 0;
 }
 
-.upperCartList {
+.upperCardList {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.upperCartList p {
+.upperCardList p {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.allCarts {
+.allCards {
   display: flex;
   gap: 15px;
   overflow-x: auto;
   scroll-behavior: smooth;
 }
 
-.allCarts > * {
+.allCards > * {
   flex: 0 0 auto;
 }
 
-.allCarts::-webkit-scrollbar {
+.allCards::-webkit-scrollbar {
   height: 6px;
 }
 
-.allCarts::-webkit-scrollbar-thumb {
+.allCards::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 3px;
 }

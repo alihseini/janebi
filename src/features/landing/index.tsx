@@ -3,7 +3,7 @@ import ImageSwiper from './components/imageSwiper/imageSwiper';
 import styles from './styles.module.css';
 import { fetchProducts } from './services/services';
 import { useQuery } from '@tanstack/react-query';
-import CartList from '../../shared/components/cartList/CartList';
+import CardList from '../../shared/components/cardList/CardList';
 import BannerMaker from '../../shared/components/bannerMaker/bannerMaker';
 
 const images = [
@@ -38,7 +38,7 @@ const Landing: React.FC = () => {
   return (
     <div className={styles.container}>
       <ImageSwiper images={images} />
-      <CartList data={products} title="اجناس" button="نمایش همه" />
+      <CardList data={products} title="اجناس" button="نمایش همه" />
       <BannerMaker images={imageBanner} />
     </div>
   );
