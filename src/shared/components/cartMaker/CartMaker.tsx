@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './styles.module.css';
-import { shortenDesc } from '../../utils/utils';
+import { shortenTitle } from '../../utils/utils';
 
 interface Product {
   id: number;
   price: number;
+  title: string;
   description: string;
   category: string;
   image: string;
@@ -20,8 +21,8 @@ const CartMaker: React.FC<CartMakerProps> = ({ product }) => {
   return (
     <div className={styles.cart}>
       <img src={product?.image} alt="img" />
-      <p>{shortenDesc(product?.description)}</p>
-      <p className={styles.price}>قیمت: ${product?.price}</p>
+      <p>{shortenTitle(product?.title)}</p>
+      <span className={styles.price}>قیمت: ${product?.price}</span>
     </div>
   );
 };

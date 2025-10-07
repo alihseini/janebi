@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 import { fetchProducts } from './services/services';
 import { useQuery } from '@tanstack/react-query';
 import CartList from '../../shared/components/cartList/CartList';
+import BannerMaker from '../../shared/components/bannerMaker/bannerMaker';
 
 const images = [
   'https://janebi.com/janebi/9fd2/files/normal/496502.jpg',
@@ -13,6 +14,11 @@ const images = [
   'https://janebi.com/janebi/9fd2/files/normal/496495.jpg',
   'https://janebi.com/janebi/9fd2/files/normal/496498.jpg',
   'https://janebi.com/janebi/9fd2/files/normal/496494.jpg',
+];
+
+const imageBanner = [
+  'https://janebi.com/janebi/9fd2/uploads/birthday404/fix-banner_powerbank.jpg',
+  'https://janebi.com/janebi/9fd2/uploads/birthday404/fix-banner_headphone.jpg',
 ];
 
 const Landing: React.FC = () => {
@@ -33,6 +39,7 @@ const Landing: React.FC = () => {
     <div className={styles.container}>
       <ImageSwiper images={images} />
       <CartList data={products} title="اجناس" button="نمایش همه" />
+      <BannerMaker images={imageBanner} />
     </div>
   );
 };
