@@ -1,0 +1,19 @@
+/* TopHeader */
+.topHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px; /* ارتفاع TopHeader */
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* فاصله mainContent برای جلوگیری از پوشیده شدن توسط هدر */
+.mainContent {
+  padding-top: 140px; /* TopHeader + MainHeader */
+}

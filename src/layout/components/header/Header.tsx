@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import Input from '../../../shared/components/input/Input';
 import Button from '../../../shared/components/button/Button';
@@ -8,9 +8,35 @@ import ShortDrawer from '../../../shared/components/shortDrawer/ShortDrawer';
 const MainHeader: React.FC = () => {
   const [search, setSearch] = useState('');
   const [isLoginHovered, setIsLoginHovered] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 80) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <div className={styles.fullHeader}>
+    <header
+      className={`${styles.headerWrapper} ${
+        showNavbar ? styles.headerWhite : styles.headerGlass
+      }`}
+    >
+      <div className={styles.topHeader}>
+        <p>
+          <span>ارسال رایگان </span>با اولین خرید از جانبی با کد :{' '}
+          <span>FREE007</span>
+        </p>
+      </div>
       <div className={styles.mainHeader}>
         <img src="/src/assets/images/janebi-logo.svg" alt="logo" />
 
@@ -53,7 +79,11 @@ const MainHeader: React.FC = () => {
         </div>
       </div>
 
-      <div className={styles.navBar}>
+      <div
+        className={`${styles.navBar} ${
+          showNavbar ? styles.navVisible : styles.navHidden
+        }`}
+      >
         <Button
           text="دسته بندی محصولات"
           svgSrc="bx-menu-alt-right"
@@ -65,7 +95,7 @@ const MainHeader: React.FC = () => {
         <Button text="پر فروش ترین" color="#4b4b4b" fontSize="1.1rem" />
         <Button text="وبلاگ" color="#4b4b4b" fontSize="1.1rem" />
       </div>
-    </div>
+    </header>
   );
 };
 
