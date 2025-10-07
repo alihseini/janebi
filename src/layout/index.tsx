@@ -1,6 +1,5 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import TopHeader from './components/top-header/TopHeader';
 import MainHeader from './components/header/Header';
 import styles from './style.module.css';
 
