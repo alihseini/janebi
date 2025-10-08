@@ -17,7 +17,7 @@
 
 .topHeader p span {
   color: var(--primary-color);
-  font-family: "dana-bold";
+  font-family: 'dana-bold';
 }
 
 .headerWhite {
@@ -69,10 +69,17 @@
 .mainHeaderLogin {
   width: 15%;
   display: flex;
-  align-items: flex-start;
-  position: relative;
+  align-items: center;
+  justify-content: flex-start;
   border-left: 2px var(--light-gray) solid;
   padding-left: 10px;
+}
+
+.loginTrigger {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
 }
 
 .mainHeaderCart {
@@ -97,7 +104,6 @@
   justify-content: flex-start;
   background-color: white;
   transition: all 0.4s ease-in-out;
-  overflow: hidden;
 }
 
 .navVisible {
