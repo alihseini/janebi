@@ -3,8 +3,9 @@ import ImageSwiper from './components/imageSwiper/imageSwiper';
 import styles from './styles.module.css';
 import { fetchProducts } from './services/services';
 import { useQuery } from '@tanstack/react-query';
-import BannerMaker from '../../shared/components/bannerMaker/bannerMaker';
-import CardList from '../../shared/components/cardList/cardList';
+import CardList from '../../shared/components/cardList/CardList';
+import BannerMaker from '../../shared/components/bannerMaker/BannerMaker';
+import BannerCards from './components/bannerCards/BannerCards';
 
 const images = [
   'https://janebi.com/janebi/9fd2/files/normal/496502.jpg',
@@ -40,6 +41,7 @@ const Landing: React.FC = () => {
       <ImageSwiper images={images} />
       <CardList data={products} title="اجناس" button="نمایش همه" />
       <BannerMaker images={imageBanner} />
+      <BannerCards />
     </div>
   );
 };
