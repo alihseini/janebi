@@ -32,6 +32,7 @@ const Landing: React.FC = () => {
   } = useQuery({
     queryKey: ['products'],
     queryFn: fetchProducts,
+    staleTime: 5 * 60 * 1000,
   });
 
   if (isLoading) return <p>در حال بارگذاری...</p>;

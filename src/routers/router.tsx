@@ -8,6 +8,7 @@ import {
 import Layout from '../layout';
 
 const Landing = lazy(() => import('../features/landing'));
+const Products = lazy(() => import('../features/products'));
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +16,7 @@ export const router = createBrowserRouter(
       <Route element={<Layout />}>
         <Route index element={<Landing />} />
         <Route path="landing" element={<Landing />} />
+        <Route path="products" element={<Products />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </>

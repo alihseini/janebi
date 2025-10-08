@@ -6,8 +6,11 @@ import Button from '../../../shared/components/button/Button';
 import Icons from '../../../shared/icons';
 import ShortDrawer from '../../../shared/components/shortDrawer/ShortDrawer';
 import LoginModal from '../../../features/landing/components/loginModal/LoginModal';
+import { useNavigate } from 'react-router';
 
 const Header: React.FC = () => {
+  const navigate = useNavigate();
+
   const [search, setSearch] = useState('');
   const [showNavbar, setShowNavbar] = useState(true);
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -129,6 +132,7 @@ const Header: React.FC = () => {
               fontSize="1.1rem"
               className={styles.categoriButton}
               color="#fff"
+              onClick={() => navigate('/products')}
             />
           }
           items={[
