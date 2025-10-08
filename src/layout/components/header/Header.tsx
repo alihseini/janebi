@@ -94,7 +94,11 @@ const Header: React.FC = () => {
                   </div>
                 }
                 items={[
-                  { text: 'ورود / ثبت نام', svgSrc: 'bx-log-in' },
+                  {
+                    text: 'ورود / ثبت نام',
+                    svgSrc: 'bx-log-in',
+                    onClick: () => setShowLoginModal(true),
+                  },
                   { text: 'پیگیری سفارشات', svgSrc: 'bx-cart-add' },
                 ]}
               />{' '}

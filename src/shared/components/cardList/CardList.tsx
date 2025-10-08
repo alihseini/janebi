@@ -10,7 +10,7 @@ interface CardListProps {
 }
 
 const CardList: React.FC<CardListProps> = ({ data, title, button }) => {
-    return (
+  return (
     <div className={styles.cardList}>
       <div className={styles.upperCardList}>
         <p>{title}</p>
@@ -18,7 +18,11 @@ const CardList: React.FC<CardListProps> = ({ data, title, button }) => {
       </div>
       <div className={styles.allCards}>
         {data.map((item) => (
-          <CardMaker product={item} onClick={() => console.log('click')} />
+          <CardMaker
+            key={item.id}
+            product={item}
+            onClick={() => console.log('click')}
+          />
         ))}
       </div>
     </div>

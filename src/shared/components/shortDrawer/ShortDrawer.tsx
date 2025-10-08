@@ -4,10 +4,14 @@ import Icons from '../../icons';
 
 interface ShortDrawerProps {
   trigger: React.ReactNode;
-  items: { text: string; svgSrc: string }[];
+  items: { text: string; svgSrc: string; onClick?: () => void }[];
 }
 
-const ShortDrawer: React.FC<ShortDrawerProps> = ({ trigger, items }) => {
+const ShortDrawer: React.FC<ShortDrawerProps> = ({
+  trigger,
+  items,
+  onClick,
+}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
@@ -20,7 +24,11 @@ const ShortDrawer: React.FC<ShortDrawerProps> = ({ trigger, items }) => {
 
       <div className={`${styles.drawer} ${isVisible ? styles.show : ''}`}>
         {items.map((item, index) => (
-          <button key={index} className={styles.drawerButton}>
+          <button
+            key={index}
+            className={styles.drawerButton}
+            onClick={item.onClick}
+          >
             <Icons name={item.svgSrc} size={20} color="#555" />
             <span>{item.text}</span>
           </button>
