@@ -5,7 +5,7 @@ import { fetchProducts } from './services/services';
 import { useQuery } from '@tanstack/react-query';
 import CardList from '../../shared/components/cardList/CardList';
 import BannerMaker from '../../shared/components/bannerMaker/BannerMaker';
-import BannerCards from './components/bannerCards/BannerCards';
+import BannerCards from './components/tripleBannerCards/TripleBannerCards';
 
 const images = [
   'https://janebi.com/janebi/9fd2/files/normal/496502.jpg',
@@ -42,6 +42,9 @@ const Landing: React.FC = () => {
       <CardList data={products} title="اجناس" button="نمایش همه" />
       <BannerMaker images={imageBanner} />
       <BannerCards />
+      <CardList data={products} title="اجناس" button="نمایش همه" />
+      <CardList data={products} title="اجناس" button="نمایش همه" />
+
     </div>
   );
 };

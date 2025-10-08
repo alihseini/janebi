@@ -31,7 +31,7 @@ const cardData = [
   },
 ];
 
-const BannerCards = () => {
+const TripleBannerCards = () => {
   return (
     <div className={styles.cardsWrapper}>
       {cardData.map((card, i) => (
@@ -46,4 +46,4 @@ const BannerCards = () => {
   );
 };
 
-export default BannerCards;
+export default TripleBannerCards;
