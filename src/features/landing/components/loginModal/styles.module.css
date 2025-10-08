@@ -1,0 +1,67 @@
+.backdrop {
+  position: fixed;
+  inset: 0; /* top:0; left:0; right:0; bottom:0 */
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(-100px) scale(0.95);
+  width: 350px;
+  max-width: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* نمایش مودال با انیمیشن از بالا */
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) translateY(0) scale(1);
+}
+
+.modal h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.modal input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.modal input:focus {
+  border-color: var(--primary-color);
+}
+
+.modal button {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
