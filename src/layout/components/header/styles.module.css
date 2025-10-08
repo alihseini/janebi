@@ -13,11 +13,11 @@
   text-align: center;
   padding: 15px 0;
   border-bottom: var(--primary-color) 3.5px solid;
-  font-family: 'dana-bold';
 }
 
 .topHeader p span {
   color: var(--primary-color);
+  font-family: "dana-bold";
 }
 
 .headerWhite {

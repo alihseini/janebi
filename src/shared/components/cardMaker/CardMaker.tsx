@@ -22,7 +22,7 @@ const CardMaker: React.FC<CardMakerProps> = ({ product }) => {
     <div className={styles.card}>
       <img src={product?.image} alt="img" />
       <p>{shortenTitle(product?.title)}</p>
-      <span className={styles.price}>قیمت: ${product?.price}</span>
+      <span className={styles.price}>قیمت: {product?.price} تومان</span>
     </div>
   );
 };

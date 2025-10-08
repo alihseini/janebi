@@ -5,12 +5,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'fa-light-300';
 }
 
 body {
-
   background-color: #f9f9f9;
-  font-family: 'fa-regular-400';
   color: #333;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
