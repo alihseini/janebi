@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { useLogin } from '../../services/auth';
 import Cookies from 'js-cookie';
 import styles from './styles.module.css';
+import { toast } from 'react-toastify';
 
 interface LoginModalProps {
   isVisible: boolean;
@@ -32,12 +33,25 @@ const LoginModal: React.FC<LoginModalProps> = ({
       { username, password },
       {
         onSuccess: (data) => {
-          Cookies.set('token', data.token, { expires: 1 }); 
+          Cookies.set('token', data.token, { expires: 1 });
           if (onLoginSuccess) onLoginSuccess(data.token);
+          toast.success('با موفقیت وارد شدید!', {
+            position: 'top-center',
+            autoClose: 5000,
+            hideProgressBar: false,
+            pauseOnHover: true,
+            draggable: true,
+          });
           onClose();
         },
         onError: (err: any) => {
-          alert('نام کاربری یا رمز عبور اشتباه است!');
+          toast.error('خطا در ورود به حساب کاربری!', {
+            position: 'top-center',
+            autoClose: 5000,
+            hideProgressBar: false,
+            pauseOnHover: true,
+            draggable: true,
+          });
         },
       }
     );
