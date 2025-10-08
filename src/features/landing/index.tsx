@@ -46,6 +46,10 @@ const Landing: React.FC = () => {
       <CardList data={products} title="اجناس" button="نمایش همه" />
       <CardList data={products} title="اجناس" button="نمایش همه" />
       <FourBanner />
+      <CardList data={products} title="اجناس" button="نمایش همه" />
+      <CardList data={products} title="اجناس" button="نمایش همه" />
+      <CardList data={products} title="اجناس" button="نمایش همه" />
+      <CardList data={products} title="اجناس" button="نمایش همه" />
     </div>
   );
 };
