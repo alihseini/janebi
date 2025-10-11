@@ -9,7 +9,7 @@ import LoginModal from '../../../features/landing/components/loginModal/LoginMod
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
 
 const categories = [
-  { label: 'همه', value: 'all' },
+  { label: 'همه', value: 'all', svgSrc: 'bx-filter' },
   { label: 'الکترونیکی', value: 'electronics' },
   { label: 'جواهرات', value: 'jewelery' },
   { label: 'لباس مردانه', value: "men's clothing" },
@@ -185,7 +185,7 @@ const Header: React.FC = () => {
           }
           items={categories.map((cat) => ({
             text: cat.label,
-            svgSrc: 'bx-filter',
+            svgSrc: cat?.svgSrc,
             onClick: () => handleCategoryClick(cat.value),
           }))}
         />
