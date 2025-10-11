@@ -20,7 +20,6 @@ const Filtering: React.FC = () => {
     return params.get('filter') || 'all';
   });
 
-  // هماهنگی selected با تغییرات URL
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     setSelected(params.get('filter') || 'all');
