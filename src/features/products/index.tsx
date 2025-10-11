@@ -15,7 +15,7 @@ const Products: React.FC = () => {
     queryKey: ['products'],
     queryFn: fetchProducts,
   });
-  console.log(products);
+  
   const [searchParams] = useSearchParams();
   const filter = searchParams.get('filter') || '';
 
