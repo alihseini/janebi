@@ -49,10 +49,7 @@ const Header: React.FC = () => {
       }`}
     >
       <div className={styles.topHeader}>
-        <p>
-          <span>ارسال رایگان </span>
-          با اولین خرید از جانبی با کد : <span>FREE007</span>
-        </p>
+        ارسال <span>رایگان</span> شد! فرصت محدود
       </div>
 
       <div className={styles.mainHeader}>
