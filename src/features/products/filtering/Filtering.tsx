@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import Icons from '../../../shared/icons';
-import { useNavigate, createSearchParams } from 'react-router';
+import { useNavigate, useLocation, createSearchParams } from 'react-router';
 
 const categories = [
-  { label: 'همه', value: '' },
+  { label: 'همه', value: 'all' },
   { label: 'الکترونیکی', value: 'electronics' },
   { label: 'جواهرات', value: 'jewelery' },
   { label: 'لباس مردانه', value: "men's clothing" },
@@ -13,9 +13,16 @@ const categories = [
 
 const Filtering: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const [selected, setSelected] = useState(() => {
+    const params = new URLSearchParams(location.search);
+    return params.get('filter') || 'all';
+  });
 
   const handleClick = (value: string) => {
-    const params = value ? { filter: value } : {};
+    setSelected(value);
+    const params = value !== 'all' ? { filter: value } : {};
     navigate({
       pathname: '/products',
       search: `?${createSearchParams(params)}`,
@@ -29,7 +36,11 @@ const Filtering: React.FC = () => {
       </h2>
       <ul>
         {categories.map((cat) => (
-          <li key={cat.value} onClick={() => handleClick(cat.value)}>
+          <li
+            key={cat.value}
+            className={cat.value === selected ? styles.selected : ''}
+            onClick={() => handleClick(cat.value)}
+          >
             {cat.label}
           </li>
         ))}
