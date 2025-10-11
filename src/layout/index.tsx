@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router';
 import Header from './components/header/Header';
 import styles from './style.module.css';
+import Footer from './components/footer/Footer';
 
 const MainLayout: React.FC = () => {
   return (
@@ -14,9 +15,7 @@ const MainLayout: React.FC = () => {
         <Outlet />
       </main>
 
-      <footer>
-        <p>© 2025 My Shop. All rights reserved.</p>
-      </footer>
+      <Footer />
     </>
   );
 };
