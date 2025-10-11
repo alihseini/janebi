@@ -10,7 +10,6 @@ interface ShortDrawerProps {
 const ShortDrawer: React.FC<ShortDrawerProps> = ({
   trigger,
   items,
-  onClick,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
 

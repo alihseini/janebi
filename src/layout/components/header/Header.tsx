@@ -137,13 +137,34 @@ const Header: React.FC = () => {
             />
           }
           items={[
-            { text: 'همه', svgSrc: 'bx-filter' },
-            { text: 'الکترونیکی', svgSrc: 'null' },
-            { text: 'جواهرات', svgSrc: 'null' },
-            { text: 'لباس مردانه', svgSrc: 'null' },
-            { text: 'لباس زنانه', svgSrc: 'null' },
+            {
+              text: 'همه',
+              svgSrc: 'bx-filter',
+              onClick: () => navigate('/products'),
+            },
+            {
+              text: 'الکترونیکی',
+              svgSrc: 'null',
+              onClick: () => navigate('/products?filter=electronics'),
+            },
+            {
+              text: 'جواهرات',
+              svgSrc: 'null',
+              onClick: () => navigate('/products?filter=jewelery'),
+            },
+            {
+              text: 'لباس مردانه',
+              svgSrc: 'null',
+              onClick: () => navigate("/products?filter=men's clothing"),
+            },
+            {
+              text: 'لباس زنانه',
+              svgSrc: 'null',
+              onClick: () => navigate("/products?filter=women's clothing"),
+            },
           ]}
         />
+
         <Button text="پیشنهاد ویژه" color="#4b4b4b" fontSize="1.1rem" />
         <Button text="پر فروش ترین" color="#4b4b4b" fontSize="1.1rem" />
         <Button text="وبلاگ" color="#4b4b4b" fontSize="1.1rem" />
