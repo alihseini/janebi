@@ -6,12 +6,29 @@ import Button from '../../../shared/components/button/Button';
 import Icons from '../../../shared/icons';
 import ShortDrawer from '../../../shared/components/shortDrawer/ShortDrawer';
 import LoginModal from '../../../features/landing/components/loginModal/LoginModal';
-import { useNavigate } from 'react-router';
+import { useNavigate, useLocation, createSearchParams } from 'react-router';
+
+const categories = [
+  { label: 'همه', value: 'all' },
+  { label: 'الکترونیکی', value: 'electronics' },
+  { label: 'جواهرات', value: 'jewelery' },
+  { label: 'لباس مردانه', value: "men's clothing" },
+  { label: 'لباس زنانه', value: "women's clothing" },
+];
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(() => {
+    const params = new URLSearchParams(location.search);
+    return params.get('search') || '';
+  });
+  const [selectedCategory, setSelectedCategory] = useState(() => {
+    const params = new URLSearchParams(location.search);
+    return params.get('filter') || 'all';
+  });
+
   const [showNavbar, setShowNavbar] = useState(true);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -35,6 +52,32 @@ const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    setSearch(params.get('search') || '');
+    setSelectedCategory(params.get('filter') || 'all');
+  }, [location.search]);
+
+  const updateURL = (newSearch: string, newCategory: string) => {
+    const params: any = {};
+    if (newSearch.trim() !== '') params.search = newSearch.trim();
+    if (newCategory !== 'all') params.filter = newCategory;
+
+    navigate({
+      pathname: '/products',
+      search: `?${createSearchParams(params)}`,
+    });
+  };
+
+  const handleSearch = () => {
+    updateURL(search, selectedCategory);
+  };
+
+  const handleCategoryClick = (value: string) => {
+    setSelectedCategory(value);
+    updateURL(search, value);
+  };
 
   const handleLogout = () => {
     Cookies.remove('token');
@@ -68,8 +111,13 @@ const Header: React.FC = () => {
               placeholder="دنبال چه لوازمی هستید؟"
               onChange={(e) => setSearch(e.target.value)}
               className={styles.searchInput}
+              onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
             />
-            <Button svgSrc="bx-search" className={styles.searchButton} />
+            <Button
+              svgSrc="bx-search"
+              className={styles.searchButton}
+              onClick={handleSearch}
+            />
           </div>
         </div>
 
@@ -105,7 +153,7 @@ const Header: React.FC = () => {
                   },
                   { text: 'پیگیری سفارشات', svgSrc: 'bx-cart-add' },
                 ]}
-              />{' '}
+              />
               <LoginModal
                 isVisible={showLoginModal}
                 onClose={() => setShowLoginModal(false)}
@@ -133,36 +181,13 @@ const Header: React.FC = () => {
               fontSize="1.1rem"
               className={styles.categoriButton}
               color="#fff"
-              onClick={() => navigate('/products')}
             />
           }
-          items={[
-            {
-              text: 'همه',
-              svgSrc: 'bx-filter',
-              onClick: () => navigate('/products'),
-            },
-            {
-              text: 'الکترونیکی',
-              svgSrc: 'null',
-              onClick: () => navigate('/products?filter=electronics'),
-            },
-            {
-              text: 'جواهرات',
-              svgSrc: 'null',
-              onClick: () => navigate('/products?filter=jewelery'),
-            },
-            {
-              text: 'لباس مردانه',
-              svgSrc: 'null',
-              onClick: () => navigate("/products?filter=men's clothing"),
-            },
-            {
-              text: 'لباس زنانه',
-              svgSrc: 'null',
-              onClick: () => navigate("/products?filter=women's clothing"),
-            },
-          ]}
+          items={categories.map((cat) => ({
+            text: cat.label,
+            svgSrc: 'bx-filter',
+            onClick: () => handleCategoryClick(cat.value),
+          }))}
         />
 
         <Button text="پیشنهاد ویژه" color="#4b4b4b" fontSize="1.1rem" />

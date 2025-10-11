@@ -15,25 +15,32 @@ const Products: React.FC = () => {
     queryKey: ['products'],
     queryFn: fetchProducts,
   });
-  
+
   const [searchParams] = useSearchParams();
   const filter = searchParams.get('filter') || '';
+  const search = searchParams.get('search') || '';
 
   const [filteredProducts, setFilteredProducts] = useState(products);
 
   useEffect(() => {
     if (!products) return;
 
-    if (!filter) {
-      setFilteredProducts(products);
-    } else {
-      setFilteredProducts(
-        products.filter((p) =>
-          p.category.toLowerCase().includes(filter.toLowerCase())
-        )
+    let tempProducts = products;
+
+    if (filter) {
+      tempProducts = tempProducts.filter((p) =>
+        p.category.toLowerCase().includes(filter.toLowerCase())
       );
     }
-  }, [products, filter]);
+
+    if (search) {
+      tempProducts = tempProducts.filter((p) =>
+        p.title.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+
+    setFilteredProducts(tempProducts);
+  }, [products, filter, search]);
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Something went wrong.</p>;
