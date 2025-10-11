@@ -1,0 +1,25 @@
+.container {
+  width: 80%;
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto;
+  direction: ltr;
+}
+
+.container img {
+  width: 300px;
+  height: 300px;
+  margin-right: 50px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.description {
+  width: 50%;
+  text-align: left;
+}
