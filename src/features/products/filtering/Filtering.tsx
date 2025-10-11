@@ -20,9 +20,16 @@ const Filtering: React.FC = () => {
     return params.get('filter') || 'all';
   });
 
+  // هماهنگی selected با تغییرات URL
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    setSelected(params.get('filter') || 'all');
+  }, [location.search]);
+
   const handleClick = (value: string) => {
-    setSelected(value);
-    const params = value !== 'all' ? { filter: value } : {};
+    const params: any = {};
+    if (value !== 'all') params.filter = value;
+
     navigate({
       pathname: '/products',
       search: `?${createSearchParams(params)}`,
