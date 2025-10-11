@@ -1,13 +1,13 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import MainHeader from './components/header/Header';
+import Header from './components/header/Header';
 import styles from './style.module.css';
 
 const MainLayout: React.FC = () => {
   return (
     <>
       <header className={styles.fixedHeader}>
-        <MainHeader />
+        <Header />
       </header>
 
       <main className={styles.mainContent}>
