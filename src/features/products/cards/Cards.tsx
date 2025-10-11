@@ -10,6 +10,7 @@ const Cards: React.FC = ({ data }) => {
           key={item.id}
           product={item}
           onClick={() => console.log('click')}
+          fullWidth={true}
         />
       ))}
     </div>

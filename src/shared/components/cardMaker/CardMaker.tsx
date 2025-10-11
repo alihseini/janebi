@@ -13,16 +13,24 @@ interface Product {
   rating: { rate: number; count: number };
 }
 
-const CardMaker: React.FC<{ product: Product }> = ({ product }) => {
+interface CardMakerProps {
+  product: Product;
+  fullWidth: boolean;
+}
+
+const CardMaker: React.FC<CardMakerProps> = ({ product, fullWidth = false }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
     const slug = makeSlug(product.title);
-    navigate(`/products/${product.id}/${slug}`); 
+    navigate(`/products/${product.id}/${slug}`);
   };
 
   return (
-    <div className={styles.card} onClick={handleClick}>
+    <div
+      className={`${styles.card} ${fullWidth ? styles.fullWidth : styles.fixedWidth}`}
+      onClick={handleClick}
+    >
       <img src={product.image} alt={product.title} />
       <p>{shortenTitle(product.title)}</p>
       <span className={styles.price}>قیمت: {product.price} تومان</span>
