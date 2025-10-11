@@ -18,7 +18,7 @@ const CardMaker: React.FC<{ product: Product }> = ({ product }) => {
 
   const handleClick = () => {
     const slug = makeSlug(product.title);
-    navigate(`/product/${product.id}/${slug}`); 
+    navigate(`/products/${product.id}/${slug}`); 
   };
 
   return (
