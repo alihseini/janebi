@@ -2,8 +2,9 @@ import { lazy } from 'react';
 import { createBrowserRouter, Navigate } from 'react-router';
 import Layout from '../layout';
 
-const Landing = lazy(() => import('../features/landing'));
-const Products = lazy(() => import('../features/products'));
+const Landing = lazy(() => import('../features/landing/index'));
+const Products = lazy(() => import('../features/products/index'));
+const ProductDetail = lazy(() => import('../features/productDetails/index'));
 
 export const router = createBrowserRouter([
   {
@@ -12,10 +13,11 @@ export const router = createBrowserRouter([
       { index: true, element: <Landing /> },
       { path: 'landing', element: <Landing /> },
       { path: 'products', element: <Products /> },
+      {
+        path: 'product/:id/:slug',
+        element: <ProductDetail />,
+      },
     ],
   },
-  {
-    path: '*',
-    element: <Navigate to="/" replace />,
-  },
+  { path: '*', element: <Navigate to="/" replace /> },
 ]);

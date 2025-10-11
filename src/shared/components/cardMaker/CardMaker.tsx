@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
-import { shortenTitle } from '../../utils/utils';
+import { shortenTitle, makeSlug } from '../../utils/utils';
+import { useNavigate } from 'react-router';
 
 interface Product {
   id: number;
@@ -12,17 +13,19 @@ interface Product {
   rating: { rate: number; count: number };
 }
 
-interface CardMakerProps {
-  product: Product;
-  onClick?: () => void;
-}
+const CardMaker: React.FC<{ product: Product }> = ({ product }) => {
+  const navigate = useNavigate();
 
-const CardMaker: React.FC<CardMakerProps> = ({ product }) => {
+  const handleClick = () => {
+    const slug = makeSlug(product.title);
+    navigate(`/product/${product.id}/${slug}`); 
+  };
+
   return (
-    <div className={styles.card}>
-      <img src={product?.image} alt="img" />
-      <p>{shortenTitle(product?.title)}</p>
-      <span className={styles.price}>قیمت: {product?.price} تومان</span>
+    <div className={styles.card} onClick={handleClick}>
+      <img src={product.image} alt={product.title} />
+      <p>{shortenTitle(product.title)}</p>
+      <span className={styles.price}>قیمت: {product.price} تومان</span>
     </div>
   );
 };
