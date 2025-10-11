@@ -53,8 +53,12 @@ const Header: React.FC = () => {
       </div>
 
       <div className={styles.mainHeader}>
-        <img src="/src/assets/images/janebi-logo.svg" alt="logo" />
-
+        <img
+          src="/src/assets/images/janebi-logo.svg"
+          alt="logo"
+          style={{ cursor: 'pointer' }}
+          onClick={() => navigate('/')}
+        />
         <div className={styles.mainHeaderSearch}>
           <div className={styles.searchDiv}>
             <Input
