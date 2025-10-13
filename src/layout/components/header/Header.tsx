@@ -157,7 +157,7 @@ const Header: React.FC = () => {
         </div>
 
         <div className={styles.mainHeaderCart}>
-          <Button svgSrc="bx-cart" size={40} />
+          <Button svgSrc="bx-cart" size={40} onClick={()=>navigate("/cart")} />
         </div>
       </div>
 
