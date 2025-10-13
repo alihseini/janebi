@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './styles.module.css';
+import styles from '../../css/filtering.module.css';
 import Icons from '../../../../shared/icons';
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
 

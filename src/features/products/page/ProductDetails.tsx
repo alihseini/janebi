@@ -1,17 +1,17 @@
 import { useParams } from 'react-router';
-import { useQuery } from '@tanstack/react-query';
-import styles from './productDetails.module.css';
+import styles from '../css/productDetails.module.css';
+import { useProductById } from '../services/useProducts';
 
 export default function ProductDetails() {
-  const { id } = useParams();
-
+  const { id } = useParams<{ id: string }>();
+  const { data, isLoading, isError } = useProductById(id || '');
 
   if (isLoading) return <p>Loading...</p>;
   if (isError || !data) return <p>Something went wrong.</p>;
 
   return (
     <div className={styles.container}>
-      <img src={data.image} alt={data.title} width="200" />
+      <img src={data.image} alt={data.title} width={200} />
       <div className={styles.details}>
         <h2>{data.title}</h2>
         <p className={styles.description}>{data.description}</p>

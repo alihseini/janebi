@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './styles.module.css';
-import CardMaker from '../../../shared/components/cardMaker/CardMaker';
+import styles from '../../css/cards.module.css';
+import CardMaker from '../../../../shared/components/cardMaker/CardMaker';
 
 const Cards: React.FC = ({ data }) => {
   return (
@@ -9,7 +9,6 @@ const Cards: React.FC = ({ data }) => {
         <CardMaker
           key={item.id}
           product={item}
-          onClick={() => console.log('click')}
           fullWidth={true}
         />
       ))}

@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router';
-import { fetchProducts } from '../../landing/services/services';
 import Cards from '../components/cards/Cards';
 import Filtering from '../components/filtering/Filtering';
+import { useProducts } from '../services/useProducts';
 
 const ProductsList: React.FC = () => {
-  const {
-    data: products,
-    isLoading,
-    isError,
-  } = useQuery({
-    queryKey: ['products'],
-    queryFn: fetchProducts,
-  });
+  const { data: products = [], isLoading, isError } = useProducts();
 
   const [searchParams] = useSearchParams();
   const filter = searchParams.get('filter') || '';
@@ -22,8 +14,6 @@ const ProductsList: React.FC = () => {
   const [filteredProducts, setFilteredProducts] = useState(products);
 
   useEffect(() => {
-    if (!products) return;
-
     let tempProducts = products;
 
     if (filter) {
