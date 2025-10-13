@@ -8,10 +8,13 @@ import ShortDrawer from '../../../shared/components/shortDrawer/ShortDrawer';
 import LoginModal from '../../../features/landing/components/loginModal/LoginModal';
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
 import { categoryList } from '../../../features/products/json/categoryList';
+import { useCartCache } from '../../../features/cart/services/useCartCache';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { state } = useCartCache();
+  const totalCount = state?.totalCount || 0;
 
   const [search, setSearch] = useState(() => {
     const params = new URLSearchParams(location.search);
@@ -95,6 +98,7 @@ const Header: React.FC = () => {
           style={{ cursor: 'pointer' }}
           onClick={() => navigate('/')}
         />
+
         <div className={styles.mainHeaderSearch}>
           <div className={styles.searchDiv}>
             <Input
@@ -155,9 +159,15 @@ const Header: React.FC = () => {
             </>
           )}
         </div>
-
         <div className={styles.mainHeaderCart}>
-          <Button svgSrc="bx-cart" size={40} onClick={()=>navigate("/cart")} />
+          <div className={styles.cartWrapper}>
+            <Button
+              svgSrc="bx-cart"
+              size={40}
+              onClick={() => navigate('/cart')}
+            />
+            <span className={styles.cartBadge}>{totalCount}</span>
+          </div>
         </div>
       </div>
 

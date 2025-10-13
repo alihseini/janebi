@@ -124,3 +124,24 @@
   border-bottom-right-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }
+
+.cartWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cartBadge {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #ff4d4f;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
