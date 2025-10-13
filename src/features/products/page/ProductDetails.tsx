@@ -1,16 +1,10 @@
 import { useParams } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
-import { fetchProductById } from './services/productById';
-import styles from './styles.module.css';
+import styles from './productDetails.module.css';
 
-export default function ProductDetail() {
+export default function ProductDetails() {
   const { id } = useParams();
 
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ['product', id],
-    queryFn: () => fetchProductById(id!),
-    staleTime: 1000 * 60 * 5,
-  });
 
   if (isLoading) return <p>Loading...</p>;
   if (isError || !data) return <p>Something went wrong.</p>;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
-import styles from './styles.module.css';
+import styles from '../../css/header.module.css';
 import Input from '../../../shared/components/input/Input';
 import Button from '../../../shared/components/button/Button';
 import Icons from '../../../shared/icons';

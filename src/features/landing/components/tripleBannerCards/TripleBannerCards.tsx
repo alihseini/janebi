@@ -1,5 +1,5 @@
 import BannerCardMaker from '../../../../shared/components/bannerCardMaker/BannerCardMaker';
-import styles from './styles.module.css';
+import styles from '../../css/tripleBanner.module.css';
 
 const cardData = [
   {

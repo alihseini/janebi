@@ -4,7 +4,7 @@ import Layout from '../layout';
 
 const Landing = lazy(() => import('../features/landing/index'));
 const Products = lazy(() => import('../features/products/index'));
-const ProductDetail = lazy(() => import('../features/productDetails/index'));
+const ProductDetails = lazy(() => import('../features/products/page/ProductDetails'));
 
 export const router = createBrowserRouter([
   {
@@ -14,8 +14,8 @@ export const router = createBrowserRouter([
       { path: 'landing', element: <Landing /> },
       { path: 'products', element: <Products /> },
       {
-        path: 'products/:id/:slug',
-        element: <ProductDetail />,
+        path: 'products/:id',
+        element: <ProductDetails />,
       },
     ],
   },

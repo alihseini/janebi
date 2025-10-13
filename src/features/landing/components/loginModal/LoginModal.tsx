@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { useLogin } from '../../services/auth';
 import Cookies from 'js-cookie';
-import styles from './styles.module.css';
+import styles from '../../css/loginModal.module.css';
 import { toast } from 'react-toastify';
 
 interface LoginModalProps {
