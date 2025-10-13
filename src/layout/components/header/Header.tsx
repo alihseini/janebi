@@ -7,14 +7,7 @@ import Icons from '../../../shared/icons';
 import ShortDrawer from '../../../shared/components/shortDrawer/ShortDrawer';
 import LoginModal from '../../../features/landing/components/loginModal/LoginModal';
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
-
-const categories = [
-  { label: 'همه', value: 'all', svgSrc: 'bx-filter' },
-  { label: 'الکترونیکی', value: 'electronics' },
-  { label: 'جواهرات', value: 'jewelery' },
-  { label: 'لباس مردانه', value: "men's clothing" },
-  { label: 'لباس زنانه', value: "women's clothing" },
-];
+import { categoryList } from '../../../features/products/json/categoryList';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -181,9 +174,10 @@ const Header: React.FC = () => {
               fontSize="1.1rem"
               className={styles.categoriButton}
               color="#fff"
+              onClick={() => navigate('/products')}
             />
           }
-          items={categories.map((cat) => ({
+          items={categoryList.map((cat) => ({
             text: cat.label,
             svgSrc: cat?.svgSrc,
             onClick: () => handleCategoryClick(cat.value),

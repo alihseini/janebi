@@ -2,14 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from '../../css/filtering.module.css';
 import Icons from '../../../../shared/icons';
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
-
-const categories = [
-  { label: 'همه', value: 'all' },
-  { label: 'الکترونیکی', value: 'electronics' },
-  { label: 'جواهرات', value: 'jewelery' },
-  { label: 'لباس مردانه', value: "men's clothing" },
-  { label: 'لباس زنانه', value: "women's clothing" },
-];
+import { categoryList } from '../../json/categoryList';
 
 const Filtering: React.FC = () => {
   const navigate = useNavigate();
@@ -41,7 +34,7 @@ const Filtering: React.FC = () => {
         <Icons name="bx-filter" /> دسته بندی ها
       </h2>
       <ul>
-        {categories.map((cat) => (
+        {categoryList.map((cat) => (
           <li
             key={cat.value}
             className={cat.value === selected ? styles.selected : ''}
