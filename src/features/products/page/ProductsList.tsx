@@ -17,8 +17,8 @@ const ProductsList: React.FC = () => {
     let tempProducts = products;
 
     if (filter) {
-      tempProducts = tempProducts.filter((p) =>
-        p.category.toLowerCase().includes(filter.toLowerCase())
+      tempProducts = tempProducts.filter(
+        (p) => p.category.toLowerCase() === filter.toLocaleLowerCase()
       );
     }
 
