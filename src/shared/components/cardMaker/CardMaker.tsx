@@ -3,7 +3,6 @@ import styles from './styles.module.css';
 import { shortenTitle } from '../../utils/utils';
 import { useNavigate } from 'react-router';
 import { useCartCache } from '../../../features/cart/services/useCartCache';
-import Icons from '../../icons';
 import Button from '../button/Button';
 
 interface Product {
@@ -59,38 +58,38 @@ const CardMaker: React.FC<CardMakerProps> = ({
 
         {count === 1 && (
           <div className={styles.counter}>
-            <button
+            <Button
+              text="+"
               className={styles.plusBtn}
               onClick={() => increaseProduct(product.id)}
-            >
-              +
-            </button>
+              color="white"
+            />
             <span className={styles.count}>{count}</span>
             <Button
               onClick={() => removeProduct(product.id)}
               className={styles.removeBtn}
               svgSrc="bx-trash"
               color="white"
-              fontSize='1.2rem'
+              fontSize="1.2rem"
             />
           </div>
         )}
 
         {count > 1 && (
           <div className={styles.counter}>
-            <button
+            <Button
+              text="+"
               className={styles.plusBtn}
               onClick={() => increaseProduct(product.id)}
-            >
-              +
-            </button>
+              color="white"
+            />
             <span className={styles.count}>{count}</span>
-            <button
+            <Button
+              text="-"
               className={styles.minusBtn}
               onClick={() => decreaseProduct(product.id)}
-            >
-              -
-            </button>
+              color="white"
+            />
           </div>
         )}
       </div>
