@@ -3,12 +3,13 @@ import { useNavigate, useLocation } from 'react-router';
 import styles from '../css/CartDrawer.module.css';
 import Button from '../../../shared/components/button/Button';
 import { useCartCache } from '../services/useCartCache';
+import { shortenTitle } from '../../../shared/utils/utils';
 
 const CartDrawer: React.FC = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const { state } = useCartCache();
+  const { state, removeProduct } = useCartCache();
 
   const products = state?.products || [];
   const totalPrice = state?.totalPrice || 0;
@@ -32,35 +33,46 @@ const CartDrawer: React.FC = () => {
         <span className={styles.badge}>{state.totalCount}</span>
       </div>
       <div className={`${styles.drawer} ${open ? styles.open : ''}`}>
-        <h4>سبد خرید شما</h4>
         {products.length === 0 ? (
-          <p className={styles.empty}>سبد خرید خالی است</p>
-        ) : (
-          <div className={styles.items}>
-            {products.map((p) => (
-              <div key={p.id} className={styles.item}>
-                <img src={p.image || '/placeholder.png'} alt={p.name} />
-                <div className={styles.info}>
-                  <p>{p.name}</p>
-                  <span>
-                    {p.count} × {p.price.toLocaleString()} تومان
-                  </span>
-                </div>
-              </div>
-            ))}
+          <div className={styles.emptyCart}>
+            <img src="/src/assets/images/cart-empty.svg" alt="cart" />
+            <p>سبد خرید شما خالی است!</p>
           </div>
+        ) : (
+          <>
+            <h4>سبد خرید شما</h4>
+            <div className={styles.items}>
+              {products.map((p) => (
+                <div key={p.id} className={styles.item}>
+                  <img src={p.image} alt={p.id} />
+                  <div className={styles.info}>
+                    <p>{shortenTitle(p.title)}</p>
+                    <span>تعداد:{p.count}</span>
+                  </div>
+                  <div>
+                    <Button
+                      svgSrc="bx-trash"
+                      onClick={() => removeProduct(p.id)}
+                      size={20}
+                    />
+                    <p className={styles.price}>{p.price} تومان</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className={styles.footer}>
+              <p>
+                جمع کل: <strong>{totalPrice.toLocaleString()} تومان</strong>
+              </p>
+              <Button
+                text="مشاهده سبد خرید"
+                className={styles.viewCartBtn}
+                onClick={() => navigate('/cart')}
+                color='white'
+              />
+            </div>
+          </>
         )}
-
-        <div className={styles.footer}>
-          <p>
-            جمع کل: <strong>{totalPrice.toLocaleString()} تومان</strong>
-          </p>
-          <Button
-            text="مشاهده سبد خرید"
-            className={styles.viewCartBtn}
-            onClick={() => navigate('/cart')}
-          />
-        </div>
       </div>
     </div>
   );
