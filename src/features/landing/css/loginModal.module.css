@@ -72,12 +72,12 @@
 }
 
 .modal input:focus {
-  border-color: var(--primary-color);
+  border-color: var(--primary);
 }
 
 .modal button {
   padding: 10px;
-  background-color: var(--primary-color);
+  background-color: var(--primary);
   color: #fff;
   border: none;
   border-radius: 5px;

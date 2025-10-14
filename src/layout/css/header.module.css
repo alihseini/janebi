@@ -82,7 +82,7 @@
   cursor: pointer;
 }
 
-.loginTriggerText p{
+.loginTriggerText p {
   font-size: 0.8rem;
   color: var(--dark-gray);
 }
@@ -124,7 +124,7 @@
 }
 
 .categoriButton {
-  background-color: var(--primary-color);
+  background-color: var(--primary);
   color: #fff !important;
   border-bottom-right-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
