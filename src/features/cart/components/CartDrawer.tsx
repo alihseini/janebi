@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router';
 import styles from '../css/CartDrawer.module.css';
 import Button from '../../../shared/components/button/Button';
@@ -14,6 +14,10 @@ const CartDrawer: React.FC = () => {
   const products = state?.products || [];
   const totalPrice = state?.totalPrice || 0;
 
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
   if (location.pathname.includes('/cart')) return null;
 
   return (
@@ -23,15 +27,10 @@ const CartDrawer: React.FC = () => {
       onMouseLeave={() => setOpen(false)}
     >
       <div className={styles.iconWrapper}>
-        <Button
-          svgSrc="bx-cart"
-          size={40}
-          onClick={() => {
-            navigate('/cart');
-          }}
-        />
+        <Button svgSrc="bx-cart" size={40} onClick={() => navigate('/cart')} />
         <span className={styles.badge}>{state.totalCount}</span>
       </div>
+
       <div className={`${styles.drawer} ${open ? styles.open : ''}`}>
         {products.length === 0 ? (
           <div className={styles.emptyCart}>
