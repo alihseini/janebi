@@ -20,9 +20,8 @@ export const useCartCache = () => {
   const calculateTotalPrice = (products: Product[]) =>
     products.reduce((sum, p) => sum + p.price * (p.count || 1), 0);
 
-  const calculateTotalCount = (products: Product[]) =>
-    products.reduce((sum, p) => sum + (p.count || 1), 0);
-
+  const calculateTotalCount = (products: Product[]) => products.length;
+  
   const getInitialState = (): IState => {
     const saved = localStorage.getItem('cart_state');
     if (saved) return JSON.parse(saved);
