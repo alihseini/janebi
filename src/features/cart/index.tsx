@@ -15,7 +15,10 @@ const Cart: React.FC = () => {
       <h2 className={styles.title}>سبد خرید شما</h2>
 
       {products.length === 0 ? (
-        <p className={styles.empty}>سبد خرید شما خالی است.</p>
+        <div className={styles.empty}>
+          <img src="/src/assets/images/cart-empty.svg" alt="cart" />
+          <p>سبد خرید شما خالیست!</p>
+        </div>
       ) : (
         <div className={styles.cartContent}>
           <CartCards
