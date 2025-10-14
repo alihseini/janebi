@@ -13,11 +13,11 @@
   text-align: center;
   padding: 15px 0;
   font-family: 'dana-bold';
-  border-bottom: var(--primary-color) 3.5px solid;
+  border-bottom: var(--primary) 3.5px solid;
 }
 
 .topHeader span {
-  color: var(--primary-color);
+  color: var(--primary);
 }
 
 .headerWhite {
