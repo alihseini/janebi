@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../css/CartCards.module.css';
 import Button from '../../../shared/components/button/Button';
+import { shortenTitle } from '../../../shared/utils/utils';
 
 interface Product {
   id: number;
@@ -25,19 +26,27 @@ const CartCards: React.FC<CartCardsProps> = ({
   onRemove,
   onAdd,
 }) => {
+  const sumPrice = (price, count) => {
+    return price * count;
+  };
   return (
     <div className={styles.cardsWrapper}>
+      <h2 className={styles.title}>سبد خرید شما</h2>
       {products.map((product) => (
         <div key={product.id} className={styles.card}>
           <img
             src={product.image || '/placeholder.png'}
-            alt={product.name}
+            alt={product.title}
             className={styles.image}
           />
 
           <div className={styles.info}>
-            <h4>{product.name}</h4>
+            <h4>{shortenTitle(product.title)}</h4>
             <p>{product.price.toLocaleString()} تومان</p>
+          </div>
+
+          <div className={styles.totalPrice}>
+            مبلغ کل : {sumPrice(product.price, product.count)}
           </div>
 
           <div className={styles.actions}>

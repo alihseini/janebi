@@ -1,5 +1,6 @@
 .checkoutWrapper {
   background: #fff;
+  max-height: fit-content;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -10,4 +11,30 @@
   flex-direction: column;
   gap: 10px;
   margin-top: 20px;
+}
+
+.delivery span {
+  color: var(--primary);
+}
+
+.checkout {
+  background-color: var(--light-gray);
+  width: 150px;
+}
+
+.checkout:hover {
+  background-color: var(--dark-gray);
+  color: #fff !important;
+  width: 150px;
+}
+
+.emptyCart {
+  background-color: var(--bg-red);
+  width: 150px;
+}
+
+.emptyCart:hover {
+  background-color: var(--tx-red);
+  color: #fff !important;
+  width: 150px;
 }

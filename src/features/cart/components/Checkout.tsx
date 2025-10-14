@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../css/Checkout.module.css';
 import Button from '../../../shared/components/button/Button';
+import { toast } from 'react-toastify';
 
 interface CheckoutProps {
   totalPrice: number;
@@ -22,10 +23,13 @@ const Checkout: React.FC<CheckoutProps> = ({
       <p>
         مبلغ کل: <strong>{totalPrice.toLocaleString()} تومان</strong>
       </p>
+      <p className={styles.delivery}>
+        نحوه ارسال : <span>رایگان</span>{' '}
+      </p>
 
       <div className={styles.actions}>
-        <Button text="تسویه حساب" onClick={() => alert('در حال پرداخت...')} />
-        <Button text="خالی کردن سبد" color="red" onClick={onClear} />
+        <Button className={styles.checkout} text="تسویه حساب" onClick={() => toast('در حال پرداخت...')} />
+        <Button className={styles.emptyCart} text="خالی کردن سبد" color="red" onClick={onClear} />
       </div>
     </div>
   );

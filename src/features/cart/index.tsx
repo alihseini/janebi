@@ -12,8 +12,6 @@ const Cart: React.FC = () => {
 
   return (
     <div className={styles.cartContainer}>
-      <h2 className={styles.title}>سبد خرید شما</h2>
-
       {products.length === 0 ? (
         <div className={styles.empty}>
           <img src="/src/assets/images/cart-empty.svg" alt="cart" />
