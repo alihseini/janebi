@@ -68,7 +68,7 @@ const CartDrawer: React.FC = () => {
                 text="مشاهده سبد خرید"
                 className={styles.viewCartBtn}
                 onClick={() => navigate('/cart')}
-                color='white'
+                color="white"
               />
             </div>
           </>
