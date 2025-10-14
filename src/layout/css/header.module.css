@@ -82,6 +82,11 @@
   cursor: pointer;
 }
 
+.loginTriggerText p{
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+}
+
 .mainHeaderCart {
   width: 5%;
   display: flex;

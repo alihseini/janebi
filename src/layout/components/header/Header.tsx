@@ -133,7 +133,7 @@ const Header: React.FC = () => {
                 trigger={
                   <div className={styles.loginTrigger}>
                     <Icons name="bx-user" size={40} color="#999999" />
-                    <div>
+                    <div className={styles.loginTriggerText}>
                       <p>خوش آمدی</p>
                       <Button
                         text="ورود به حساب کاربری"
