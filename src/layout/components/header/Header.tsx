@@ -9,6 +9,7 @@ import LoginModal from '../../../features/landing/components/loginModal/LoginMod
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
 import { categoryList } from '../../../features/products/json/categoryList';
 import { useCartCache } from '../../../features/cart/services/useCartCache';
+import CartDrawer from '../../../features/cart/components/CartDrawer';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -160,14 +161,7 @@ const Header: React.FC = () => {
           )}
         </div>
         <div className={styles.mainHeaderCart}>
-          <div className={styles.cartWrapper}>
-            <Button
-              svgSrc="bx-cart"
-              size={40}
-              onClick={() => navigate('/cart')}
-            />
-            <span className={styles.cartBadge}>{totalCount}</span>
-          </div>
+          <CartDrawer />
         </div>
       </div>
 

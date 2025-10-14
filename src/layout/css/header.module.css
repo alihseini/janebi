@@ -130,11 +130,6 @@
   border-bottom-left-radius: 0 !important;
 }
 
-.cartWrapper {
-  position: relative;
-  display: inline-block;
-}
-
 .cartBadge {
   position: absolute;
   top: 0px;
