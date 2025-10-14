@@ -8,14 +8,11 @@ import ShortDrawer from '../../../shared/components/shortDrawer/ShortDrawer';
 import LoginModal from '../../../features/landing/components/loginModal/LoginModal';
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
 import { categoryList } from '../../../features/products/json/categoryList';
-import { useCartCache } from '../../../features/cart/services/useCartCache';
 import CartDrawer from '../../../features/cart/components/CartDrawer';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { state } = useCartCache();
-  const totalCount = state?.totalCount || 0;
 
   const [search, setSearch] = useState(() => {
     const params = new URLSearchParams(location.search);
