@@ -18,11 +18,11 @@
 
 .bannerItem {
   flex: 1;
-  max-height: fit-content;
+  max-height: 28rem;
   border-radius: 10px;
   background-color: #fcfcfc;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .bannerItem img {
@@ -30,9 +30,4 @@
   height: 100%;
   object-fit: cover;
   mix-blend-mode: multiply;
-}
-
-.bannerItem:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
