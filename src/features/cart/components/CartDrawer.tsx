@@ -48,14 +48,15 @@ const CartDrawer: React.FC = () => {
                     <p>{shortenTitle(p.title)}</p>
                     <span>تعداد:{p.count}</span>
                   </div>
-                  <div>
+                  <div className={styles.trashBadge}>
                     <Button
                       svgSrc="bx-trash"
                       onClick={() => removeProduct(p.id)}
                       size={20}
+                      color="red"
                     />
-                    <p className={styles.price}>{p.price} تومان</p>
                   </div>
+                  <p className={styles.price}>{p.price} تومان</p>
                 </div>
               ))}
             </div>
