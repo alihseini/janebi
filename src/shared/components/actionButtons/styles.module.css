@@ -1,0 +1,41 @@
+.addButton {
+  background-color: var(--primary);
+  border-radius: 10px;
+  padding: 5px;
+  width: fit-content;
+  margin-top: 14px;
+}
+
+.actions {
+  border: solid 1px var(--bg-blue);
+  border-radius: 10px;
+  padding: 5px 5px;
+  margin-top: 10px;
+  width: fit-content;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.ltr {
+  flex-direction: row-reverse;
+}
+
+.addButton:hover {
+  background-color: var(--dark-gray);
+}
+
+.minusBtn {
+  background-color: var(--bg-red);
+}
+
+.minusBtn,
+.removeBtn,
+.plusBtn {
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.plusBtn {
+  background-color: var(--bg-blue);
+}

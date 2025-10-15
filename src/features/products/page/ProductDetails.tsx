@@ -36,6 +36,7 @@ export default function ProductDetails() {
           removeProduct={removeProduct}
           increaseProduct={increaseProduct}
           decreaseProduct={decreaseProduct}
+          isLTR={true}
         />
       </div>
     </div>
