@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../css/CartCards.module.css';
-import Button from '../../../shared/components/button/Button';
 import { shortenTitle } from '../../../shared/utils/utils';
+import ProductActions from '../../../shared/components/actionButtons/ProductActions';
 
 interface Product {
   id: number;
@@ -48,54 +48,14 @@ const CartCards: React.FC<CartCardsProps> = ({
           <div className={styles.totalPrice}>
             مبلغ کل : {sumPrice(product.price, product.count)}
           </div>
-
-          <div className={styles.actions}>
-            {product.count === 0 && (
-              <Button
-                onClick={() => onAdd(product)}
-                className={styles.addButton}
-                svgSrc="bx-cart-add"
-                color="white"
-              />
-            )}
-
-            {product.count === 1 && (
-              <div className={styles.counter}>
-                <Button
-                  text="+"
-                  className={styles.plusBtn}
-                  onClick={() => onIncrease(product.id)}
-                  color="white"
-                />
-                <span className={styles.count}>{product.count}</span>
-                <Button
-                  onClick={() => onRemove(product.id)}
-                  className={styles.removeBtn}
-                  svgSrc="bx-trash"
-                  color="white"
-                  fontSize="1.2rem"
-                />
-              </div>
-            )}
-
-            {product.count > 1 && (
-              <div className={styles.counter}>
-                <Button
-                  text="+"
-                  className={styles.plusBtn}
-                  onClick={() => onIncrease(product.id)}
-                  color="white"
-                />
-                <span className={styles.count}>{product.count}</span>
-                <Button
-                  text="-"
-                  className={styles.minusBtn}
-                  onClick={() => onDecrease(product.id)}
-                  color="white"
-                />
-              </div>
-            )}
-          </div>
+          <ProductActions
+            count={product.count}
+            productId={product.id}
+            addProduct={() => onAdd(product)}
+            removeProduct={onRemove}
+            increaseProduct={onIncrease}
+            decreaseProduct={onDecrease}
+          />
         </div>
       ))}
     </div>

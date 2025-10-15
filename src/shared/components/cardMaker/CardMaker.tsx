@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 import { shortenTitle } from '../../utils/utils';
 import { useNavigate } from 'react-router';
 import { useCartCache } from '../../../features/cart/services/useCartCache';
-import Button from '../button/Button';
+import ProductActions from '../actionButtons/ProductActions';
 
 interface Product {
   id: number;
@@ -46,53 +46,14 @@ const CardMaker: React.FC<CardMakerProps> = ({
       </div>
       <p onClick={handleClick}>{shortenTitle(product.title)}</p>
       <span className={styles.price}>قیمت: {product.price} تومان</span>
-      <div className={styles.actions}>
-        {count === 0 && (
-          <Button
-            onClick={() => addProduct(product)}
-            className={styles.addButton}
-            svgSrc="bx-cart-add"
-            color="white"
-          />
-        )}
-
-        {count === 1 && (
-          <div className={styles.counter}>
-            <Button
-              text="+"
-              className={styles.plusBtn}
-              onClick={() => increaseProduct(product.id)}
-              color="white"
-            />
-            <span className={styles.count}>{count}</span>
-            <Button
-              onClick={() => removeProduct(product.id)}
-              className={styles.removeBtn}
-              svgSrc="bx-trash"
-              color="white"
-              fontSize="1.2rem"
-            />
-          </div>
-        )}
-
-        {count > 1 && (
-          <div className={styles.counter}>
-            <Button
-              text="+"
-              className={styles.plusBtn}
-              onClick={() => increaseProduct(product.id)}
-              color="white"
-            />
-            <span className={styles.count}>{count}</span>
-            <Button
-              text="-"
-              className={styles.minusBtn}
-              onClick={() => decreaseProduct(product.id)}
-              color="white"
-            />
-          </div>
-        )}
-      </div>
+      <ProductActions
+        count={count}
+        productId={product.id}
+        addProduct={() => addProduct(product)}
+        removeProduct={removeProduct}
+        increaseProduct={increaseProduct}
+        decreaseProduct={decreaseProduct}
+      />
     </div>
   );
 };
