@@ -13,9 +13,16 @@
   align-items: center;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 2px dashed var(--dark-gray);
+  cursor: pointer;
+  margin: 10px 0;
   padding: 10px 15px;
   justify-content: space-between;
+  transition: all 0.5s ease-in;
+}
+
+.card:hover{
+  background-color: #eeefff;
 }
 
 .totalPrice {
@@ -48,47 +55,5 @@
   border-radius: 10px;
   padding: 5px;
   cursor: pointer;
-  font-weight: bold;
-}
-
-.counter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.plusBtn,
-.minusBtn {
-  background-color: #007bff;
-  color: white;
-  width: 40px;
-  height: 40px;
-  font-size: 1.5rem;
-  border: none;
-  border-radius: 10px;
-  padding: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.2s ease-in;
-}
-
-.plusBtn:hover,
-.minusBtn:hover {
-  color: black;
-}
-
-.removeBtn {
-  background-color: #dc3545;
-  border: none;
-  border-radius: 10px;
-  padding: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.count {
-  min-width: 24px;
-  text-align: center;
   font-weight: bold;
 }
