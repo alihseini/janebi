@@ -28,8 +28,17 @@ const Checkout: React.FC<CheckoutProps> = ({
       </p>
 
       <div className={styles.actions}>
-        <Button className={styles.checkout} text="تسویه حساب" onClick={() => toast('در حال پرداخت...')} />
-        <Button className={styles.emptyCart} text="خالی کردن سبد" color="red" onClick={onClear} />
+        <Button
+          className={styles.checkout}
+          text="پرداخت"
+          onClick={() => toast('در حال پرداخت...')}
+        />
+        <Button
+          className={styles.emptyCart}
+          text="خالی کردن سبد"
+          color="red"
+          onClick={onClear}
+        />
       </div>
     </div>
   );
