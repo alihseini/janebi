@@ -38,19 +38,18 @@ const CartCards: React.FC<CartCardsProps> = ({
     <div className={styles.cardsWrapper}>
       <h2 className={styles.title}>سبد خرید شما</h2>
       {products.map((product) => (
-        <div
-          key={product.id}
-          className={styles.card}
-          onClick={() => cardClickHandler(product.id)}
-        >
+        <div key={product.id} className={styles.card}>
           <img
             src={product.image || '/placeholder.png'}
             alt={product.title}
             className={styles.image}
+            onClick={() => cardClickHandler(product.id)}
           />
 
           <div className={styles.info}>
-            <h4>{shortenTitle(product.title)}</h4>
+            <h4 onClick={() => cardClickHandler(product.id)}>
+              {shortenTitle(product.title)}
+            </h4>
             <p>{product.price.toLocaleString()} تومان</p>
           </div>
 
