@@ -1,14 +1,12 @@
 import { useParams } from 'react-router';
 import styles from '../css/productDetails.module.css';
 import { useProductById } from '../services/useProducts';
-import Button from '../../../shared/components/button/Button';
 import { useCartCache } from '../../cart/services/useCartCache';
 import ProductActions from '../../../shared/components/actionButtons/ProductActions';
 
 export default function ProductDetails() {
   const { id } = useParams<{ id: string }>();
   const { data, isLoading, isError } = useProductById(id || '');
-  console.log(data);
 
   const { state, addProduct, removeProduct, increaseProduct, decreaseProduct } =
     useCartCache();
