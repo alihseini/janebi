@@ -1,20 +1,36 @@
 .checkoutWrapper {
   background: #fff;
+  width: 300px;
   max-height: fit-content;
   border-radius: 10px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  border-bottom: 1px solid #d7d7d7;
+  margin-bottom: 10px;
 }
 
 .actions {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
+  width: 100%;
   margin-top: 20px;
 }
 
 .delivery span {
   color: var(--primary);
+}
+
+.delivery {
+  border-bottom: 1px solid #d7d7d7;
+  padding-bottom: 10px;
 }
 
 .checkout {
