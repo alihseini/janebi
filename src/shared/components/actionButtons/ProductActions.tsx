@@ -31,31 +31,33 @@ const ProductActions: React.FC<ProductActionsProps> = ({
   }
 
   return (
-    <div className={styles.counter}>
-      <Button
-        text="+"
-        className={styles.plusBtn}
-        onClick={() => increaseProduct && increaseProduct(productId)}
-        color="white"
-      />
-      <span className={styles.count}>{count}</span>
+    <div className={styles.actions}>
+      <div className={styles.counter}>
+        <Button
+          text="+"
+          className={styles.plusBtn}
+          onClick={() => increaseProduct && increaseProduct(productId)}
+          color="white"
+        />
+        <span className={styles.count}>{count}</span>
 
-      {count === 1 ? (
-        <Button
-          onClick={() => removeProduct && removeProduct(productId)}
-          className={styles.removeBtn}
-          svgSrc="bx-trash"
-          color="white"
-          fontSize="1.2rem"
-        />
-      ) : (
-        <Button
-          text="-"
-          className={styles.minusBtn}
-          onClick={() => decreaseProduct && decreaseProduct(productId)}
-          color="white"
-        />
-      )}
+        {count === 1 ? (
+          <Button
+            onClick={() => removeProduct && removeProduct(productId)}
+            className={styles.removeBtn}
+            svgSrc="bx-trash"
+            color="white"
+            fontSize="1.2rem"
+          />
+        ) : (
+          <Button
+            text="-"
+            className={styles.minusBtn}
+            onClick={() => decreaseProduct && decreaseProduct(productId)}
+            color="white"
+          />
+        )}
+      </div>
     </div>
   );
 };

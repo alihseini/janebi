@@ -22,6 +22,33 @@
   width: 100%;
 }
 
+.ratings {
+  width: 90%;
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  top: 20px;
+  right: 10px;
+}
+
+.rate,
+.count {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.rate {
+  background-color: var(--bg-green);
+  color: var(--tx-green);
+}
+
+.count {
+  background-color: var(--bg-blue);
+  color: var(--primary);
+}
+
 .card p {
   font-size: 1rem;
   width: 100%;
@@ -32,7 +59,7 @@
   object-fit: cover;
   width: 200px;
   height: 200px;
-  margin-bottom: 50px;
+  margin: 40px 0 50px;
 }
 
 .card img {
