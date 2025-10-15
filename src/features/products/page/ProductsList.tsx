@@ -11,14 +11,12 @@ const ProductsList: React.FC = () => {
   const filter = searchParams.get('filter') || '';
   const search = searchParams.get('search') || '';
 
-  const [filteredProducts, setFilteredProducts] = useState(products);
-
-  useEffect(() => {
+  const filteredProducts = React.useMemo(() => {
     let tempProducts = products;
 
     if (filter) {
       tempProducts = tempProducts.filter(
-        (p) => p.category.toLowerCase() === filter.toLocaleLowerCase()
+        (p) => p.category.toLowerCase() === filter.toLowerCase()
       );
     }
 
@@ -28,7 +26,7 @@ const ProductsList: React.FC = () => {
       );
     }
 
-    setFilteredProducts(tempProducts);
+    return tempProducts;
   }, [products, filter, search]);
 
   if (isLoading) return <p>Loading...</p>;
