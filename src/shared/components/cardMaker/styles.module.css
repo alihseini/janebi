@@ -10,6 +10,10 @@
   text-align: center;
 }
 
+.card * {
+  font-family: 'dana-fanum-regular';
+}
+
 .fixedWidth {
   width: 280px;
 }

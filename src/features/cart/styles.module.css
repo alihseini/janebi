@@ -9,6 +9,10 @@
   border-radius: 8px;
 }
 
+.cartContainer * {
+  font-family: 'dana-fanum-regular';
+}
+
 .title {
   font-size: 1.8rem;
   font-weight: bold;

@@ -3,6 +3,10 @@
   display: inline-block;
 }
 
+.cartWrapper *{
+  font-family: 'dana-fanum-regular';
+}
+
 .iconWrapper {
   position: relative;
   cursor: pointer;
@@ -94,15 +98,16 @@
 }
 
 .footer {
-  padding-top: 0.75rem;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
 
 .viewCartBtn {
   background-color: #007aff;
   border-radius: 8px;
+  height: 40px;
 }
 
 .viewCartBtn:hover {
