@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../css/CartCards.module.css';
 import { shortenTitle } from '../../../shared/utils/utils';
 import ProductActions from '../../../shared/components/actionButtons/ProductActions';
+import { useNavigate } from 'react-router';
 
 interface Product {
   id: number;
@@ -26,14 +27,22 @@ const CartCards: React.FC<CartCardsProps> = ({
   onRemove,
   onAdd,
 }) => {
+  const navigate = useNavigate();
   const sumPrice = (price, count) => {
     return price * count;
+  };
+  const cardClickHandler = (id) => {
+    navigate(`/products/${id}`);
   };
   return (
     <div className={styles.cardsWrapper}>
       <h2 className={styles.title}>سبد خرید شما</h2>
       {products.map((product) => (
-        <div key={product.id} className={styles.card}>
+        <div
+          key={product.id}
+          className={styles.card}
+          onClick={() => cardClickHandler(product.id)}
+        >
           <img
             src={product.image || '/placeholder.png'}
             alt={product.title}
