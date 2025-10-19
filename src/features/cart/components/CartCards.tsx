@@ -3,16 +3,8 @@ import styles from '../css/CartCards.module.css';
 import { shortenTitle } from '../../../shared/utils/utils';
 import ProductActions from '../../../shared/components/actionButtons/ProductActions';
 import { useNavigate } from 'react-router';
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  image?: string;
-  count: number;
-}
-
-interface CartCardsProps {
+import type { Product } from '../types/cart';
+interface IProps {
   products: Product[];
   onIncrease: (id: number) => void;
   onDecrease: (id: number) => void;
@@ -20,7 +12,7 @@ interface CartCardsProps {
   onAdd: (product: Product) => void;
 }
 
-const CartCards: React.FC<CartCardsProps> = ({
+const CartCards: React.FC<IProps> = ({
   products,
   onIncrease,
   onDecrease,
