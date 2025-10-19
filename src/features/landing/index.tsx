@@ -1,13 +1,12 @@
 import React from 'react';
-import ImageSwiper from './components/imageSwiper/imageSwiper';
+import ImageSwiper from './components/imageSwiper';
 import styles from './css/styles.module.css';
-import { fetchProducts } from './services/services';
-import { useQuery } from '@tanstack/react-query';
 import CardList from '../../shared/components/cardList/CardList';
 import BannerMaker from '../../shared/components/bannerMaker/BannerMaker';
-import BannerCards from './components/tripleBannerCards/TripleBannerCards';
-import FourBanner from './components/fourBanners/FourBanners';
-import Footer from './components/footer/Footer';
+import Footer from './components/Footer';
+import TripleBannerCards from './components/TripleBannerCards';
+import FourBanner from './components/FourBanners';
+import { useProducts } from '../products/services/useProducts';
 
 const images = [
   'https://janebi.com/janebi/9fd2/files/normal/496502.jpg',
@@ -25,16 +24,7 @@ const imageBanner = [
 ];
 
 const Landing: React.FC = () => {
-  const {
-    data: products,
-    isLoading,
-    isError,
-    error,
-  } = useQuery({
-    queryKey: ['products'],
-    queryFn: fetchProducts,
-    staleTime: 5 * 60 * 1000,
-  });
+  const { data: products, isLoading, isError, error } = useProducts();
 
   if (isLoading) return <p>در حال بارگذاری...</p>;
   if (isError) return <p>خطا در دریافت داده: {(error as Error).message}</p>;
@@ -44,7 +34,7 @@ const Landing: React.FC = () => {
       <ImageSwiper images={images} />
       <CardList data={products} title="اجناس" button="نمایش همه" />
       <BannerMaker images={imageBanner} />
-      <BannerCards />
+      <TripleBannerCards />
       <CardList data={products} title="اجناس" button="نمایش همه" />
       <CardList data={products} title="اجناس" button="نمایش همه" />
       <FourBanner />

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../css/CartCards.module.css';
+import styles from '../css/styles.module.css';
 import { shortenTitle } from '../../../shared/utils/utils';
 import ProductActions from '../../../shared/components/actionButtons/ProductActions';
 import { useNavigate } from 'react-router';
@@ -27,25 +27,25 @@ const CartCards: React.FC<IProps> = ({
     navigate(`/products/${id}`);
   };
   return (
-    <div className={styles.cardsWrapper}>
-      <h2 className={styles.title}>سبد خرید شما</h2>
+    <div className={styles.cartCardsWrapper}>
+      <h2>سبد خرید شما</h2>
       {products.map((product) => (
-        <div key={product.id} className={styles.card}>
+        <div key={product.id} className={styles.cartCard}>
           <img
             src={product.image || '/placeholder.png'}
             alt={product.title}
-            className={styles.image}
+            className={styles.cartImage}
             onClick={() => cardClickHandler(product.id)}
           />
 
-          <div className={styles.info}>
+          <div className={styles.cartInfo}>
             <h4 onClick={() => cardClickHandler(product.id)}>
               {shortenTitle(product.title)}
             </h4>
             <p>{product.price.toLocaleString()} تومان</p>
           </div>
 
-          <div className={styles.totalPrice}>
+          <div className={styles.cartTotalPrice}>
             مبلغ کل : {sumPrice(product.price, product.count)}
           </div>
           <ProductActions

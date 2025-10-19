@@ -4,7 +4,7 @@ import ProductsList from './page/ProductsList';
 
 const Products: React.FC = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.productContainer}>
       <ProductsList />
     </div>
   );

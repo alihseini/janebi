@@ -1,5 +1,5 @@
 import { useParams } from 'react-router';
-import styles from '../css/productDetails.module.css';
+import styles from '../css/styles.module.css';
 import { useProductById } from '../services/useProducts';
 import { useCartCache } from '../../cart/services/useCartCache';
 import ProductActions from '../../../shared/components/actionButtons/ProductActions';
@@ -18,9 +18,9 @@ export default function ProductDetails() {
   if (isError || !data) return <p>Something went wrong.</p>;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.detailContainer}>
       <img src={data.image} alt={data.title} width={200} />
-      <div className={styles.details}>
+      <div className={styles.detailsInfo}>
         <h2>{data.title}</h2>
         <p className={styles.description}>{data.description}</p>
         <p>

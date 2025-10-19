@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.module.css';
+import styles from './css/styles.module.css';
 import { useCartCache } from '../cart/services/useCartCache';
 import CartCards from './components/CartCards';
 import Checkout from './components/Checkout';
@@ -13,7 +13,7 @@ const Cart: React.FC = () => {
   return (
     <div className={styles.cartContainer}>
       {products.length === 0 ? (
-        <div className={styles.empty}>
+        <div className={styles.emptyCart}>
           <img src="/src/assets/images/cart-empty.svg" alt="cart" />
           <p>سبد خرید شما خالیست!</p>
         </div>

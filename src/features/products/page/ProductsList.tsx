@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSearchParams } from 'react-router';
-import Cards from '../components/cards/Cards';
-import Filtering from '../components/filtering/Filtering';
 import { useProducts } from '../services/useProducts';
+import Filtering from '../components/Filtering';
+import Cards from '../components/Cards';
 
 const ProductsList: React.FC = () => {
   const { data: products = [], isLoading, isError } = useProducts();

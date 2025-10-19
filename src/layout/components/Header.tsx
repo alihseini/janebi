@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
-import styles from '../../css/header.module.css';
-import Input from '../../../shared/components/input/Input';
-import Button from '../../../shared/components/button/Button';
-import Icons from '../../../shared/icons';
-import ShortDrawer from '../../../shared/components/shortDrawer/ShortDrawer';
-import LoginModal from '../../../features/landing/components/loginModal/LoginModal';
+import styles from '../css/styles.module.css';
+import Input from '../../shared/components/input/Input';
+import Button from '../../shared/components/button/Button';
+import Icons from '../../shared/icons';
+import ShortDrawer from '../../shared/components/shortDrawer/ShortDrawer';
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
-import { categoryList } from '../../../features/products/json/categoryList';
-import CartDrawer from '../../../features/cart/components/CartDrawer';
+import { categoryList } from '../../features/products/json/categoryList';
+import CartDrawer from '../../features/cart/components/CartDrawer';
+import LoginModal from '../../features/landing/components/LoginModal';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();

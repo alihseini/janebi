@@ -1,6 +1,84 @@
-.container {
+.productContainer {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin: 30px 0;
+}
+
+/* CARDS  */
+
+.cardsContainer {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* FILTERING */
+
+.filteringContainer {
+  width: 25%;
+  background-color: white;
+  margin: 0 20px;
+  border-radius: 10px;
+  max-height: fit-content;
+  padding: 10px 25px;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filteringContainer  h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filteringContainer  ul {
+  margin-top: 10px;
+}
+
+.filteringContainer  ul li {
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: all 0.2s ease-in;
+  border-radius: 10px;
+}
+
+.filteringContainer  ul li:not(.selected):hover {
+  background-color: var(--light-gray);
+}
+
+.selected {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* PRODUCT DETAILS  */
+
+.detailContainer {
+  width: 80%;
+  display: flex;
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto;
+  direction: ltr;
+}
+
+.detailContainer img {
+  width: 300px;
+  height: 300px;
+  margin-right: 50px;
+}
+
+.detailsInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.description {
+  width: 50%;
+  text-align: left;
 }

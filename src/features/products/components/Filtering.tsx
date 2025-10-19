@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../../css/filtering.module.css';
-import Icons from '../../../../shared/icons';
+import styles from '../css/styles.module.css';
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
-import { categoryList } from '../../json/categoryList';
+import Icons from '../../../shared/icons';
+import { categoryList } from '../json/categoryList';
 
 const Filtering: React.FC = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Filtering: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.filteringContainer}>
       <h2>
         <Icons name="bx-filter" /> دسته بندی ها
       </h2>

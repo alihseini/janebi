@@ -1,4 +1,4 @@
-import BannerMaker from '../../../../shared/components/bannerMaker/BannerMaker';
+import BannerMaker from '../../../shared/components/bannerMaker/BannerMaker';
 
 const images = [
   'https://janebi.com/janebi/9fd2/uploads/home-banner/car-charger.jpg',

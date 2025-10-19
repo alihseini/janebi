@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import { useLogin } from '../../services/auth';
 import Cookies from 'js-cookie';
-import styles from '../../css/loginModal.module.css';
+import styles from '../css/styles.module.css';
 import { toast } from 'react-toastify';
+import { useLogin } from '../services/useLogin';
 
 interface LoginModalProps {
   isVisible: boolean;
@@ -62,7 +62,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
   return ReactDOM.createPortal(
     <>
       <div
-        className={`${styles.backdrop} ${isVisible ? styles.show : ''}`}
+        className={`${styles.loginBackdrop} ${isVisible ? styles.show : ''}`}
         onClick={onClose}
       />
       <div className={`${styles.modal} ${isVisible ? styles.show : ''}`}>

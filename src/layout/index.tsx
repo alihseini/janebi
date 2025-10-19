@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router';
-import Header from './components/header/Header';
-import styles from './style.module.css';
-import Footer from './components/footer/Footer';
+import Header from './components/Header';
+import styles from './css/styles.module.css';
+import Footer from './components/Footer';
 
 const MainLayout: React.FC = () => {
   const { pathname } = useLocation();

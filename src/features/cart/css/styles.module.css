@@ -1,0 +1,263 @@
+.cartContainer {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 95%;
+  min-height: 60vh;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.cartContainer * {
+  font-family: 'dana-fanum-regular';
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.emptyCart {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--dark-gray);
+}
+
+.cartContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+/* CART DRAWER */
+
+.cartDrawerWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cartDrawerWrapper * {
+  font-family: 'dana-fanum-regular';
+}
+
+.CartIconWrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.emptyDrawerCart {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyDrawerCart p {
+  color: var(--dark-gray);
+}
+
+.drawerItem img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.drawerCartBadge {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  background-color: red;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+.cartDrawer {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 350px;
+  max-height: 50vh;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  scrollbar-width: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.25s ease;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.drawerOpen {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.drawerItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.drawerItem {
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  gap: 0.75rem;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.drawerTrashBadge {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.drawerInfo {
+  flex-grow: 1;
+}
+
+.drawerInfo p {
+  font-size: 1rem;
+}
+
+.drawerInfo span,
+.drawerPrice {
+  color: var(--dark-gray);
+  font-size: 0.8rem;
+}
+
+.drawerFooter {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.viewDrawerCartBtn {
+  background-color: #007aff;
+  border-radius: 8px;
+  height: 40px;
+}
+
+.viewDrawerCartBtn:hover {
+  background-color: var(--light-gray);
+  color: var(--dark-gray) !important;
+}
+
+/* CART CARDS */
+
+.cartCardsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cartCard {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  border: 2px dashed var(--dark-gray);
+  cursor: pointer;
+  margin: 10px 0;
+  padding: 10px 15px;
+  justify-content: space-between;
+  transition: all 0.5s ease-in;
+}
+
+.cartCard:hover {
+  background-color: #eeefff;
+}
+
+.cartTotalPrice {
+  padding-top: 15px;
+  margin-left: 20px;
+}
+
+.cartImage {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.cartInfo {
+  flex: 1;
+  margin: 0 10px;
+  width: 20%;
+}
+
+/* CHECKOUT */
+
+.checkoutWrapper {
+  background: #fff;
+  width: 300px;
+  max-height: fit-content;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  border-bottom: 1px solid #d7d7d7;
+  margin-bottom: 10px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.delivery span {
+  color: var(--primary);
+}
+
+.delivery {
+  border-bottom: 1px solid #d7d7d7;
+  padding-bottom: 10px;
+}
+
+.checkout {
+  background-color: var(--light-gray);
+  width: 150px;
+}
+
+.checkout:hover {
+  background-color: var(--dark-gray);
+  color: #fff !important;
+  width: 150px;
+}
+
+.emptyCart {
+  background-color: var(--bg-red);
+  width: 150px;
+}
+
+.emptyCart:hover {
+  background-color: var(--tx-red);
+  color: #fff !important;
+  width: 150px;
+}
