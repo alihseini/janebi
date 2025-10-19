@@ -45,7 +45,7 @@ axiosInterCeptors.interceptors.response.use(
     } else if (error.response.status === 401 && !originalRequest._retry) {
       if (!isTokenRefreshing) {
         isTokenRefreshing = true;
-        refreshPromise = renewToken();
+        refreshPromise = null;
 
         try {
           const res: any = await refreshPromise;

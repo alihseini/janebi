@@ -58,8 +58,8 @@ export const renewToken = async () => {
       localStorage.removeItem('token');
       localStorage.removeItem('refresh_token');
       localStorage.removeItem('app_version');
-      sessionStorage.clear();
-      window.location.reload();
+      // sessionStorage.clear();
+      // window.location.reload();
     } else if (error?.response.status === 400) {
       toast.error('لطفا کمی بعد مجددا تلاش کنید.');
     } else if (error?.response.status >= 500) {
