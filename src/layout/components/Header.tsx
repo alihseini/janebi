@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Cookies from 'js-cookie';
 import styles from '../css/styles.module.css';
 import Input from '../../shared/components/input/Input';
 import Button from '../../shared/components/button/Button';
@@ -18,6 +17,7 @@ const Header: React.FC = () => {
     const params = new URLSearchParams(location.search);
     return params.get('search') || '';
   });
+
   const [selectedCategory, setSelectedCategory] = useState(() => {
     const params = new URLSearchParams(location.search);
     return params.get('filter') || 'all';
@@ -28,11 +28,14 @@ const Header: React.FC = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [user, setUser] = useState<string | null>(null);
 
+  // 🔹 چک کردن وضعیت کاربر از localStorage در بارگذاری اولیه
   useEffect(() => {
-    const username = Cookies.get('username');
-    if (username) setUser(username);
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
+    if (token && username) setUser(username);
   }, []);
 
+  // 🔹 کنترل نمایش یا مخفی شدن هدر هنگام اسکرول
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY && window.scrollY > 80) {
@@ -47,6 +50,7 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  // 🔹 همگام‌سازی سرچ و فیلتر با URL
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     setSearch(params.get('search') || '');
@@ -74,8 +78,8 @@ const Header: React.FC = () => {
   };
 
   const handleLogout = () => {
-    Cookies.remove('token');
-    Cookies.remove('username');
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
     setUser(null);
   };
 
@@ -152,11 +156,15 @@ const Header: React.FC = () => {
               <LoginModal
                 isVisible={showLoginModal}
                 onClose={() => setShowLoginModal(false)}
-                onLogin={(username: string) => setUser(username)}
+                onLoginSuccess={() => {
+                  const username = localStorage.getItem('username');
+                  setUser(username);
+                }}
               />
             </>
           )}
         </div>
+
         <div className={styles.mainHeaderCart}>
           <CartDrawer />
         </div>

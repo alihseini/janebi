@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import Cookies from 'js-cookie';
 import styles from '../css/styles.module.css';
-import { toast } from 'react-toastify';
 import { useLogin } from '../services/useLogin';
 
 interface LoginModalProps {
   isVisible: boolean;
   onClose: () => void;
-  onLoginSuccess?: (token: string) => void;
+  onLoginSuccess: () => void;
 }
 
 const LoginModal: React.FC<LoginModalProps> = ({
@@ -18,7 +16,20 @@ const LoginModal: React.FC<LoginModalProps> = ({
 }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const loginMutation = useLogin();
+
+  const { mutate, isLoading } = useLogin(
+    { username, password },
+    {
+      onSuccess: (data) => {
+        onLoginSuccess?.(data.token);
+        onClose();
+      },
+    }
+  );
+
+  const handleLogin = () => {
+    mutate({ username, password });
+  };
 
   useEffect(() => {
     if (isVisible) document.body.style.overflow = 'hidden';
@@ -27,35 +38,6 @@ const LoginModal: React.FC<LoginModalProps> = ({
       document.body.style.overflow = 'auto';
     };
   }, [isVisible]);
-
-  const handleLogin = () => {
-    loginMutation.mutate(
-      { username, password },
-      {
-        onSuccess: (data) => {
-          Cookies.set('token', data.token, { expires: 1 });
-          if (onLoginSuccess) onLoginSuccess(data.token);
-          toast.success('با موفقیت وارد شدید!', {
-            position: 'top-center',
-            autoClose: 5000,
-            hideProgressBar: false,
-            pauseOnHover: true,
-            draggable: true,
-          });
-          onClose();
-        },
-        onError: (err: any) => {
-          toast.error('خطا در ورود به حساب کاربری!', {
-            position: 'top-center',
-            autoClose: 5000,
-            hideProgressBar: false,
-            pauseOnHover: true,
-            draggable: true,
-          });
-        },
-      }
-    );
-  };
 
   if (!isVisible) return null;
 
@@ -79,8 +61,8 @@ const LoginModal: React.FC<LoginModalProps> = ({
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handleLogin} disabled={loginMutation.isLoading}>
-          {loginMutation.isLoading ? 'در حال ورود...' : 'ورود'}
+        <button onClick={handleLogin} disabled={isLoading}>
+          {isLoading ? 'در حال ورود...' : 'ورود'}
         </button>
       </div>
     </>,
