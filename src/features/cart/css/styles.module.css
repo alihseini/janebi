@@ -252,12 +252,13 @@ h3 {
 }
 
 .emptyCart {
-  background-color: var(--bg-red);
-  width: 150px;
+  background-color: white;
+  min-height: 50vh;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.emptyCart:hover {
-  background-color: var(--tx-red);
-  color: #fff !important;
-  width: 150px;
-}
