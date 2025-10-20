@@ -26,6 +26,8 @@
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  gap: 10px;
+  flex: 1; /* دوتا دکمه کنار */
 }
 
 .allCards::-webkit-scrollbar {
@@ -43,4 +45,47 @@
 .allCards::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 3px;
+}
+
+.scrollContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: relative;
+}
+
+.rightButton,
+.leftButton {
+  background-color: white;
+  border: none;
+  width: 40px;
+  height: 60px;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bolder;
+  position: absolute;
+  box-shadow: 0px 1px 20px -8px #000000;
+  z-index: 100;
+}
+
+.rightButton {
+  right: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 0;
+}
+
+.leftButton {
+  left: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 5px;
+}
+
+.rightButton:hover,
+.leftButton:hover {
+  background-color: var(--primary);
+  color: white !important;
 }
