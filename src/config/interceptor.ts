@@ -11,9 +11,7 @@ export const axiosInterCeptors: any = axios.create();
 axiosInterCeptors.interceptors.request.use(
   (req: any) => {
     req.headers = {
-      Authorization: JSON.parse(localStorage.getItem('token') as string)
-        ? `Bearer ${JSON.parse(localStorage.getItem('token') as string)}`
-        : '',
+      Authorization: '',
       'Content-Type': 'application/json',
       // Accept: "application/json",
     };
