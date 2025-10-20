@@ -3,7 +3,6 @@ import ImageSwiper from './components/imageSwiper';
 import styles from './css/styles.module.css';
 import CardList from '../../shared/components/cardList/CardList';
 import BannerMaker from '../../shared/components/bannerMaker/BannerMaker';
-import Footer from './components/Footer';
 import TripleBannerCards from './components/TripleBannerCards';
 import FourBanner from './components/FourBanners';
 import { useProducts } from '../products/services/useProducts';
@@ -42,7 +41,6 @@ const Landing: React.FC = () => {
       <CardList data={products} title="اجناس" button="نمایش همه" />
       <CardList data={products} title="اجناس" button="نمایش همه" />
       <CardList data={products} title="اجناس" button="نمایش همه" />
-      <Footer />
     </div>
   );
 };

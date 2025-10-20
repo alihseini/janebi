@@ -20,7 +20,9 @@ const MainLayout: React.FC = () => {
         <Outlet />
       </main>
 
-      <Footer />
+      <footer className={styles.fullFooter}>
+        <Footer />
+      </footer>
     </>
   );
 };

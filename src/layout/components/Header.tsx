@@ -84,7 +84,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header
+    <div
       className={`${styles.headerWrapper} ${
         showNavbar ? styles.headerWhite : styles.headerGlass
       }`}
@@ -197,7 +197,7 @@ const Header: React.FC = () => {
         <Button text="پر فروش ترین" color="#4b4b4b" fontSize="1.1rem" />
         <Button text="وبلاگ" color="#4b4b4b" fontSize="1.1rem" />
       </div>
-    </header>
+    </div>
   );
 };
 
