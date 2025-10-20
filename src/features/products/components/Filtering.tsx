@@ -105,22 +105,21 @@ const Filtering: React.FC = () => {
           value={brandSearch}
           onChange={brandSearchHandler}
         />
-      </div>
-
-      <div className={styles.brandList}>
-        {filteredBrands.length > 0 ? (
-          filteredBrands.map((brand) => (
-            <label key={brand.name} className={styles.brandItem}>
-              <div>
-                <span className={styles.brandTitle}>{brand.title}</span>
-                <input type="checkbox" />
-              </div>
-              <span>{brand.name}</span>
-            </label>
-          ))
-        ) : (
-          <p className={styles.noBrand}>برندی یافت نشد</p>
-        )}
+        <div className={styles.brandList}>
+          {filteredBrands.length > 0 ? (
+            filteredBrands.map((brand) => (
+              <label key={brand.name} className={styles.brandItem}>
+                <div>
+                  <span className={styles.brandTitle}>{brand.title}</span>
+                  <input type="checkbox" />
+                </div>
+                <span>{brand.name}</span>
+              </label>
+            ))
+          ) : (
+            <p className={styles.noBrand}>برندی یافت نشد</p>
+          )}
+        </div>
       </div>
 
       <ul>
