@@ -10,6 +10,8 @@
 
 body {
   background-color: #f9f9f9;
+  max-width: 1600px;
+  margin: 50px auto;
   color: #333;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
