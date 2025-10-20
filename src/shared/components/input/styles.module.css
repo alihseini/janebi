@@ -14,7 +14,7 @@
 }
 
 .input::placeholder {
-  color: var(--dark-gray);
+  color: var(--darker-gray);
   font-family: 'dana-semibold';
   font-size: 1rem;
 }

@@ -8,6 +8,7 @@ interface InputProps {
   placeholder?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
+  onKeyDown?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -17,6 +18,7 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   onChange,
   className,
+  onKeyDown,
 }) => {
   return (
     <input
@@ -27,6 +29,7 @@ const Input: React.FC<InputProps> = ({
       value={value}
       placeholder={placeholder}
       onChange={onChange}
+      onKeyDown={onKeyDown}
     />
   );
 };
