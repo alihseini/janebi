@@ -108,16 +108,6 @@ const Filtering: React.FC = () => {
       brand.title.toLowerCase().includes(debouncedBrandSearch.toLowerCase())
   );
 
-  const filteredProducts = categoryList.filter((product) => {
-    const price = product.price || 0;
-    const matchesSearch = product.label
-      .toLowerCase()
-      .includes(search.toLowerCase());
-    const matchesCategory = selected === 'all' || product.category === selected;
-    const matchesPrice = price >= minPrice && price <= maxPrice;
-    return matchesSearch && matchesCategory && matchesPrice;
-  });
-
   // ---------------------- render ----------------------
   return (
     <div className={styles.filteringContainer}>
