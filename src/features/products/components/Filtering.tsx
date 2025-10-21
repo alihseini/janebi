@@ -43,7 +43,7 @@ const Filtering: React.FC = () => {
     });
   };
 
-  // 🔹 سرچ برای فیلتر نتایج با debounce
+  //  سرچ برای فیلتر نتایج با debounce
   const searchHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearch(value);
@@ -55,7 +55,7 @@ const Filtering: React.FC = () => {
     }, 1000);
   };
 
-  // 🔹 سرچ برندها با debounce
+  //  سرچ برندها با debounce
   const brandSearchHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setBrandSearch(value);
@@ -79,7 +79,7 @@ const Filtering: React.FC = () => {
     updateURL(search, value);
   };
 
-  // 🔹 فیلتر برندها با سرچ debounce شده
+  //  فیلتر برندها با سرچ debounce شده
   const filteredBrands = brandsList.filter(
     (brand) =>
       brand.name.toLowerCase().includes(debouncedBrandSearch.toLowerCase()) ||
