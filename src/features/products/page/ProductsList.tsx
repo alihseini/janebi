@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router';
 import { useProducts } from '../services/useProducts';
 import Filtering from '../components/Filtering';
@@ -10,8 +10,21 @@ const ProductsList: React.FC = () => {
   const [searchParams] = useSearchParams();
   const filter = searchParams.get('filter') || '';
   const search = searchParams.get('search') || '';
-  const minPrice = Number(searchParams.get('minPrice')) || 0;
-  const maxPrice = Number(searchParams.get('maxPrice')) || 1000;
+
+  const minPrice =
+    Number(searchParams.get('minPrice')) ||
+    Number(localStorage.getItem('minPrice')) ||
+    0;
+
+  const maxPrice =
+    Number(searchParams.get('maxPrice')) ||
+    Number(localStorage.getItem('maxPrice')) ||
+    1000;
+
+  useEffect(() => {
+    localStorage.setItem('minPrice', String(minPrice));
+    localStorage.setItem('maxPrice', String(maxPrice));
+  }, [minPrice, maxPrice]);
 
   const filteredProducts = React.useMemo(() => {
     let tempProducts = products;
