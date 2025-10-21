@@ -42,7 +42,7 @@
   content: '';
   height: 22px;
   width: 22px;
-  box-shadow: 2px 2px 50px -9px #000000;
+  box-shadow: 1px 1px 11px 1px rgba(54, 54, 54, 0.73);
   left: 1px;
   bottom: 1px;
   background-color: white;
