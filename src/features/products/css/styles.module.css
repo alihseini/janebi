@@ -37,8 +37,22 @@
   gap: 10px;
 }
 
+.smallSearch,
+.brandSearch {
+  width: 100%;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.smallSearch:focus,
+.brandSearch:focus {
+  box-shadow: 1px 1px 10px 8px var(--bg-blue);
+}
+
 .filteringContainer ul {
   margin-top: 10px;
+  border-bottom: 1px solid var(--dark-gray);
+  padding: 0 20px;
 }
 
 .filteringContainer ul li {
@@ -68,21 +82,9 @@
   border-bottom: 1px solid var(--dark-gray);
 }
 
-.smallSearch,
-.brandSearch {
-  width: 100%;
-  border-radius: 5px;
-  background-color: white;
-}
-
-.smallSearch:focus,
-.brandSearch:focus {
-  box-shadow: 1px 1px 10px 8px var(--bg-blue);
-}
-
 .brandSection {
   border-bottom: 1px solid var(--dark-gray);
-  padding: 0 10px;
+  padding: 20px;
 }
 
 .brandList {
@@ -131,7 +133,6 @@
 .brandTitle {
   color: var(--darkest-gray) !important;
 }
-
 
 /* PRODUCT DETAILS  */
 

@@ -15,13 +15,15 @@ const Filtering: React.FC = () => {
     return params.get('search') || '';
   });
 
-  const [brandSearch, setBrandSearch] = useState(''); // 👈 سرچ مخصوص برندها
+  const [brandSearch, setBrandSearch] = useState('');
+  const [debouncedBrandSearch, setDebouncedBrandSearch] = useState('');
   const [selected, setSelected] = useState(() => {
     const params = new URLSearchParams(location.search);
     return params.get('filter') || 'all';
   });
 
   const debounceRef = useRef<any>(null);
+  const brandDebounceRef = useRef<any>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -40,7 +42,7 @@ const Filtering: React.FC = () => {
     });
   };
 
-  // 🔹 سرچ برای فیلتر نتایج
+  // 🔹 سرچ برای فیلتر نتایج با debounce
   const searchHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearch(value);
@@ -52,9 +54,16 @@ const Filtering: React.FC = () => {
     }, 1000);
   };
 
-  // 🔹 سرچ برای فیلتر برندها (بدون debounce)
+  // 🔹 سرچ برندها با debounce
   const brandSearchHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setBrandSearch(e.target.value);
+    const value = e.target.value;
+    setBrandSearch(value);
+
+    if (brandDebounceRef.current) clearTimeout(brandDebounceRef.current);
+
+    brandDebounceRef.current = setTimeout(() => {
+      setDebouncedBrandSearch(value);
+    }, 500);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -69,11 +78,11 @@ const Filtering: React.FC = () => {
     updateURL(search, value);
   };
 
-  // 🔹 فیلتر برندها با سرچ
+  // 🔹 فیلتر برندها با سرچ debounce شده
   const filteredBrands = brandsList.filter(
     (brand) =>
-      brand.name.toLowerCase().includes(brandSearch.toLowerCase()) ||
-      brand.title.toLowerCase().includes(brandSearch.toLowerCase())
+      brand.name.toLowerCase().includes(debouncedBrandSearch.toLowerCase()) ||
+      brand.title.toLowerCase().includes(debouncedBrandSearch.toLowerCase())
   );
 
   return (
@@ -94,7 +103,17 @@ const Filtering: React.FC = () => {
           onKeyDown={handleKeyDown}
         />
       </div>
-
+      <ul>
+        {categoryList.map((cat) => (
+          <li
+            key={cat.value}
+            className={cat.value === selected ? styles.selected : ''}
+            onClick={() => handleClick(cat.value)}
+          >
+            {cat.label}
+          </li>
+        ))}
+      </ul>
       <div className={styles.brandSection}>
         <p>برند ها</p>
         <Input
@@ -121,18 +140,6 @@ const Filtering: React.FC = () => {
           )}
         </div>
       </div>
-
-      <ul>
-        {categoryList.map((cat) => (
-          <li
-            key={cat.value}
-            className={cat.value === selected ? styles.selected : ''}
-            onClick={() => handleClick(cat.value)}
-          >
-            {cat.label}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };
