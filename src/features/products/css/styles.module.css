@@ -11,6 +11,48 @@
   width: 75%;
 }
 
+.cardsContainer h2 {
+  margin-bottom: 20px;
+}
+
+.productListTabs {
+  display: flex;
+  justify-content: space-between;
+  color: var(--darkest-gray);
+  border-bottom: 1px solid var(--dark-gray);
+  margin-bottom: 20px;
+  font-family: 'dana-fanum-regular';
+  padding-left: 20px;
+}
+
+.productListTabs * {
+  font-family: 'dana-fanum-regular';
+}
+
+.productListTabs ul {
+  display: flex;
+  gap: 30px;
+}
+
+.productListTabs div {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.selectedTab {
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+  cursor: pointer;
+}
+
+.productListTabs ul li {
+  display: inline-block;
+  cursor: pointer;
+  padding-bottom: 5px;
+  font-size: 0.9rem;
+}
+
 /* FILTERING */
 
 .filteringContainer {
