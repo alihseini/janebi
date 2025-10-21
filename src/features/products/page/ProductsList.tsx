@@ -10,6 +10,8 @@ const ProductsList: React.FC = () => {
   const [searchParams] = useSearchParams();
   const filter = searchParams.get('filter') || '';
   const search = searchParams.get('search') || '';
+  const minPrice = Number(searchParams.get('minPrice')) || 0;
+  const maxPrice = Number(searchParams.get('maxPrice')) || 1000;
 
   const filteredProducts = React.useMemo(() => {
     let tempProducts = products;
@@ -26,8 +28,14 @@ const ProductsList: React.FC = () => {
       );
     }
 
+    // فیلتر قیمت
+    tempProducts = tempProducts.filter((p) => {
+      const price = p.price || 0;
+      return price >= minPrice && price <= maxPrice;
+    });
+
     return tempProducts;
-  }, [products, filter, search]);
+  }, [products, filter, search, minPrice, maxPrice]);
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Something went wrong.</p>;

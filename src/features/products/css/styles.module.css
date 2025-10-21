@@ -22,8 +22,9 @@
   margin: 0 20px;
   border-radius: 5px;
   max-height: fit-content;
-  padding: 10px 0;
+  padding: 10px 0 0;
   font-size: 1.2rem;
+  border: 1px solid var(--dark-gray);
 }
 
 .filteringContainer p {
@@ -137,8 +138,18 @@
   color: var(--darkest-gray) !important;
 }
 
-.specialButtons{
-  padding: 5px 20px;
+.rangeSection {
+  max-width: 100%;
+  direction: rtl;
+  text-align: right;
+  padding: 20px 10px;
+  border-bottom: 1px solid var(--dark-gray);
+}
+
+.specialButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* PRODUCT DETAILS  */

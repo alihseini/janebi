@@ -1,13 +1,14 @@
 .switchContainer {
   display: flex;
-  gap: 5px;
+  gap: 15px;
+  padding: 20px;
   width: 100%;
   align-items: center;
-  margin: 15px 0;
+  border-bottom: 1px solid var(--dark-gray);
 }
 
 .switchContainer p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: normal;
 }
 
