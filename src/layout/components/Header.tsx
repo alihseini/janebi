@@ -28,14 +28,12 @@ const Header: React.FC = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [user, setUser] = useState<string | null>(null);
 
-  // 🔹 چک کردن وضعیت کاربر از localStorage در بارگذاری اولیه
   useEffect(() => {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
     if (token && username) setUser(username);
   }, []);
 
-  // 🔹 کنترل نمایش یا مخفی شدن هدر هنگام اسکرول
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY && window.scrollY > 80) {
@@ -45,12 +43,10 @@ const Header: React.FC = () => {
       }
       setLastScrollY(window.scrollY);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  // 🔹 همگام‌سازی سرچ و فیلتر با URL
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     setSearch(params.get('search') || '');
@@ -62,19 +58,29 @@ const Header: React.FC = () => {
     if (newSearch.trim() !== '') params.search = newSearch.trim();
     if (newCategory !== 'all') params.filter = newCategory;
 
+    // اضافه کردن min/max پیش‌فرض از localStorage
+    params.minPrice = localStorage.getItem('minPrice') || '0';
+    params.maxPrice = localStorage.getItem('maxPrice') || '1000';
+
     navigate({
       pathname: '/products',
       search: `?${createSearchParams(params)}`,
     });
   };
 
-  const handleSearch = () => {
-    updateURL(search, selectedCategory);
-  };
-
+  const handleSearch = () => updateURL(search, selectedCategory);
   const handleCategoryClick = (value: string) => {
     setSelectedCategory(value);
     updateURL(search, value);
+  };
+
+  const handleCategoryButtonClick = () => {
+    const minPrice = localStorage.getItem('minPrice') || '0';
+    const maxPrice = localStorage.getItem('maxPrice') || '1000';
+    navigate({
+      pathname: '/products',
+      search: `?minPrice=${minPrice}&maxPrice=${maxPrice}`,
+    });
   };
 
   const handleLogout = () => {
@@ -156,10 +162,7 @@ const Header: React.FC = () => {
               <LoginModal
                 isVisible={showLoginModal}
                 onClose={() => setShowLoginModal(false)}
-                onLoginSuccess={() => {
-                  const username = localStorage.getItem('username');
-                  setUser(username);
-                }}
+                onLoginSuccess={() => setUser(localStorage.getItem('username'))}
               />
             </>
           )}
@@ -183,7 +186,7 @@ const Header: React.FC = () => {
               fontSize="1.1rem"
               className={styles.categoriButton}
               color="#fff"
-              onClick={() => navigate('/products')}
+              onClick={handleCategoryButtonClick}
             />
           }
           items={categoryList.map((cat) => ({
