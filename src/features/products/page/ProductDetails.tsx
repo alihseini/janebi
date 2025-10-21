@@ -2,7 +2,7 @@ import { useParams } from 'react-router';
 import styles from '../css/styles.module.css';
 import { useProductById } from '../services/useProducts';
 import { useCartCache } from '../../cart/services/useCartCache';
-import ProductActions from '../../../shared/components/actionButtons/ProductActions';
+import ProductActions from '../../../shared/components/ActionButtons/ProductActions';
 
 export default function ProductDetails() {
   const { id } = useParams<{ id: string }>();

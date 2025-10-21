@@ -1,8 +1,8 @@
 import React from 'react';
 import ImageSwiper from './components/imageSwiper';
 import styles from './css/styles.module.css';
-import CardList from '../../shared/components/cardList/CardList';
-import BannerMaker from '../../shared/components/bannerMaker/BannerMaker';
+import CardList from '../../shared/components/CardList/CardList';
+import BannerMaker from '../../shared/components/BannerMaker/BannerMaker';
 import TripleBannerCards from './components/TripleBannerCards';
 import FourBanner from './components/FourBanners';
 import { useProducts } from '../products/services/useProducts';

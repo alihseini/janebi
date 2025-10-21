@@ -1,4 +1,4 @@
-import BannerCardMaker from '../../../shared/components/bannerCardMaker/BannerCardMaker';
+import BannerCardMaker from '../../../shared/components/BannerCardMaker/BannerCardMaker';
 import styles from '../css/styles.module.css';
 
 const cardData = [

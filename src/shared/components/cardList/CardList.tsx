@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import CardMaker from '../cardMaker/CardMaker';
+import CardMaker from '../CardMaker/CardMaker';
 import styles from './styles.module.css';
-import Button from '../button/Button';
+import Button from '../Button/Button';
 import { useNavigate } from 'react-router';
 
 interface CardListProps {

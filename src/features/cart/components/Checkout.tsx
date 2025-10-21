@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../css/styles.module.css';
-import Button from '../../../shared/components/button/Button';
+import Button from '../../../shared/components/Button/Button';
 import { toast } from 'react-toastify';
 
 interface CheckoutProps {

@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 import { shortenTitle } from '../../utils/utils';
 import { useNavigate } from 'react-router';
 import { useCartCache } from '../../../features/cart/services/useCartCache';
-import ProductActions from '../actionButtons/ProductActions';
+import ProductActions from '../ActionButtons/ProductActions';
 import Icons from '../../icons';
 
 interface Product {

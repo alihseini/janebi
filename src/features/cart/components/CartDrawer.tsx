@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router';
 import styles from '../css/styles.module.css';
-import Button from '../../../shared/components/button/Button';
+import Button from '../../../shared/components/Button/Button';
 import { useCartCache } from '../services/useCartCache';
 import { shortenTitle } from '../../../shared/utils/utils';
 

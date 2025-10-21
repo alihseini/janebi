@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../button/Button';
+import Button from '../Button/Button';
 import styles from './styles.module.css';
 
 interface ProductActionsProps {
@@ -19,7 +19,7 @@ const ProductActions: React.FC<ProductActionsProps> = ({
   removeProduct,
   increaseProduct,
   decreaseProduct,
-  isLTR = false, 
+  isLTR = false,
 }) => {
   if (count === 0) {
     return (

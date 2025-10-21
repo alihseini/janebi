@@ -3,7 +3,7 @@ import styles from '../css/styles.module.css';
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
 import Icons from '../../../shared/icons';
 import { categoryList } from '../json/categoryList';
-import Input from '../../../shared/components/input/Input';
+import Input from '../../../shared/components/Input/Input';
 import { brandsList } from '../json/brandsList';
 
 const Filtering: React.FC = () => {

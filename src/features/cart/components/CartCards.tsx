@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../css/styles.module.css';
 import { shortenTitle } from '../../../shared/utils/utils';
-import ProductActions from '../../../shared/components/actionButtons/ProductActions';
+import ProductActions from '../../../shared/components/ActionButtons/ProductActions';
 import { useNavigate } from 'react-router';
 import type { Product } from '../types/cart';
 interface IProps {
