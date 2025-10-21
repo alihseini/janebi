@@ -5,11 +5,13 @@ import styles from '../css/styles.module.css';
 
 const Cards: React.FC = ({ data }) => {
   return (
-    <AutoGrid className={styles.cardsContainer} minWidth={250}>
-      {data?.map((item) => (
-        <CardMaker key={item.id} product={item} fullWidth={true} />
-      ))}
-    </AutoGrid>
+    <div className={styles.cardsContainer}>
+      <AutoGrid minWidth={250}>
+        {data?.map((item) => (
+          <CardMaker key={item.id} product={item} fullWidth={true} />
+        ))}
+      </AutoGrid>
+    </div>
   );
 };
 
