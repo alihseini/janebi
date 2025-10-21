@@ -5,6 +5,7 @@ import Icons from '../../../shared/icons';
 import { categoryList } from '../json/categoryList';
 import Input from '../../../shared/components/Input/Input';
 import { brandsList } from '../json/brandsList';
+import SwitchButton from '../../../shared/components/SwitchButton/SwitchButton';
 
 const Filtering: React.FC = () => {
   const navigate = useNavigate();
@@ -139,6 +140,11 @@ const Filtering: React.FC = () => {
             <p className={styles.noBrand}>برندی یافت نشد</p>
           )}
         </div>
+      </div>
+      <div className={styles.specialButtons}>
+        <SwitchButton text="فقط آیتم های موجود" />
+        <SwitchButton text="فقط آیتم های تخفیف دار" />
+        <SwitchButton text="فقط آیتم های ویژه" />
       </div>
     </div>
   );

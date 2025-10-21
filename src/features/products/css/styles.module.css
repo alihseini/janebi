@@ -134,6 +134,10 @@
   color: var(--darkest-gray) !important;
 }
 
+.specialButtons{
+  padding: 5px 20px;
+}
+
 /* PRODUCT DETAILS  */
 
 .detailContainer {
