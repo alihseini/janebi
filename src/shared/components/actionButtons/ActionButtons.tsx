@@ -12,7 +12,7 @@ interface ProductActionsProps {
   isLTR?: boolean;
 }
 
-const ProductActions: React.FC<ProductActionsProps> = ({
+const ActionButtons: React.FC<ProductActionsProps> = ({
   count,
   productId,
   addProduct,
@@ -65,4 +65,4 @@ const ProductActions: React.FC<ProductActionsProps> = ({
   );
 };
 
-export default ProductActions;
+export default ActionButtons;

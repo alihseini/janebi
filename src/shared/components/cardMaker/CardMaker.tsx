@@ -3,8 +3,8 @@ import styles from './styles.module.css';
 import { shortenTitle } from '../../utils/utils';
 import { useNavigate } from 'react-router';
 import { useCartCache } from '../../../features/cart/services/useCartCache';
-import ProductActions from '../ActionButtons/ProductActions';
 import Icons from '../../icons';
+import ActionButtons from '../ActionButtons/ActionButtons';
 
 interface Product {
   id: number;
@@ -57,7 +57,7 @@ const CardMaker: React.FC<CardMakerProps> = ({
       </div>
       <p onClick={handleClick}>{shortenTitle(product.title)}</p>
       <span className={styles.price}>قیمت: {product.price} تومان</span>
-      <ProductActions
+      <ActionButtons
         count={count}
         productId={product.id}
         addProduct={() => addProduct(product)}

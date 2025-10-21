@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from '../css/styles.module.css';
 import { shortenTitle } from '../../../shared/utils/utils';
-import ProductActions from '../../../shared/components/ActionButtons/ProductActions';
 import { useNavigate } from 'react-router';
 import type { Product } from '../types/cart';
+import ActionButtons from '../../../shared/components/ActionButtons/ActionButtons';
 interface IProps {
   products: Product[];
   onIncrease: (id: number) => void;
@@ -48,7 +48,7 @@ const CartCards: React.FC<IProps> = ({
           <div className={styles.cartTotalPrice}>
             مبلغ کل : {sumPrice(product.price, product.count)}
           </div>
-          <ProductActions
+          <ActionButtons
             count={product.count}
             productId={product.id}
             addProduct={() => onAdd(product)}
