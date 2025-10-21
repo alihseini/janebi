@@ -196,15 +196,6 @@ const Filtering: React.FC = () => {
         <SwitchButton text="فقط آیتم های تخفیف دار" />
         <SwitchButton text="فقط آیتم های ویژه" />
       </div>
-
-      {/* لیست محصولات */}
-      <ul className={styles.productList}>
-        {filteredProducts.map((product) => (
-          <li key={product.value}>
-            {product.label} - {product.price} تومان
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };
