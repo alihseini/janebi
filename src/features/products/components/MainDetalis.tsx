@@ -41,7 +41,7 @@ export default function MainDetails({ data }) {
                 <span>( خریداری شده: {data?.rating.count} نفر )</span>
               </p>
               <p>
-                دسته بندی : <span>{data.category}</span>
+                دسته بندی : <span>{data?.category}</span>
               </p>
               <div style={{ color: '#9b9b9b' }}>کد کالا:{data.id}</div>
             </div>

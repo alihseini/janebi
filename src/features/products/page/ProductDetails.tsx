@@ -13,7 +13,7 @@ export default function ProductDetails() {
   const [filteredCards, setFilteredCards] = useState([]);
 
   useEffect(() => {
-    let temp = products.filter((item) => item.category === data.category);
+    let temp = products.filter((item) => item?.category === data?.category);
     setFilteredCards(temp);
   }, []);
 
