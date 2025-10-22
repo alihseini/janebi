@@ -34,7 +34,7 @@ const Checkout: React.FC<CheckoutProps> = ({
           onClick={() => toast('در حال پرداخت...')}
         />
         <Button
-          className={styles.emptyCart}
+          className={styles.emptyCartButton}
           text="خالی کردن سبد"
           color="red"
           onClick={onClear}

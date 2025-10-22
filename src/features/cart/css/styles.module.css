@@ -4,7 +4,6 @@
   flex-direction: column;
   gap: 30px;
   width: 95%;
-  min-height: 60vh;
   margin: 0 auto;
   border-radius: 8px;
 }
@@ -26,8 +25,7 @@
 }
 
 .cartContent {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
   gap: 20px;
 }
 
@@ -161,6 +159,7 @@
 
 .cartCardsWrapper {
   display: flex;
+  max-height: fit-content;
   flex-direction: column;
   gap: 12px;
   background-color: white;
@@ -207,6 +206,7 @@
 
 .checkoutWrapper {
   background: #fff;
+  height: fit-content;
   width: 300px;
   max-height: fit-content;
   border-radius: 10px;
@@ -250,6 +250,8 @@ h3 {
   color: #fff !important;
   width: 150px;
 }
+
+/* emptyCart */
 
 .emptyCart {
   background-color: white;
