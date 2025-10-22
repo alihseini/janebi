@@ -21,9 +21,6 @@ const Cards: React.FC<{ data: any[] }> = ({ data }) => {
       case 'محبوب ترین':
         temp.sort((a, b) => b.rating.rate - a.rating.rate);
         break;
-      case 'پرفروش ترین':
-        temp.sort((a, b) => b.sold - a.sold);
-        break;
       case 'ارزان ترین':
         temp.sort((a, b) => a.price - b.price);
         break;
