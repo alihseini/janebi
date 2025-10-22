@@ -19,13 +19,12 @@ export default function MainDetails({ data }) {
   return (
     <div className={styles.detailsContainer}>
       <div className={styles.detailsImage}>
-        <img src={data.image} alt={data.title} width={200} />
         <Icons
           name="bx-heart"
           onClick={handleLike}
-          className={`${styles.likeButton} ${isLiked ? styles.liked : ''}`}
           color={`${isLiked ? 'red' : 'black'}`}
         />
+        <img src={data.image} alt={data.title} width={200} />
       </div>
 
       <div className={styles.detailsRightSide}>

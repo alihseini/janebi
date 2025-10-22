@@ -358,14 +358,3 @@
   width: 30px;
 }
 
-.likeButton {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.liked {
-  transform: scale(1.1);
-}
