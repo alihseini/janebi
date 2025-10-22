@@ -13,7 +13,7 @@ const ProductListTabs: React.FC<Props> = ({ onTabChange, onCountChange }) => {
   const tabs = [
     'جدیدترین ها',
     'پربازدیدترین ها',
-    'پرفروش ترین',
+    'محبوب ترین',
     'ارزان ترین',
     'گران ترین',
   ];
