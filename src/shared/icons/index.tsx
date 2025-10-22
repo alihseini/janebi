@@ -10,7 +10,6 @@ interface IconProps {
   strokeWidth?: string;
   onClick?: () => void;
   cursor?: CSSProperties['cursor'];
-  className?: string;
 }
 
 const Icons: React.FC<IconProps> = ({
@@ -22,7 +21,6 @@ const Icons: React.FC<IconProps> = ({
   strokeWidth,
   onClick,
   cursor = 'auto',
-  className,
 }) => {
   const [iconSrc, setIconSrc] = useState<string | null>(null);
 
@@ -53,7 +51,7 @@ const Icons: React.FC<IconProps> = ({
         }
       }}
       src={iconSrc}
-      className={`${className} custom-icon`}
+      className="custom-icon"
       style={{ overflow: 'hidden', cursor: cursor }}
       beforeInjection={(svg) => {
         if (color) svg.setAttribute('fill', isFill ? color : 'none');
