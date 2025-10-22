@@ -36,10 +36,10 @@ export default function MainDetails({ data }) {
               <p>{shortenTitle(data.title)}</p>
             </div>
             <div className={styles.detailsRatings}>
-              <p>
+              <div>
                 <Icons name="bxs-star" color="#ced810" /> {data?.rating.rate}
                 <span>( خریداری شده: {data?.rating.count} نفر )</span>
-              </p>
+              </div>
               <p>
                 دسته بندی : <span>{data?.category}</span>
               </p>
@@ -66,10 +66,10 @@ export default function MainDetails({ data }) {
               </div>
             </div>
             <div className={styles.optGuaranty}>
-              <p>
+              <div>
                 <Icons name="bx-check-shield" />
                 گارانتی اصالت و سلامت فیزیکی
-              </p>
+              </div>
             </div>
             <p>تومان {data?.price}</p>
             <div className={styles.detailActions}>
