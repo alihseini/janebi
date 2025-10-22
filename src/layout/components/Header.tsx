@@ -8,6 +8,7 @@ import { useNavigate, useLocation, createSearchParams } from 'react-router';
 import { categoryList } from '../../features/products/json/categoryList';
 import CartDrawer from '../../features/cart/components/CartDrawer';
 import LoginModal from '../../features/landing/components/LoginModal';
+import { toast } from 'react-toastify';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -87,6 +88,11 @@ const Header: React.FC = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
     setUser(null);
+
+    toast.success('با موفقیت خارج شدید!', {
+      position: 'top-center',
+      autoClose: 3000,
+    });
   };
 
   return (
