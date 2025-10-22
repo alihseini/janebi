@@ -7,7 +7,7 @@ import ShortDrawer from '../../shared/components/ShortDrawer/ShortDrawer';
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
 import { categoryList } from '../../features/products/json/categoryList';
 import CartDrawer from '../../features/cart/components/CartDrawer';
-import LoginModal from '../../features/landing/components/LoginModal';
+import LoginModal from './LoginModal';
 import { toast } from 'react-toastify';
 
 const Header: React.FC = () => {

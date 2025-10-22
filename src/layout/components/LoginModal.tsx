@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import styles from '../css/styles.module.css';
-import { useLogin } from '../services/useLogin';
+import { useLogin } from '../../features/landing/services/useLogin';
 
 interface LoginModalProps {
   isVisible: boolean;
