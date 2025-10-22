@@ -13,14 +13,12 @@ export default function ProductDetails() {
   const [filteredCards, setFilteredCards] = useState([]);
 
   useEffect(() => {
-    if (!data || !products.length) return;
-    const temp = products.filter((item) => item.category === data.category);
+    let temp = products.filter((item) => item.category === data.category);
     setFilteredCards(temp);
-  }, [data, products]);
+  }, []);
 
   if (isLoading) return <p>Loading...</p>;
   if (isError || !data) return <p>Something went wrong.</p>;
-
   return (
     <div className={styles.detailsPage}>
       <MainDetails data={data} />

@@ -3,19 +3,31 @@ import { useCartCache } from '../../cart/services/useCartCache';
 import ProductActions from '../../../shared/components/ActionButtons/ActionButtons';
 import { shortenTitle } from '../../../shared/utils/utils';
 import Icons from '../../../shared/icons';
+import { useState } from 'react';
 
 export default function MainDetails({ data }) {
   const { state, addProduct, removeProduct, increaseProduct, decreaseProduct } =
     useCartCache();
 
+  const [isLiked, setIsLiked] = useState(false);
+
   const cartProduct = state?.products?.find((p) => p.id === data?.id);
   const count = cartProduct?.count || 0;
+
+  const handleLike = () => setIsLiked((prev) => !prev);
 
   return (
     <div className={styles.detailsContainer}>
       <div className={styles.detailsImage}>
         <img src={data.image} alt={data.title} width={200} />
+        <Icons
+          name="bx-heart"
+          onClick={handleLike}
+          className={`${styles.likeButton} ${isLiked ? styles.liked : ''}`}
+          color={`${isLiked ? 'red' : 'black'}`}
+        />
       </div>
+
       <div className={styles.detailsRightSide}>
         <div className={styles.mainDetails}>
           <div className={styles.detailsText}>
@@ -45,6 +57,7 @@ export default function MainDetails({ data }) {
               </div>
             </div>
           </div>
+
           <div className={styles.buyOptions}>
             <div className={styles.colorDiv}>
               رنگ :
@@ -72,6 +85,7 @@ export default function MainDetails({ data }) {
             </div>
           </div>
         </div>
+
         <div className={styles.detailsBottom}>
           <div>
             <img

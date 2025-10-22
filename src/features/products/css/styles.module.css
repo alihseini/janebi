@@ -206,6 +206,7 @@
 .detailsImage {
   width: 20%;
   height: 100%;
+  position: relative;
   padding: 30px;
 }
 
@@ -228,7 +229,7 @@
   padding: 20px;
 }
 
-.detailsText{
+.detailsText {
   width: 70%;
   padding: 0 50px;
 }
@@ -311,19 +312,19 @@
   border-radius: 50%;
 }
 
-.optGuaranty{
+.optGuaranty {
   padding: 10px 0;
   border-bottom: 1px dashed var(--dark-gray);
   border-top: 1px dashed var(--dark-gray);
   margin: 50px 0;
 }
 
-.optGuaranty p{
+.optGuaranty p {
   display: flex;
   font-size: 0.9rem;
 }
 
-.buyOptions > p{
+.buyOptions > p {
   width: 100%;
   display: flex;
   align-items: center;
@@ -332,13 +333,13 @@
   font-size: 1.5rem;
 }
 
-.detailActions{
+.detailActions {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.detailsBottom{
+.detailsBottom {
   display: flex;
   border-top: 1px solid var(--dark-gray);
   padding: 20px 50px;
@@ -347,13 +348,25 @@
   justify-content: center;
 }
 
-.detailsBottom > div{
+.detailsBottom > div {
   font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.detailsBottom img{
+.detailsBottom img {
   width: 30px;
+}
+
+.likeButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.liked {
+  transform: scale(1.1);
 }
