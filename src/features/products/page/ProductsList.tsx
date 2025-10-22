@@ -11,7 +11,6 @@ const ProductsList: React.FC = () => {
   const filter = searchParams.get('filter') || '';
   const search = searchParams.get('search') || '';
 
-  // مقدار اولیه از localStorage یا مقدار پیش‌فرض
   const [minPrice, setMinPrice] = useState(() => {
     const stored = localStorage.getItem('minPrice');
     return stored ? Number(stored) : 0;
@@ -21,7 +20,6 @@ const ProductsList: React.FC = () => {
     return stored ? Number(stored) : 1000;
   });
 
-  // وقتی URL مقدار جدید داده، state رو به‌روز کن
   useEffect(() => {
     const urlMin = Number(searchParams.get('minPrice'));
     const urlMax = Number(searchParams.get('maxPrice'));
@@ -30,7 +28,6 @@ const ProductsList: React.FC = () => {
     if (!isNaN(urlMax)) setMaxPrice(urlMax);
   }, [searchParams]);
 
-  // ذخیره در localStorage وقتی state تغییر کرد
   useEffect(() => {
     localStorage.setItem('minPrice', String(minPrice));
     localStorage.setItem('maxPrice', String(maxPrice));
