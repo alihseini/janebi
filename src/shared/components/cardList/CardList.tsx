@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router';
 interface CardListProps {
   data: any[];
   title: string;
-  button: string;
+  button?: string;
 }
 
 const CardList: React.FC<CardListProps> = ({ data, title, button }) => {

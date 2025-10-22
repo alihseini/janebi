@@ -26,7 +26,7 @@ const ActionButtons: React.FC<ProductActionsProps> = ({
       <Button
         onClick={addProduct}
         className={styles.addButton}
-        svgSrc="bx-cart-add"
+        text='اضافه کردن به سبد خرید'
         size={30}
         color="white"
       />

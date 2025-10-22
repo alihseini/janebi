@@ -1,0 +1,108 @@
+import styles from '../css/styles.module.css';
+import { useCartCache } from '../../cart/services/useCartCache';
+import ProductActions from '../../../shared/components/ActionButtons/ActionButtons';
+import { shortenTitle } from '../../../shared/utils/utils';
+import Icons from '../../../shared/icons';
+
+export default function MainDetails({ data }) {
+  const { state, addProduct, removeProduct, increaseProduct, decreaseProduct } =
+    useCartCache();
+
+  const cartProduct = state?.products?.find((p) => p.id === data?.id);
+  const count = cartProduct?.count || 0;
+
+  return (
+    <div className={styles.detailsContainer}>
+      <div className={styles.detailsImage}>
+        <img src={data.image} alt={data.title} width={200} />
+      </div>
+      <div className={styles.detailsRightSide}>
+        <div className={styles.mainDetails}>
+          <div className={styles.detailsText}>
+            <div className={styles.intro}>
+              <h2>{data.title}</h2>
+              <p>{shortenTitle(data.title)}</p>
+            </div>
+            <div className={styles.detailsRatings}>
+              <p>
+                <Icons name="bxs-star" color="#ced810" /> {data?.rating.rate}
+                <span>( خریداری شده: {data?.rating.count} نفر )</span>
+              </p>
+              <p>
+                دسته بندی : <span>{data.category}</span>
+              </p>
+              <div style={{ color: '#9b9b9b' }}>کد کالا:{data.id}</div>
+            </div>
+            <div className={styles.description}>
+              <span>Description:</span>
+              <p>{data?.description}</p>
+            </div>
+            <div className={styles.snappPay}>
+              <img src="/src/assets/images/snapp-pay.svg" alt="snapp-pay" />
+              <div>
+                <p>امکان خرید اقساط با اسنپ پی</p>
+                <span>پرداخت در چهار قسط بدون کارمزد</span>
+              </div>
+            </div>
+          </div>
+          <div className={styles.buyOptions}>
+            <div className={styles.colorDiv}>
+              رنگ :
+              <div className={styles.selectedColor}>
+                <div className={styles.color}></div>
+              </div>
+            </div>
+            <div className={styles.optGuaranty}>
+              <p>
+                <Icons name="bx-check-shield" />
+                گارانتی اصالت و سلامت فیزیکی
+              </p>
+            </div>
+            <p>تومان {data?.price}</p>
+            <div className={styles.detailActions}>
+              <ProductActions
+                count={count}
+                productId={data.id}
+                addProduct={() => addProduct(data)}
+                removeProduct={removeProduct}
+                increaseProduct={increaseProduct}
+                decreaseProduct={decreaseProduct}
+                isLTR={true}
+              />
+            </div>
+          </div>
+        </div>
+        <div className={styles.detailsBottom}>
+          <div>
+            <img
+              src="https://janebi.shopfa.com/src/themes/theme_8/80011/img/guaranty.svg"
+              alt=""
+            />
+            ضمانت اصل بودن کالا
+          </div>
+          <div>
+            <img
+              src="https://janebi.shopfa.com/src/themes/theme_8/80011/img/cart-return.svg"
+              alt=""
+            />
+            ضمانت بازگشت
+          </div>
+          <div>
+            <img
+              src="https://janebi.shopfa.com/src/themes/theme_8/80011/img/delivery-fast.svg"
+              alt=""
+            />
+            تحویل اکسپرس
+          </div>
+          <div>
+            <img
+              src="https://janebi.com/src/themes/theme_7/70103/img/hand-card.svg"
+              alt=""
+            />
+            خرید و پرداخت امن
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

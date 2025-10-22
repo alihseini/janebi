@@ -193,29 +193,166 @@
 
 /* PRODUCT DETAILS  */
 
-.detailContainer {
-  width: 80%;
+.detailsContainer {
+  width: 100%;
   display: flex;
   border-radius: 10px;
   background-color: white;
-  padding: 20px;
   margin: 20px auto;
   direction: ltr;
+  border: 1px solid var(--dark-gray);
 }
 
-.detailContainer img {
-  width: 300px;
-  height: 300px;
-  margin-right: 50px;
+.detailsImage {
+  width: 20%;
+  height: 100%;
+  padding: 30px;
 }
 
-.detailsInfo {
+.detailsImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.detailsRightSide {
+  width: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  border-left: 1px solid var(--dark-gray);
+}
+
+.mainDetails {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.detailsText{
+  width: 70%;
+  padding: 0 50px;
+}
+
+.intro {
+  width: 100%;
+  border-bottom: 1px solid var(--dark-gray);
+}
+
+.intro p {
+  color: var(--darker-gray);
+}
+
+.detailsRatings {
+  display: flex;
+  gap: 50px;
+  padding: 10px 0;
+}
+
+.detailsRatings p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--darker-gray);
+}
+
+.detailsRatings span {
+  color: var(--primary);
 }
 
 .description {
-  width: 50%;
-  text-align: left;
+  margin-top: 20px;
+}
+
+.description span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.snappPay {
+  display: flex;
+  padding: 10px;
+  background-color: var(--bg-blue);
+  width: fit-content;
+  gap: 15px;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+
+.snappPay span {
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.buyOptions {
+  width: 25%;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 35px -10px rgba(0, 0, 0, 0.52);
+  padding: 20px;
+}
+
+.colorDiv {
+  display: flex;
+  gap: 10px;
+}
+
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+.selectedColor {
+  padding: 3px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+}
+
+.optGuaranty{
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--dark-gray);
+  border-top: 1px dashed var(--dark-gray);
+  margin: 50px 0;
+}
+
+.optGuaranty p{
+  display: flex;
+  font-size: 0.9rem;
+}
+
+.buyOptions > p{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.detailActions{
+  width: 100%;
+  text-align: center;
+}
+
+.detailsBottom{
+  display: flex;
+  border-top: 1px solid var(--dark-gray);
+  padding: 20px 50px;
+  gap: 100px;
+  width: 100%;
+  justify-content: center;
+}
+
+.detailsBottom > div{
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.detailsBottom img{
+  width: 30px;
 }
