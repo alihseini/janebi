@@ -286,7 +286,6 @@
 
 .buyOptions {
   width: 25%;
-  height: 300px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
