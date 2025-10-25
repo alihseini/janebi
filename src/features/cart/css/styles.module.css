@@ -145,7 +145,7 @@
 }
 
 .viewDrawerCartBtn {
-  background-color: #007aff;
+  background-color: var(--primary);
   border-radius: 8px;
   height: 40px;
 }
@@ -157,49 +157,74 @@
 
 /* CART CARDS */
 
-.cartCardsWrapper {
-  display: flex;
-  max-height: fit-content;
-  flex-direction: column;
-  gap: 12px;
-  background-color: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+.cartTableWrapper {
+  width: 85%;
+  direction: rtl;
   border-radius: 10px;
+  background-color: white;
+  border: 1px solid var(--dark-gray);
+  padding-top: 20px;
 }
 
-.cartCard {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border-radius: 10px;
-  border: 2px dashed var(--dark-gray);
-  cursor: pointer;
-  margin: 10px 0;
-  padding: 10px 15px;
-  justify-content: space-between;
+.cartTable {
+  width: 100%;
+  text-align: right;
+  border-collapse: collapse;
+}
+
+.cartTableWrapper h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  padding-right: 20px;
+}
+
+.cartTable th {
+  color: var(--darker-gray);
+  padding-right: 20px;
+}
+
+.cartTable td {
+  padding: 12px 16px;
+  border-top: 1px solid var(--dark-gray);
+  vertical-align: middle;
+}
+
+.cartTable tbody tr{
   transition: all 0.5s ease-in;
 }
 
-.cartCard:hover {
-  background-color: #eeefff;
+.cartTable tbody tr:hover {
+  background-color: var(--bg-blue);
 }
 
-.cartTotalPrice {
-  padding-top: 15px;
-  margin-left: 20px;
+.productCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
 }
 
 .cartImage {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.cartInfo {
-  flex: 1;
-  margin: 0 10px;
-  width: 20%;
+.cartImage:hover {
+  transform: scale(1.05);
+}
+
+.productCell h4 {
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.productCell h4:hover {
+  color: var(--primary);
 }
 
 /* CHECKOUT */
@@ -211,10 +236,10 @@
   max-height: fit-content;
   border-radius: 10px;
   padding: 20px;
+  border: 1px solid var(--dark-gray);
   display: flex;
   flex-direction: column;
   gap: 5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 h3 {
@@ -263,4 +288,3 @@ h3 {
   align-items: center;
   flex-direction: column;
 }
-
