@@ -20,9 +20,10 @@ export default function MainDetails({ data }) {
     <div className={styles.detailsContainer}>
       <div className={styles.detailsImage}>
         <Icons
-          name="bx-heart"
+          name="heart-fill"
           onClick={handleLike}
-          color={`${isLiked ? 'red' : 'black'}`}
+          color={`${isLiked ? 'red' : 'gray'}`}
+          cursor='pointer'
         />
         <img src={data.image} alt={data.title} width={200} />
       </div>
