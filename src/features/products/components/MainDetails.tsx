@@ -36,7 +36,7 @@ export default function MainDetails({ data }) {
               <p>{shortenTitle(data.title)}</p>
             </div>
             <div className={styles.detailsRatings}>
-              <div>
+              <div className={styles.detailsRate}>
                 <Icons name="bxs-star" color="#ced810" /> {data?.rating.rate}
                 <span>( خریداری شده: {data?.rating.count} نفر )</span>
               </div>
