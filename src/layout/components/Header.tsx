@@ -59,7 +59,6 @@ const Header: React.FC = () => {
     if (newSearch.trim() !== '') params.search = newSearch.trim();
     if (newCategory !== 'all') params.filter = newCategory;
 
-    // اضافه کردن min/max پیش‌فرض از localStorage
     params.minPrice = localStorage.getItem('minPrice') || '0';
     params.maxPrice = localStorage.getItem('maxPrice') || '1000';
 
