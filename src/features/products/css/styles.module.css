@@ -257,9 +257,6 @@
 }
 
 .detailsRatings p {
-  display: flex;
-  align-items: center;
-  gap: 5px;
   color: var(--darker-gray);
 }
 
@@ -320,12 +317,12 @@
 
 .optGuaranty {
   padding: 10px 0;
-  border-bottom: 1px dashed var(--dark-gray);
-  border-top: 1px dashed var(--dark-gray);
+  border-bottom: 1px dashed var(--darker-gray);
+  border-top: 1px dashed var(--darker-gray);
   margin: 50px 0;
 }
 
-.optGuaranty p {
+.optGuaranty div {
   display: flex;
   font-size: 0.9rem;
 }
@@ -364,4 +361,3 @@
 .detailsBottom img {
   width: 30px;
 }
-
