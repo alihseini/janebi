@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import styles from '../css/styles.module.css';
 import Input from '../../shared/components/Input/Input';
 import Button from '../../shared/components/Button/Button';
-import Icons from '../../shared/icons';
 import ShortDrawer from '../../shared/components/ShortDrawer/ShortDrawer';
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
 import { categoryList } from '../../features/products/json/categoryList';
@@ -134,7 +133,6 @@ const Header: React.FC = () => {
         <div className={styles.mainHeaderLogin}>
           {user ? (
             <div className={styles.loggedInInfo}>
-              <Icons name="bx-user" size={40} color="#999999" />
               <div>
                 <p>سلام، {user}</p>
                 <Button text="خروج" onClick={handleLogout} />
@@ -145,12 +143,13 @@ const Header: React.FC = () => {
               <ShortDrawer
                 trigger={
                   <div className={styles.loginTrigger}>
-                    <Icons name="bx-user" size={40} color="#999999" />
+                    <Button svgSrc="bx-user" />
                     <div className={styles.loginTriggerText}>
                       <p>خوش آمدی</p>
                       <Button
                         text="ورود به حساب کاربری"
                         onClick={() => setShowLoginModal(true)}
+                        className={styles.loginTriggerButton}
                       />
                     </div>
                   </div>
@@ -201,9 +200,24 @@ const Header: React.FC = () => {
           }))}
         />
 
-        <Button text="پیشنهاد ویژه" color="#4b4b4b" fontSize="1.1rem" />
-        <Button text="پر فروش ترین" color="#4b4b4b" fontSize="1.1rem" />
-        <Button text="وبلاگ" color="#4b4b4b" fontSize="1.1rem" />
+        <Button
+          text="پیشنهاد ویژه"
+          color="#4b4b4b"
+          fontSize="1.1rem"
+          className={styles.specialOffer}
+        />
+        <Button
+          text="پر فروش ترین"
+          color="#4b4b4b"
+          fontSize="1.1rem"
+          className={styles.highestSale}
+        />
+        <Button
+          text="وبلاگ"
+          color="#4b4b4b"
+          fontSize="1.1rem"
+          className={styles.webLog}
+        />
       </div>
     </div>
   );

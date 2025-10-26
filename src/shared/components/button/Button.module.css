@@ -1,5 +1,5 @@
 .button {
-  padding: 4px 12px;
+  padding: 4px 7px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -25,4 +25,25 @@
 
 .textOnly:hover {
   color: black;
+}
+
+@media (min-width: 300px) and (max-width: 560px) {
+  .button svg {
+    width: 20px;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 780px) {
+  .button svg {
+    width: 30px;
+  }
+}
+
+@media (min-width: 780px) and (max-width: 992px) {
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+}
+
+@media (min-width: 1200px) {
 }

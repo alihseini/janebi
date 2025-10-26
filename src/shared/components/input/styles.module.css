@@ -1,5 +1,6 @@
 .input {
   background-color: var(--light-gray);
+  min-width: 100px;
   width: 90%;
   border: none;
   height: 40px;
@@ -17,4 +18,22 @@
   color: var(--darker-gray);
   font-family: 'dana-semibold';
   font-size: 1rem;
+}
+
+@media (min-width: 300px) and (max-width: 560px) {
+  .input::placeholder{
+    font-size: 0.5rem;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 780px) {
+}
+
+@media (min-width: 780px) and (max-width: 992px) {
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+}
+
+@media (min-width: 1200px) {
 }

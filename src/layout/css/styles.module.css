@@ -14,7 +14,7 @@
 
 .mainContent {
   padding-top: 150px;
-} 
+}
 
 /* LOGIN MODAL */
 
@@ -141,8 +141,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 5px 10px;
   transition: all 0.4s ease;
+}
+
+.mainHeader > img {
+  margin-left: 15px;
 }
 
 .mainHeaderSearch {
@@ -156,7 +160,7 @@
 
 .searchButton {
   background-color: var(--light-gray);
-  height: 41.5px;
+  height: 42px;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
   border-top-right-radius: 0 !important;
@@ -168,16 +172,16 @@
   border-bottom-left-radius: 0 !important;
   border-top-right-radius: 3px !important;
   border-bottom-right-radius: 3px !important;
+  height: 40px !important;
   font-family: 'dana-bold';
 }
 
 .mainHeaderLogin {
-  width: 15%;
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   border-left: 2px var(--light-gray) solid;
-  padding-left: 10px;
 }
 
 .loginTrigger {
@@ -187,8 +191,10 @@
   cursor: pointer;
 }
 
-.loginTriggerText p {
+.loginTriggerText p,
+.loginTriggerButton {
   font-size: 0.8rem;
+  width: 100%;
   color: var(--dark-gray);
 }
 
@@ -201,11 +207,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-right: 20px;
 }
 
 .mainHeader > img {
-  width: 15%;
-  height: 45px;
+  width: 150px;
   object-fit: contain;
 }
 
@@ -237,22 +243,6 @@
   color: #fff !important;
   border-bottom-right-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
-}
-
-.cartBadge {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  background-color: #ff4d4f;
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* FOOTER  */
@@ -293,53 +283,53 @@
   border-bottom: 1px solid var(--dark-gray);
 }
 
-.mainFooter p{
+.mainFooter p {
   font-size: 1rem;
   font-weight: bold;
 }
 
-.mainFooter > div{
+.mainFooter > div {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.mainFooter ul li{
+.mainFooter ul li {
   font-size: 0.8rem;
   padding: 10px 0;
   color: var(--darkest-gray);
 }
 
-.mainFooter img{
+.mainFooter img {
   width: 350px;
 }
 
-.download{
+.download {
   display: flex;
   align-items: center;
 }
 
-.downloadButton{
+.downloadButton {
   border: 1px solid var(--darker-gray) !important;
   height: 40px;
 }
 
-.bottomFooter{
+.bottomFooter {
   padding: 100px 20px 0;
 }
 
-.bottomFooter span{
+.bottomFooter span {
   color: var(--tx-green);
 }
 
-.bottomFooterBase{
+.bottomFooterBase {
   display: flex;
   margin-top: 20px;
   gap: 50px;
   align-items: center;
 }
 
-.bottomInfo{
+.bottomInfo {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -347,13 +337,80 @@
   max-height: fit-content;
 }
 
-.bottomInfo > div{
+.bottomInfo > div {
   display: flex;
   align-items: center;
-  gap: 10px;padding: 10px 80px;
+  gap: 10px;
+  padding: 10px 80px;
 }
 
-.bottomFooter img{
+.bottomFooter img {
   width: 120px;
   height: 120px;
+}
+
+@media (min-width: 300px) and (max-width: 560px) {
+  .loginTriggerText {
+    display: none;
+  }
+  .mainHeaderLogin {
+    justify-content: center;
+  }
+  .mainHeader > img {
+    width: 50px;
+  }
+  .searchInput {
+    height: 20px !important;
+  }
+  .searchButton {
+    height: 22px;
+  }
+  .categoriButton,
+  .specialOffer,
+  .highestSale,
+  .webLog {
+    font-size: 0.6rem !important;
+    padding: 2px 2px!important;
+  }
+  .navBar{
+    justify-content: space-between;
+    gap: 0;
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 780px) {
+  .loginTriggerText {
+    display: none;
+  }
+  .mainHeaderLogin {
+    justify-content: center;
+  }
+  .mainHeader > img {
+    width: 75px;
+  }
+  .categoriButton,
+  .specialOffer,
+  .highestSale,
+  .webLog {
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (min-width: 780px) and (max-width: 992px) {
+  .loginTriggerText {
+    display: none;
+  }
+  .mainHeaderLogin {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .loginTriggerText {
+    font-size: 0.6rem;
+  }
+}
+
+@media (min-width: 1200px) {
 }
