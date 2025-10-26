@@ -5,8 +5,6 @@
   margin: 30px 0;
 }
 
-/* CARDS  */
-
 .cardsContainer {
   width: 75%;
 }
@@ -54,7 +52,6 @@
 }
 
 /* FILTERING */
-
 .filteringContainer {
   width: 25%;
   background-color: white;
@@ -82,11 +79,14 @@
   width: 100%;
   border-radius: 5px;
   background-color: white;
+  padding: 6px 10px;
+  border: 1px solid var(--dark-gray);
 }
 
 .smallSearch:focus,
 .brandSearch:focus {
   box-shadow: 1px 1px 10px 8px var(--bg-blue);
+  outline: none;
 }
 
 .filteringContainer ul {
@@ -116,22 +116,22 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 20px;
-  margin: 20px 0;
+  gap: 15px;
+  margin: 15px 0;
   padding: 10px;
   border-bottom: 1px solid var(--dark-gray);
 }
 
 .brandSection {
   border-bottom: 1px solid var(--dark-gray);
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .brandList {
-  max-height: 300px;
+  max-height: 250px;
   overflow-y: auto;
   margin-top: 10px;
   display: flex;
@@ -144,6 +144,7 @@
   width: 0;
   height: 0;
 }
+
 .brandList {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -181,7 +182,7 @@
   max-width: 100%;
   direction: rtl;
   text-align: right;
-  padding: 20px 10px;
+  padding: 15px 10px;
   border-bottom: 1px solid var(--dark-gray);
 }
 
@@ -189,10 +190,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
+  padding: 15px 0;
 }
 
-/* PRODUCT DETAILS  */
-
+/* PRODUCT DETAILS */
 .detailsContainer {
   width: 100%;
   display: flex;
@@ -201,6 +203,7 @@
   margin: 20px auto;
   direction: ltr;
   border: 1px solid var(--dark-gray);
+  flex-wrap: wrap;
 }
 
 .detailsImage {
@@ -213,6 +216,7 @@
 .detailsImage img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 
 .detailsRightSide {
@@ -227,6 +231,7 @@
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  flex-wrap: wrap;
 }
 
 .detailsText {
@@ -240,6 +245,7 @@
 
 .intro p {
   color: var(--darker-gray);
+  font-size: 0.9rem;
 }
 
 .detailsRatings {
@@ -248,9 +254,10 @@
   align-items: center;
   gap: 50px;
   padding: 10px 0;
+  flex-wrap: wrap;
 }
 
-.detailsRate{
+.detailsRate {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -258,6 +265,7 @@
 
 .detailsRatings p {
   color: var(--darker-gray);
+  font-size: 0.9rem;
 }
 
 .detailsRatings span {
@@ -265,7 +273,7 @@
 }
 
 .description {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .description span {
@@ -280,7 +288,8 @@
   width: fit-content;
   gap: 15px;
   border-radius: 5px;
-  margin-top: 25px;
+  margin-top: 15px;
+  flex-wrap: wrap;
 }
 
 .snappPay span {
@@ -300,6 +309,7 @@
 .colorDiv {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .color {
@@ -319,7 +329,7 @@
   padding: 10px 0;
   border-bottom: 1px dashed var(--darker-gray);
   border-top: 1px dashed var(--darker-gray);
-  margin: 50px 0;
+  margin: 20px 0;
 }
 
 .optGuaranty div {
@@ -346,18 +356,308 @@
   display: flex;
   border-top: 1px solid var(--dark-gray);
   padding: 20px 50px;
-  gap: 100px;
+  gap: 50px;
   width: 100%;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .detailsBottom > div {
   font-size: 0.9rem;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .detailsBottom img {
   width: 30px;
+}
+
+
+@media (max-width: 560px) {
+  .productContainer {
+    flex-direction: column;
+    margin: 15px 0;
+  }
+
+  .cardsContainer {
+    width: 100%;
+  }
+
+  .filteringContainer {
+    width: 100%;
+    margin: 0 0 15px 0;
+    font-size: 0.9rem;
+    padding: 8px 0 0;
+  }
+
+  .filteringContainer ul li {
+    padding: 6px;
+    margin: 6px 0;
+    font-size: 0.75rem;
+  }
+
+  .brandItem {
+    font-size: 0.75rem;
+    padding: 4px;
+  }
+
+  .smallSearch,
+  .brandSearch {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+
+  .specialButtons {
+    gap: 5px;
+  }
+
+  .productListTabs {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .productListTabs ul,.productListTabs div{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .detailsContainer {
+    flex-direction: column;
+  }
+
+  .detailsImage {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .detailsImage img {
+    height: auto;
+  }
+
+  .detailsRightSide {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--dark-gray);
+  }
+
+  .mainDetails {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .detailsText {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .description span {
+    font-size: 1.2rem;
+  }
+
+  .buyOptions {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .buyOptions > p {
+    font-size: 1.2rem;
+  }
+
+  .detailsBottom {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .detailsBottom div {
+    font-size: 0.8rem;
+  }
+
+  .snappPay {
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px;
+  }
+
+  .snappPay span {
+    font-size: 0.8rem;
+  }
+}
+
+
+@media (min-width: 561px) and (max-width: 780px) {
+  .productContainer {
+    flex-direction: column;
+  }
+  .productListTabs {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .cardsContainer {
+    width: 100%;
+  }
+
+  .filteringContainer {
+    width: 100%;
+    margin: 0 0 15px 0;
+    font-size: 1rem;
+  }
+
+  .filteringContainer ul li {
+    padding: 8px;
+    margin: 8px 0;
+    font-size: 0.8rem;
+  }
+
+  .brandItem {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+
+  .smallSearch,
+  .brandSearch {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+
+  .specialButtons {
+    gap: 8px;
+  }
+
+  .detailsContainer {
+    flex-direction: column;
+  }
+
+  .detailsImage {
+    width: 100%;
+  }
+
+  .detailsRightSide {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--dark-gray);
+  }
+
+  .mainDetails {
+    flex-direction: column;
+  }
+
+  .buyOptions {
+    width: 100%;
+  }
+
+  .detailsBottom {
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+  }
+}
+
+
+@media (min-width: 781px) and (max-width: 992px) {
+  .productContainer {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .productListTabs {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .cardsContainer {
+    width: 70%;
+  }
+
+  .filteringContainer {
+    width: 28%;
+  }
+
+  .filteringContainer ul li {
+    padding: 9px;
+    margin: 8px 0;
+    font-size: 0.85rem;
+  }
+
+  .brandItem {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+
+  .smallSearch,
+  .brandSearch {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+
+  .specialButtons {
+    gap: 10px;
+  }
+
+  .detailsContainer {
+    flex-direction: row;
+  }
+
+  .detailsImage {
+    width: 20%;
+  }
+
+  .detailsRightSide {
+    width: 80%;
+  }
+
+  .buyOptions {
+    width: 30%;
+  }
+
+  .detailsBottom {
+    gap: 50px;
+    padding: 20px 30px;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .cardsContainer {
+    width: 73%;
+  }
+
+  .filteringContainer {
+    width: 27%;
+  }
+
+  .detailsImage {
+    width: 18%;
+  }
+
+  .detailsRightSide {
+    width: 82%;
+  }
+
+  .buyOptions {
+    width: 28%;
+  }
+}
+
+@media (min-width: 1201px) {
+  .cardsContainer {
+    width: 75%;
+  }
+
+  .filteringContainer {
+    width: 25%;
+  }
+
+  .detailsImage {
+    width: 15%;
+  }
+
+  .detailsRightSide {
+    width: 85%;
+  }
+
+  .buyOptions {
+    width: 25%;
+  }
 }
