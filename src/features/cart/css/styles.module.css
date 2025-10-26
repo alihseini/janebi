@@ -1,3 +1,4 @@
+/* ================= CART CONTAINER ================= */
 .cartContainer {
   padding: 30px;
   display: flex;
@@ -29,8 +30,7 @@
   gap: 20px;
 }
 
-/* CART DRAWER */
-
+/* ================= CART DRAWER ================= */
 .cartDrawerWrapper {
   position: relative;
   display: inline-block;
@@ -155,10 +155,9 @@
   color: var(--dark-gray) !important;
 }
 
-/* CART CARDS */
-
+/* ================= CART CARDS ================= */
 .cartTableWrapper {
-  width: 85%;
+  min-width: 87%;
   direction: rtl;
   border-radius: 10px;
   background-color: white;
@@ -183,18 +182,17 @@
   padding-right: 20px;
 }
 
-.cartTable td {
-  padding: 12px 16px;
+.cartTable tbody tr {
   border-top: 1px solid var(--dark-gray);
-  vertical-align: middle;
-}
-
-.cartTable tbody tr{
   transition: all 0.5s ease-in;
 }
 
 .cartTable tbody tr:hover {
   background-color: var(--bg-blue);
+}
+
+.cartTable td {
+  padding: 12px 16px;
 }
 
 .productCell {
@@ -227,8 +225,7 @@
   color: var(--primary);
 }
 
-/* CHECKOUT */
-
+/* ================= CHECKOUT ================= */
 .checkoutWrapper {
   background: #fff;
   height: fit-content;
@@ -276,8 +273,6 @@ h3 {
   width: 150px;
 }
 
-/* emptyCart */
-
 .emptyCart {
   background-color: white;
   min-height: 50vh;
@@ -289,25 +284,185 @@ h3 {
   flex-direction: column;
 }
 
-@media (min-width: 300px) and (max-width: 560px) {
-  .drawerCartBadge{
+@media (min-width: 300px) and (max-width: 586px) {
+  .cartContainer {
+    padding: 15px;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .cartContent {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* جدول تبدیل به کارت */
+  .cartTableWrapper {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: none;
+  }
+
+  .cartTable {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .cartTable thead {
+    display: none; /* هدر مخفی */
+  }
+
+  .cartTable tbody tr {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+    align-items: center; /* همه محتوا وسط */
+  }
+
+  .cartTable tbody tr td {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* وسط محتوا */
+    justify-content: center;
+    padding: 5px 0;
+    font-size: 0.8rem;
+    position: relative;
+    width: 100%;
+  }
+
+  .cartTable tbody tr td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: var(--darkest-gray);
+    margin-bottom: 5px;
+    font-size: 0.75rem;
+  }
+
+  .productCell {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cartImage {
+    width: 50px;
+    height: 50px;
+  }
+
+  .productCell h4 {
+    font-size: 0.9rem;
+  }
+
+  /* ActionButtons */
+  .actionButtons {
+    display: flex;
+    justify-content: center; /* وسط افقی دکمه‌ها */
+    gap: 5px;
+    width: 100%; /* پهنای کامل td */
+  }
+
+  /* drawer badge */
+  .drawerCartBadge {
     font-size: 0.5rem;
-    top: 7px;
+    top: 5px;
     right: 3px;
+  }
+
+  /* checkout */
+  .checkoutWrapper {
+    width: 100%;
+    padding: 15px;
   }
 }
 
 @media (min-width: 560px) and (max-width: 780px) {
+  .cartContainer {
+    width: 95%;
+    padding: 20px;
+  }
 
+  .cartContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cartTableWrapper {
+    width: 95%;
+  }
+
+  .cartImage {
+    width: 50px;
+    height: 50px;
+  }
+
+  .checkoutWrapper {
+    width: 250px;
+  }
+
+  .drawerCart {
+    width: 300px;
+  }
 }
 
 @media (min-width: 780px) and (max-width: 992px) {
+  .cartContainer {
+    width: 90%;
+  }
 
+  .cartTableWrapper {
+    width: 90%;
+  }
+
+  .checkoutWrapper {
+    width: 280px;
+  }
+
+  .drawerCart {
+    width: 320px;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
+  .cartContainer {
+    width: 85%;
+  }
 
+  .cartTableWrapper {
+    width: 85%;
+  }
+
+  .checkoutWrapper {
+    width: 300px;
+  }
+
+  .drawerCart {
+    width: 340px;
+  }
 }
 
 @media (min-width: 1200px) {
+  .cartContainer {
+    width: 80%;
+  }
+
+  .cartTableWrapper {
+    width: 80%;
+  }
+
+  .checkoutWrapper {
+    width: 300px;
+  }
+
+  .drawerCart {
+    width: 350px;
+  }
 }

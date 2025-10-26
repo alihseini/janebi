@@ -42,7 +42,7 @@ const CartCards: React.FC<IProps> = ({
         <tbody>
           {products.map((product) => (
             <tr key={product.id}>
-              <td className={styles.productCell}>
+              <td className={styles.productCell} data-label="محصول">
                 <img
                   src={product.image}
                   alt={product.title}
@@ -53,8 +53,12 @@ const CartCards: React.FC<IProps> = ({
                   {shortenTitle(product.title)}
                 </h4>
               </td>
-              <td>{product.price.toLocaleString()} تومان</td>
-              <td>
+
+              <td data-label="قیمت واحد">
+                {product.price.toLocaleString()} تومان
+              </td>
+
+              <td data-label="تعداد">
                 <ActionButtons
                   count={product.count}
                   productId={product.id}
@@ -64,7 +68,10 @@ const CartCards: React.FC<IProps> = ({
                   decreaseProduct={onDecrease}
                 />
               </td>
-              <td>{sumPrice(product.price, product.count).toLocaleString()} تومان</td>
+
+              <td data-label="مجموع">
+                {sumPrice(product.price, product.count).toLocaleString()} تومان
+              </td>
             </tr>
           ))}
         </tbody>
