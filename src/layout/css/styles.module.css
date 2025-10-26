@@ -370,12 +370,84 @@
   .highestSale,
   .webLog {
     font-size: 0.6rem !important;
-    padding: 2px 2px!important;
+    padding: 2px 2px !important;
   }
-  .navBar{
+  .navBar {
     justify-content: space-between;
     gap: 0;
     padding: 0 10px;
+  }
+  .fullFooter {
+    padding: 40px 10px;
+    background-size: cover;
+  }
+
+  .topFooter {
+    flex-direction: column;
+    padding: 40px 10px;
+  }
+
+  .topFooter > div {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .topFooter > div span {
+    font-size: 0.7rem;
+  }
+
+  .mainFooter {
+    flex-direction: column;
+    padding: 0 10px;
+    gap: 15px;
+  }
+
+  .mainFooter p {
+    font-size: 0.8rem;
+  }
+
+  .mainFooter > div {
+    gap: 10px;
+  }
+
+  .mainFooter ul li {
+    font-size: 0.7rem;
+    padding: 5px 0;
+  }
+
+  .mainFooter img {
+    width: 150px;
+  }
+
+  .downloadButton {
+    height: 30px;
+  }
+
+  .bottomFooter {
+    padding: 50px 10px 0;
+  }
+
+  .bottomFooterBase {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .bottomInfo {
+    flex-direction: column;
+    border-left: none;
+    gap: 10px;
+  }
+
+  .bottomInfo > div {
+    padding: 5px 10px;
+    gap: 5px;
+  }
+
+  .bottomFooter img {
+    width: 80px;
+    height: 80px;
   }
 }
 
@@ -395,6 +467,68 @@
   .webLog {
     font-size: 0.7rem !important;
   }
+  .topFooter {
+    flex-direction: column;
+    padding: 50px 10px;
+  }
+
+  .topFooter > div {
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .mainFooter {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .mainFooter p {
+    font-size: 0.85rem;
+  }
+
+  .mainFooter > div {
+    gap: 15px;
+  }
+
+  .mainFooter ul li {
+    font-size: 0.75rem;
+    padding: 5px 0;
+  }
+
+  .mainFooter img {
+    width: 200px;
+  }
+
+  .downloadButton {
+    height: 35px;
+  }
+
+  .bottomFooter {
+    padding: 60px 10px 0;
+  }
+
+  .bottomFooterBase {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .bottomInfo {
+    flex-direction: column;
+    border-left: none;
+    gap: 10px;
+  }
+
+  .bottomInfo > div {
+    padding: 5px 15px;
+    gap: 5px;
+  }
+
+  .bottomFooter img {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 @media (min-width: 780px) and (max-width: 992px) {
@@ -404,13 +538,96 @@
   .mainHeaderLogin {
     justify-content: center;
   }
+  .topFooter {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 60px 15px;
+  }
+
+  .topFooter > div {
+    width: 48%;
+    padding: 40px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .mainFooter {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .mainFooter p {
+    font-size: 0.9rem;
+  }
+
+  .mainFooter ul li {
+    font-size: 0.75rem;
+  }
+
+  .mainFooter img {
+    width: 250px;
+  }
+
+  .downloadButton {
+    height: 38px;
+  }
+
+  .bottomFooter {
+    padding: 80px 15px 0;
+  }
+
+  .bottomFooterBase {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .bottomInfo {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .bottomFooter img {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
   .loginTriggerText {
     font-size: 0.6rem;
   }
+  .topFooter > div {
+    width: 48%;
+  }
+
+  .mainFooter ul li {
+    font-size: 0.8rem;
+  }
+
+  .mainFooter img {
+    width: 300px;
+  }
+
+  .bottomFooter img {
+    width: 110px;
+    height: 110px;
+  }
 }
 
 @media (min-width: 1200px) {
+  .topFooter > div {
+    width: 30%;
+  }
+
+  .mainFooter img {
+    width: 350px;
+  }
+
+  .bottomFooter img {
+    width: 120px;
+    height: 120px;
+  }
 }
