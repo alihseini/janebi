@@ -1,13 +1,11 @@
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
-import '../css/styles.module.css';
-
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+import styles from '../css/styles.module.css';
 
 interface ImageSwiperProps {
   images: string[];
@@ -37,7 +35,7 @@ const ImageSwiper: React.FC<ImageSwiperProps> = ({ images }) => {
       navigation
       modules={[Autoplay, Pagination, Navigation]}
       onAutoplayTimeLeft={onAutoplayTimeLeft}
-      className="mySwiper"
+      className={styles.mySwiper}
     >
       {images.map((img, index) => (
         <SwiperSlide key={index}>
