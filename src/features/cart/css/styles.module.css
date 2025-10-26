@@ -1,4 +1,3 @@
-/* ================= CART CONTAINER ================= */
 .cartContainer {
   padding: 30px;
   display: flex;
@@ -7,10 +6,6 @@
   width: 95%;
   margin: 0 auto;
   border-radius: 8px;
-}
-
-.cartContainer * {
-  font-family: 'dana-fanum-regular';
 }
 
 .title {
@@ -28,6 +23,7 @@
 .cartContent {
   display: flex;
   gap: 20px;
+  justify-content: space-between;
 }
 
 /* ================= CART DRAWER ================= */
@@ -36,33 +32,9 @@
   display: inline-block;
 }
 
-.cartDrawerWrapper * {
-  font-family: 'dana-fanum-regular';
-}
-
 .CartIconWrapper {
   position: relative;
   cursor: pointer;
-}
-
-.emptyDrawerCart {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
-}
-
-.emptyDrawerCart p {
-  color: var(--dark-gray);
-}
-
-.drawerItem img {
-  width: 3rem;
-  height: 3rem;
-  object-fit: cover;
-  border-radius: 8px;
 }
 
 .drawerCartBadge {
@@ -117,12 +89,6 @@
   position: relative;
 }
 
-.drawerTrashBadge {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
 .drawerInfo {
   flex-grow: 1;
 }
@@ -155,14 +121,14 @@
   color: var(--dark-gray) !important;
 }
 
-/* ================= CART CARDS ================= */
+/* ================= CART TABLE ================= */
 .cartTableWrapper {
-  min-width: 87%;
-  direction: rtl;
+  width: 100%;
   border-radius: 10px;
   background-color: white;
   border: 1px solid var(--dark-gray);
-  padding-top: 20px;
+  padding: 20px;
+  overflow-x: auto;
 }
 
 .cartTable {
@@ -171,35 +137,19 @@
   border-collapse: collapse;
 }
 
-.cartTableWrapper h2 {
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-  padding-right: 20px;
-}
-
 .cartTable th {
   color: var(--darker-gray);
-  padding-right: 20px;
-}
-
-.cartTable tbody tr {
-  border-top: 1px solid var(--dark-gray);
-  transition: all 0.5s ease-in;
-}
-
-.cartTable tbody tr:hover {
-  background-color: var(--bg-blue);
+  padding: 10px;
 }
 
 .cartTable td {
-  padding: 12px 16px;
+  padding: 10px;
 }
 
 .productCell {
   display: flex;
   align-items: center;
   gap: 10px;
-  justify-content: flex-start;
 }
 
 .cartImage {
@@ -215,31 +165,21 @@
   transform: scale(1.05);
 }
 
-.productCell h4 {
-  margin: 0;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.productCell h4:hover {
-  color: var(--primary);
-}
-
 /* ================= CHECKOUT ================= */
 .checkoutWrapper {
   background: #fff;
-  height: fit-content;
   width: 300px;
+  max-width: 100%;
   max-height: fit-content;
   border-radius: 10px;
   padding: 20px;
   border: 1px solid var(--dark-gray);
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 
-h3 {
+.checkoutWrapper h3 {
   border-bottom: 1px solid #d7d7d7;
   margin-bottom: 10px;
 }
@@ -249,17 +189,6 @@ h3 {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: 100%;
-  margin-top: 20px;
-}
-
-.delivery span {
-  color: var(--primary);
-}
-
-.delivery {
-  border-bottom: 1px solid #d7d7d7;
-  padding-bottom: 10px;
 }
 
 .checkout {
@@ -270,21 +199,9 @@ h3 {
 .checkout:hover {
   background-color: var(--dark-gray);
   color: #fff !important;
-  width: 150px;
 }
 
-.emptyCart {
-  background-color: white;
-  min-height: 50vh;
-  width: 100%;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-@media (min-width: 300px) and (max-width: 586px) {
+@media (max-width: 586px) {
   .cartContainer {
     padding: 15px;
     gap: 15px;
@@ -294,27 +211,22 @@ h3 {
   .cartContent {
     flex-direction: column;
     gap: 15px;
+    flex-wrap: wrap;
   }
 
-  /* جدول تبدیل به کارت */
   .cartTableWrapper {
-    width: 100%;
     padding: 10px;
     border: none;
-    background: none;
+    width: 100%;
   }
 
   .cartTable {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    gap: 15px;
-    width: 100%;
-    min-width: 0;
   }
 
   .cartTable thead {
-    display: none; /* هدر مخفی */
+    display: none;
   }
 
   .cartTable tbody tr {
@@ -325,32 +237,13 @@ h3 {
     border-radius: 8px;
     padding: 10px;
     background-color: #fff;
-    align-items: center; /* همه محتوا وسط */
   }
 
   .cartTable tbody tr td {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* وسط محتوا */
-    justify-content: center;
-    padding: 5px 0;
-    font-size: 0.8rem;
-    position: relative;
-    width: 100%;
-  }
-
-  .cartTable tbody tr td::before {
-    content: attr(data-label);
-    font-weight: bold;
-    color: var(--darkest-gray);
-    margin-bottom: 5px;
-    font-size: 0.75rem;
-  }
-
-  .productCell {
-    flex-direction: row;
     align-items: center;
-    gap: 10px;
   }
 
   .cartImage {
@@ -358,33 +251,18 @@ h3 {
     height: 50px;
   }
 
-  .productCell h4 {
-    font-size: 0.9rem;
-  }
-
-  /* ActionButtons */
-  .actionButtons {
-    display: flex;
-    justify-content: center; /* وسط افقی دکمه‌ها */
-    gap: 5px;
-    width: 100%; /* پهنای کامل td */
-  }
-
-  /* drawer badge */
-  .drawerCartBadge {
-    font-size: 0.5rem;
-    top: 5px;
-    right: 3px;
-  }
-
-  /* checkout */
   .checkoutWrapper {
     width: 100%;
     padding: 15px;
   }
+
+  .drawerCart {
+    width: 90%;
+    max-width: 320px;
+  }
 }
 
-@media (min-width: 560px) and (max-width: 780px) {
+@media (min-width: 587px) and (max-width: 780px) {
   .cartContainer {
     width: 95%;
     padding: 20px;
@@ -393,10 +271,7 @@ h3 {
   .cartContent {
     flex-direction: column;
     gap: 20px;
-  }
-
-  .cartTableWrapper {
-    width: 95%;
+    flex-wrap: wrap;
   }
 
   .cartImage {
@@ -413,12 +288,8 @@ h3 {
   }
 }
 
-@media (min-width: 780px) and (max-width: 992px) {
+@media (min-width: 781px) and (max-width: 992px) {
   .cartContainer {
-    width: 90%;
-  }
-
-  .cartTableWrapper {
     width: 90%;
   }
 
@@ -426,18 +297,22 @@ h3 {
     width: 280px;
   }
 
+  .cartContent {
+    flex-wrap: wrap;
+  }
+
   .drawerCart {
     width: 320px;
   }
 }
 
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 993px) and (max-width: 1200px) {
   .cartContainer {
     width: 85%;
   }
 
-  .cartTableWrapper {
-    width: 85%;
+  .cartContent {
+    flex-wrap: wrap;
   }
 
   .checkoutWrapper {
@@ -449,12 +324,8 @@ h3 {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1201px) {
   .cartContainer {
-    width: 80%;
-  }
-
-  .cartTableWrapper {
     width: 80%;
   }
 
