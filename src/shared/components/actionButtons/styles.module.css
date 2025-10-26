@@ -1,7 +1,7 @@
 .addButton {
   background-color: var(--primary);
   border-radius: 10px;
-  padding:12px 10px;
+  padding: 12px 10px;
   width: fit-content;
   margin-top: 14px;
   font-size: 0.9rem;
@@ -39,4 +39,88 @@
 
 .plusBtn {
   background-color: var(--bg-blue);
+}
+
+@media (min-width: 300px) and (max-width: 560px) {
+  .addButton {
+    padding: 8px 6px;
+    font-size: 0.7rem;
+    margin-top: 10px;
+  }
+
+  .actions {
+    gap: 10px;
+    padding: 3px 4px;
+  }
+
+  .minusBtn,
+  .plusBtn,
+  .removeBtn {
+    padding: 3px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 780px) {
+  .addButton {
+    padding: 10px 8px;
+    font-size: 0.8rem;
+    margin-top: 12px;
+  }
+
+  .actions {
+    gap: 15px;
+    padding: 4px 5px;
+  }
+
+  .minusBtn,
+  .plusBtn,
+  .removeBtn {
+    padding: 4px;
+    border-radius: 9px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 780px) and (max-width: 992px) {
+  .addButton {
+    padding: 11px 9px;
+    font-size: 0.85rem;
+  }
+
+  .minusBtn,
+  .plusBtn,
+  .removeBtn {
+    padding: 4px 5px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .addButton {
+    padding: 12px 10px;
+    font-size: 0.9rem;
+  }
+
+  .minusBtn,
+  .plusBtn,
+  .removeBtn {
+    padding: 5px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .addButton {
+    padding: 12px 10px;
+    font-size: 0.9rem;
+  }
+
+  .minusBtn,
+  .plusBtn,
+  .removeBtn {
+    padding: 5px;
+    font-size: 0.9rem;
+  }
 }

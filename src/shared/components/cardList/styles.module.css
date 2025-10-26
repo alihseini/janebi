@@ -27,7 +27,7 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
   gap: 10px;
-  flex: 1; /* دوتا دکمه کنار */
+  flex: 1;
 }
 
 .allCards::-webkit-scrollbar {
@@ -88,4 +88,82 @@
 .leftButton:hover {
   background-color: var(--primary);
   color: white !important;
+}
+
+@media (min-width: 300px) and (max-width: 560px) {
+  .rightButton,
+  .leftButton {
+    width: 25px;
+    height: 40px;
+    font-size: 1.2rem;
+    box-shadow: 0px 1px 10px -6px #000000;
+  }
+
+  .rightButton {
+    right: 2px;
+  }
+
+  .leftButton {
+    left: 2px;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 780px) {
+  .rightButton,
+  .leftButton {
+    width: 30px;
+    height: 45px;
+    font-size: 1.5rem;
+  }
+
+  .rightButton {
+    right: 5px;
+  }
+
+  .leftButton {
+    left: 5px;
+  }
+}
+
+@media (min-width: 780px) and (max-width: 992px) {
+  .rightButton,
+  .leftButton {
+    width: 35px;
+    height: 50px;
+    font-size: 1.8rem;
+  }
+
+  .rightButton {
+    right: 8px;
+  }
+
+  .leftButton {
+    left: 8px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .rightButton,
+  .leftButton {
+    width: 38px;
+    height: 55px;
+    font-size: 1.9rem;
+  }
+
+  .rightButton {
+    right: 10px;
+  }
+
+  .leftButton {
+    left: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .rightButton,
+  .leftButton {
+    width: 40px;
+    height: 60px;
+    font-size: 2rem;
+  }
 }
