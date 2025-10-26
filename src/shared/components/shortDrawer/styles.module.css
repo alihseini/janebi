@@ -14,7 +14,7 @@
 .drawer {
   position: absolute;
   top: 100%;
-  right: 0;
+  left: 0;
   margin-top: 5px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -29,6 +29,10 @@
   transform: translateY(-10px);
   transition: all 0.25s ease;
   z-index: 9999;
+  width: max-content;
+  min-width: 150px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .show {
@@ -54,4 +58,33 @@
 
 .drawerButton:hover {
   background-color: #f5f5f5;
+}
+
+@media (max-width: 560px) {
+  .drawer {
+    width: 100%;
+    left: -30px;
+  }
+  .drawerButton {
+    font-size: 0.85rem;
+    padding: 5px 6px;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 780px) {
+  .drawer {
+    width: 180px;
+  }
+}
+
+@media (min-width: 781px) and (max-width: 992px) {
+  .drawer {
+    width: 200px;
+  }
+}
+
+@media (min-width: 993px) {
+  .drawer {
+    width: 220px;
+  }
 }
