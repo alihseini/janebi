@@ -87,6 +87,11 @@
   gap: 0.75rem;
   border-bottom: 1px solid #eee;
   position: relative;
+  color: var(--darkest-gray);
+}
+
+.drawerItem img{
+  width: 50px;
 }
 
 .drawerInfo {
@@ -99,7 +104,7 @@
 
 .drawerInfo span,
 .drawerPrice {
-  color: var(--dark-gray);
+  color: var(--darkest-gray);
   font-size: 0.8rem;
 }
 
@@ -119,6 +124,12 @@
 .viewDrawerCartBtn:hover {
   background-color: var(--light-gray);
   color: var(--dark-gray) !important;
+}
+
+.drawerTrashBadge{
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 /* ================= CART TABLE ================= */
