@@ -420,6 +420,7 @@
   .productListTabs ul,.productListTabs div{
     flex-direction: column;
     align-items: flex-start;
+    margin-right: 10px;
   }
 
   .detailsContainer {
