@@ -373,7 +373,6 @@
   width: 30px;
 }
 
-
 @media (max-width: 560px) {
   .productContainer {
     flex-direction: column;
@@ -417,7 +416,8 @@
     gap: 25px;
   }
 
-  .productListTabs ul,.productListTabs div{
+  .productListTabs ul,
+  .productListTabs div {
     flex-direction: column;
     align-items: flex-start;
     margin-right: 10px;
@@ -430,10 +430,11 @@
   .detailsImage {
     width: 100%;
     padding: 5px;
+    text-align: center;
   }
 
   .detailsImage img {
-    height: auto;
+    width: 200px;
   }
 
   .detailsRightSide {
@@ -486,7 +487,6 @@
     font-size: 0.8rem;
   }
 }
-
 
 @media (min-width: 561px) and (max-width: 780px) {
   .productContainer {
@@ -555,7 +555,6 @@
     padding: 18px;
   }
 }
-
 
 @media (min-width: 781px) and (max-width: 992px) {
   .productContainer {
