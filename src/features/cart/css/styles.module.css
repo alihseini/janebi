@@ -269,6 +269,12 @@
   .cartDrawer {
     max-width: 320px;
   }
+
+  .drawerCartBadge{
+    font-size: 0.6rem;
+    top: 8px;
+    right: -2px;
+  }
 }
 
 @media (min-width: 587px) and (max-width: 780px) {
