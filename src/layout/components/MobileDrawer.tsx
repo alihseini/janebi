@@ -41,14 +41,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
               <Button text="خروج" onClick={onLogout} />
             </>
           ) : (
-            <Button
-              text="ورود / ثبت‌نام"
-              onClick={() => {
-                onLoginClick();
-                onClose();
-              }}
-              color="#000"
-            />
+            <Button text="ورود / ثبت‌نام" onClick={onLoginClick} color="#000" />
           )}
         </div>
         <div>
