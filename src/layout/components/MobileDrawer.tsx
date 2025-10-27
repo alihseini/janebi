@@ -56,10 +56,11 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
             text="دسته‌بندی محصولات"
             svgSrc={expandedCategory ? 'bx-chevron-up' : 'bx-chevron-down'}
             onClick={toggleCategory}
+            className={styles.catButton}
           />
           <div
             className={`${styles.drawerSubCategories} ${
-              expandedCategory ? 'show' : ''
+              expandedCategory ? styles.showCatList : styles.notShowCatList
             }`}
           >
             {categoryList.map((cat) => (
