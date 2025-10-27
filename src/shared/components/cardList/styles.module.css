@@ -107,6 +107,9 @@
   .leftButton {
     left: 2px;
   }
+  .upperCardList p,.upperCardListButton{
+    font-size: 0.8rem !important;
+  }
 }
 
 @media (min-width: 560px) and (max-width: 780px) {

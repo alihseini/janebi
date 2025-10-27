@@ -33,6 +33,7 @@ const CardList: React.FC<CardListProps> = ({ data, title, button }) => {
           fontSize="1.2rem"
           color="#0089ff"
           onClick={() => navigate('/products')}
+          className={styles.upperCardListButton}
         />
       </div>
 
