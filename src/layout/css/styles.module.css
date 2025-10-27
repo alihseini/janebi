@@ -191,11 +191,10 @@
   cursor: pointer;
 }
 
-.loginTriggerText p,
-.loginTriggerButton {
+.loginTriggerText p {
   font-size: 0.8rem;
   width: 100%;
-  color: var(--dark-gray);
+  color: var(--darker-gray) !important;
 }
 
 .loggedInInfo {

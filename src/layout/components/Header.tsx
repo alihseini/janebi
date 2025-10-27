@@ -150,6 +150,8 @@ const Header: React.FC = () => {
                         text="ورود به حساب کاربری"
                         onClick={() => setShowLoginModal(true)}
                         className={styles.loginTriggerButton}
+                        color='black'
+                        fontSize='0.8rem'
                       />
                     </div>
                   </div>
