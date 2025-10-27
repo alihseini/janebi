@@ -156,6 +156,7 @@
 .searchDiv {
   display: flex;
   align-items: center;
+  margin: 0 10px;
 }
 
 .searchButton {
@@ -242,6 +243,125 @@
   color: #fff !important;
   border-bottom-right-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
+}
+
+.mobileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  max-height: fit-content;
+}
+
+.mobileHeader img {
+  width: 100px;
+}
+
+.mobileSearchBar {
+  transition: all 0.4s ease-in;
+  width: 100%;
+  padding: 0 auto;
+}
+
+/* drawer  */
+
+.mobileDrawerBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.mobileDrawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 180px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -3px 0 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.25s ease forwards;
+  z-index: 1000;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.drawerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.drawerUser {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.drawerCategory {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.categoryButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.drawerSubCategories {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-top: 5px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.drawerSubCategories.show {
+  max-height: 500px;
+}
+
+.drawerLinks {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 /* FOOTER  */
@@ -349,26 +469,6 @@
 }
 
 @media (min-width: 300px) and (max-width: 560px) {
-  .loginTriggerText {
-    display: none;
-  }
-  .mainHeaderLogin {
-    justify-content: center;
-  }
-  .mainHeader > img {
-    width: 50px;
-  }
-  .searchInput {
-    height: 20px !important;
-  }
-  .searchButton {
-    height: 22px;
-  }
-
-  .mainHeader {
-    padding: 0 10px;
-  }
-
   .navBar {
     padding: 0 10px;
   }
