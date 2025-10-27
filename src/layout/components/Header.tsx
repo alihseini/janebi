@@ -189,7 +189,7 @@ const Header: React.FC = () => {
             <Button
               text="دسته بندی محصولات"
               svgSrc="bx-menu-alt-right"
-              fontSize="1.1rem"
+              fontSize="0.9rem"
               className={styles.categoriButton}
               color="#fff"
               onClick={handleCategoryButtonClick}
@@ -205,19 +205,19 @@ const Header: React.FC = () => {
         <Button
           text="پیشنهاد ویژه"
           color="#4b4b4b"
-          fontSize="1.1rem"
+          fontSize="0.9rem"
           className={styles.specialOffer}
         />
         <Button
           text="پر فروش ترین"
           color="#4b4b4b"
-          fontSize="1.1rem"
+          fontSize="0.9rem"
           className={styles.highestSale}
         />
         <Button
           text="وبلاگ"
           color="#4b4b4b"
-          fontSize="1.1rem"
+          fontSize="0.9rem"
           className={styles.webLog}
         />
       </div>
