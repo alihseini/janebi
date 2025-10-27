@@ -39,15 +39,13 @@ const LoginModal: React.FC<LoginModalProps> = ({
     };
   }, [isVisible]);
 
-  if (!isVisible) return null;
-
   return ReactDOM.createPortal(
-    <>
+    
       <div
-        className={`${styles.loginBackdrop} ${isVisible ? styles.show : ''}`}
+        className={`${isVisible ? styles.showBackdrop : styles.closeBackdrop}`}
         onClick={onClose}
-      />
-      <div className={`${styles.modal} ${isVisible ? styles.show : ''}`}>
+      >
+      <div className={`${isVisible ? styles.openModal : styles.closeModal}`}>
         <h2>ورود / ثبت نام</h2>
         <input
           type="text"
@@ -65,7 +63,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
           {isLoading ? 'در حال ورود...' : 'ورود'}
         </button>
       </div>
-    </>,
+    </div>,
     document.body
   );
 };
