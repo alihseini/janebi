@@ -140,21 +140,17 @@ const Header: React.FC = () => {
               />
             </div>
           </div>
-
-          {/* Mobile Drawer */}
           <MobileDrawer
             open={drawerOpen}
             onClose={() => setDrawerOpen(false)}
             user={user}
             onLogout={handleLogout}
             onLoginClick={() => {
-              setShowLoginModal(true); // باز کردن مودال
-              setDrawerOpen(false); // بستن دراور
+              setShowLoginModal(true); 
+              setDrawerOpen(false);
             }}
             onCategoryClick={handleCategoryClick}
           />
-
-          {/* Login Modal mount خارج از Drawer */}
           {showLoginModal && (
             <LoginModal
               isVisible={showLoginModal}
