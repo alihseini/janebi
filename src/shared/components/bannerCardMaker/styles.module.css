@@ -69,36 +69,28 @@
   }
 
   .imagesContainer {
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .mainImage {
-    width: 100%;
     display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    gap: 8px;
     justify-content: center;
+    align-items: center;
   }
 
-  .mainImage img {
-    width: 150px;
-    height: 150px;
+  .mainImage,
+  .smallImages {
+    flex: none;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .mainImage img,
+  .smallImages img {
+    width: 30vw;
+    height: 30vw;
     object-fit: cover;
     border-radius: 8px;
   }
-
-  .smallImages {
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .smallImages img {
-    width: 150px;
-    height: 150px;
-  }
 }
+
