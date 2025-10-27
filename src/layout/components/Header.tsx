@@ -27,7 +27,7 @@ const Header: React.FC = () => {
   const [user, setUser] = useState<string | null>(null);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [isMobile] = useState(window.innerWidth <= 560);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 560);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showNavbar, setShowNavbar] = useState(true);
 
@@ -35,6 +35,12 @@ const Header: React.FC = () => {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
     if (token && username) setUser(username);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 560);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
