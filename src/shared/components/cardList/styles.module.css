@@ -94,20 +94,10 @@
 @media (min-width: 300px) and (max-width: 560px) {
   .rightButton,
   .leftButton {
-    width: 25px;
-    height: 40px;
-    font-size: 1.2rem;
-    box-shadow: 0px 1px 10px -6px #000000;
+    display: none;
   }
-
-  .rightButton {
-    right: 2px;
-  }
-
-  .leftButton {
-    left: 2px;
-  }
-  .upperCardList p,.upperCardListButton{
+  .upperCardList p,
+  .upperCardListButton {
     font-size: 0.8rem !important;
   }
 }
