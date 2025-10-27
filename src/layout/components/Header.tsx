@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import styles from '../css/styles.module.css';
 import Input from '../../shared/components/Input/Input';
 import Button from '../../shared/components/Button/Button';
-import CartDrawer from '../../features/cart/components/CartDrawer';
-import MobileDrawer from './MobileDrawer';
-import LoginModal from './LoginModal';
+import ShortDrawer from '../../shared/components/ShortDrawer/ShortDrawer';
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
+import { categoryList } from '../../features/products/json/categoryList';
+import CartDrawer from '../../features/cart/components/CartDrawer';
+import LoginModal from './LoginModal';
 import { toast } from 'react-toastify';
+import MobileDrawer from './MobileDrawer';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -53,6 +55,12 @@ const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    setSearch(params.get('search') || '');
+    setSelectedCategory(params.get('filter') || 'all');
+  }, [location.search]);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -152,10 +160,7 @@ const Header: React.FC = () => {
             onClose={() => setDrawerOpen(false)}
             user={user}
             onLogout={handleLogout}
-            onLoginClick={() => {
-              setShowLoginModal(true); 
-              setDrawerOpen(false); 
-            }}
+            onLoginClick={() => setShowLoginModal(true)}
             onCategoryClick={(value) => updateURL(search, value)}
           />
         </>
@@ -198,9 +203,37 @@ const Header: React.FC = () => {
                 </div>
               ) : (
                 <>
-                  <Button
-                    text="ورود به حساب کاربری"
-                    onClick={() => setShowLoginModal(true)}
+                  <ShortDrawer
+                    trigger={
+                      <div className={styles.loginTrigger}>
+                        <Button svgSrc="bx-user" />
+                        <div className={styles.loginTriggerText}>
+                          <p>خوش آمدی</p>
+                          <Button
+                            text="ورود به حساب کاربری"
+                            onClick={() => setShowLoginModal(true)}
+                            className={styles.loginTriggerButton}
+                            color="black"
+                            fontSize="0.8rem"
+                          />
+                        </div>
+                      </div>
+                    }
+                    items={[
+                      {
+                        text: 'ورود / ثبت نام',
+                        svgSrc: 'bx-log-in',
+                        onClick: () => setShowLoginModal(true),
+                      },
+                      { text: 'پیگیری سفارشات', svgSrc: 'bx-cart-add' },
+                    ]}
+                  />
+                  <LoginModal
+                    isVisible={showLoginModal}
+                    onClose={() => setShowLoginModal(false)}
+                    onLoginSuccess={() =>
+                      setUser(localStorage.getItem('username'))
+                    }
                   />
                 </>
               )}
@@ -210,13 +243,50 @@ const Header: React.FC = () => {
               <CartDrawer />
             </div>
           </div>
+
+          <div
+            className={`${styles.navBar} ${
+              showNavbar ? styles.navVisible : styles.navHidden
+            }`}
+          >
+            <ShortDrawer
+              trigger={
+                <Button
+                  text="دسته بندی محصولات"
+                  svgSrc="bx-menu-alt-right"
+                  fontSize="0.9rem"
+                  className={styles.categoriButton}
+                  color="#fff"
+                  onClick={handleCategoryButtonClick}
+                />
+              }
+              items={categoryList.map((cat) => ({
+                text: cat.label,
+                svgSrc: cat?.svgSrc,
+                onClick: () => handleCategoryClick(cat.value),
+              }))}
+            />
+            <Button
+              text="پیشنهاد ویژه"
+              color="#4b4b4b"
+              fontSize="0.9rem"
+              className={styles.specialOffer}
+            />
+            <Button
+              text="پر فروش ترین"
+              color="#4b4b4b"
+              fontSize="0.9rem"
+              className={styles.highestSale}
+            />
+            <Button
+              text="وبلاگ"
+              color="#4b4b4b"
+              fontSize="0.9rem"
+              className={styles.webLog}
+            />
+          </div>
         </>
       )}
-      <LoginModal
-        isVisible={showLoginModal}
-        onClose={() => setShowLoginModal(false)}
-        onLoginSuccess={() => setUser(localStorage.getItem('username'))}
-      />
     </div>
   );
 };
