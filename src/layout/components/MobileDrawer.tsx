@@ -23,13 +23,17 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
 }) => {
   const [expandedCategory, setExpandedCategory] = useState(false);
 
-  if (!open) return null;
 
   const toggleCategory = () => setExpandedCategory(!expandedCategory);
 
   return ReactDOM.createPortal(
-    <div className={styles.mobileDrawerBackdrop} onClick={onClose}>
-      <div className={styles.mobileDrawer} onClick={(e) => e.stopPropagation()}>
+    <div className={`${open? styles.mobileDrawerBackdrop : styles.mobileDrawerBackdropClose}`} onClick={onClose}>
+      <div
+        className={`${
+          open ? styles.mobileDrawerOpen : styles.mobileDrawerClosed
+        }`}
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className={styles.drawerHeader}>
           <p>جانبی</p>
           <Button svgSrc="bx-x" onClick={onClose} />
