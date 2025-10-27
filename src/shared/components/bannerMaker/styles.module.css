@@ -9,7 +9,7 @@
   flex-wrap: nowrap;
   overflow-x: auto;
   scroll-behavior: smooth;
-  background-color: #f7f7f7;
+  background-color: #f9f9f9;
 }
 
 .bannerContainer::-webkit-scrollbar {
@@ -20,7 +20,7 @@
   flex: 1;
   max-height: 27rem;
   border-radius: 10px;
-  background-color: #fcfcfc;
+  background-color: #f9f9f9;
   overflow: hidden;
   cursor: pointer;
 }
