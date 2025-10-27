@@ -62,12 +62,6 @@ const Header: React.FC = () => {
     setSelectedCategory(params.get('filter') || 'all');
   }, [location.search]);
 
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    setSearch(params.get('search') || '');
-    setSelectedCategory(params.get('filter') || 'all');
-  }, [location.search]);
-
   const updateURL = (newSearch: string, newCategory: string) => {
     const params: any = {};
     if (newSearch.trim()) params.search = newSearch.trim();
@@ -85,15 +79,7 @@ const Header: React.FC = () => {
   const handleCategoryClick = (value: string) => {
     setSelectedCategory(value);
     updateURL(search, value);
-  };
-
-  const handleCategoryButtonClick = () => {
-    const minPrice = localStorage.getItem('minPrice') || '0';
-    const maxPrice = localStorage.getItem('maxPrice') || '1000';
-    navigate({
-      pathname: '/products',
-      search: `?minPrice=${minPrice}&maxPrice=${maxPrice}`,
-    });
+    setDrawerOpen(false);
   };
 
   const handleLogout = () => {
@@ -155,14 +141,27 @@ const Header: React.FC = () => {
             </div>
           </div>
 
+          {/* Mobile Drawer */}
           <MobileDrawer
             open={drawerOpen}
             onClose={() => setDrawerOpen(false)}
             user={user}
             onLogout={handleLogout}
-            onLoginClick={() => setShowLoginModal(true)}
-            onCategoryClick={(value) => updateURL(search, value)}
+            onLoginClick={() => {
+              setShowLoginModal(true); // باز کردن مودال
+              setDrawerOpen(false); // بستن دراور
+            }}
+            onCategoryClick={handleCategoryClick}
           />
+
+          {/* Login Modal mount خارج از Drawer */}
+          {showLoginModal && (
+            <LoginModal
+              isVisible={showLoginModal}
+              onClose={() => setShowLoginModal(false)}
+              onLoginSuccess={() => setUser(localStorage.getItem('username'))}
+            />
+          )}
         </>
       ) : (
         <>
@@ -228,13 +227,15 @@ const Header: React.FC = () => {
                       { text: 'پیگیری سفارشات', svgSrc: 'bx-cart-add' },
                     ]}
                   />
-                  <LoginModal
-                    isVisible={showLoginModal}
-                    onClose={() => setShowLoginModal(false)}
-                    onLoginSuccess={() =>
-                      setUser(localStorage.getItem('username'))
-                    }
-                  />
+                  {showLoginModal && (
+                    <LoginModal
+                      isVisible={showLoginModal}
+                      onClose={() => setShowLoginModal(false)}
+                      onLoginSuccess={() =>
+                        setUser(localStorage.getItem('username'))
+                      }
+                    />
+                  )}
                 </>
               )}
             </div>
@@ -257,7 +258,14 @@ const Header: React.FC = () => {
                   fontSize="0.9rem"
                   className={styles.categoriButton}
                   color="#fff"
-                  onClick={handleCategoryButtonClick}
+                  onClick={() => {
+                    const minPrice = localStorage.getItem('minPrice') || '0';
+                    const maxPrice = localStorage.getItem('maxPrice') || '1000';
+                    navigate({
+                      pathname: '/products',
+                      search: `?minPrice=${minPrice}&maxPrice=${maxPrice}`,
+                    });
+                  }}
                 />
               }
               items={categoryList.map((cat) => ({
