@@ -30,7 +30,7 @@
   width: 98%;
   display: flex;
   justify-content: space-between;
-  gap: 15px; 
+  gap: 15px;
 }
 
 /* ================= CART DRAWER ================= */
@@ -89,7 +89,7 @@
 
 .drawerItem {
   display: flex;
-  align-items: center; 
+  align-items: center;
   padding: 10px;
   gap: 0.75rem;
   border-bottom: 1px solid #eee;
@@ -116,10 +116,10 @@
 }
 
 .drawerFooter {
-  padding-top: 20px; 
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 1rem; 
+  gap: 1rem;
 }
 
 .viewDrawerCartBtn {
@@ -167,7 +167,7 @@
 .cartTable td {
   word-break: break-word;
   overflow-wrap: break-word;
-  padding: 15px 8px; 
+  padding: 15px 8px;
 }
 
 .cartTable th {
@@ -187,9 +187,9 @@
 
 .cartImage {
   width: 100%;
-  max-width: 100px; 
+  max-width: 100px;
   height: auto;
-  padding: 10px; 
+  padding: 10px;
   object-fit: cover;
   border-radius: 3px;
   cursor: pointer;
@@ -203,40 +203,40 @@
 
 .productCell {
   display: flex;
-  gap: 15px; 
+  gap: 15px;
 }
 
 .productCellText {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100px; 
+  height: 100px;
 }
 
 .productCellText span {
-  font-size: 0.75rem; 
+  font-size: 0.75rem;
   color: var(--darker-gray);
 }
 
 .productCellText p {
-  font-size: 0.85rem; 
+  font-size: 0.85rem;
 }
 
 .colorDiv {
   display: flex;
-  gap: 5px; 
+  gap: 5px;
   align-items: center;
 }
 
 .color {
-  width: 15px; 
-  height: 15px; 
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background-color: var(--primary);
 }
 
 .selectedColor {
-  padding: 2px; 
+  padding: 2px;
   border: 1px solid var(--primary);
   border-radius: 50%;
 }
@@ -277,14 +277,18 @@
 
 @media (max-width: 560px) {
   body {
-    background-color: var(--bg-light, #f6f6f6); 
+    background-color: var(--bg-light, #f6f6f6);
+  }
+
+  .cartDrawer {
+    display: none;
   }
 
   .cartContainer {
     flex-direction: column;
     margin: 0px auto;
     padding: 10px;
-    background: transparent; 
+    background: transparent;
   }
 
   .cartContent {
@@ -296,7 +300,7 @@
   .cartTableWrapper {
     width: 100%;
     border: none;
-    background: transparent; 
+    background: transparent;
     overflow-x: visible;
   }
 
@@ -396,6 +400,10 @@
     width: 100%;
   }
 
+  .cartDrawer {
+    display: none;
+  }
+
   .cartTableWrapper {
     width: 100%;
     overflow-x: auto;
@@ -425,6 +433,10 @@
 
   .cartTableWrapper {
     width: 65%;
+  }
+
+  .cartDrawer {
+    display: none;
   }
 
   .checkoutWrapper {
