@@ -152,7 +152,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 160px;
+  padding: 5px 80px;
   transition: all 0.4s ease;
 }
 
@@ -228,7 +228,7 @@
 .navBar {
   display: flex;
   gap: 50px;
-  padding: 0 167px;
+  padding: 0 80px;
   width: 100%;
   align-items: flex-end;
   justify-content: flex-start;
