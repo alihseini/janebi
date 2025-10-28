@@ -184,7 +184,6 @@
   border-bottom-left-radius: 0 !important;
   border-top-right-radius: 3px !important;
   border-bottom-right-radius: 3px !important;
-  height: 40px !important;
   font-family: 'dana-bold';
 }
 
@@ -522,7 +521,7 @@
 
 @media (min-width: 300px) and (max-width: 560px) {
   .navBar {
-    padding: 0 10px;
+    display: none;
   }
 
   .categoriButton,
@@ -532,11 +531,15 @@
     font-size: 0.6rem !important;
     padding: 2px 2px !important;
   }
-  .navBar {
-    justify-content: space-between;
-    gap: 0;
-    padding: 0 10px;
+
+  .searchInput{
+    height: 25px !important;
   }
+
+  .searchButton{
+    height: 27px !important;
+  }
+
   .fullFooter {
     padding: 40px 10px;
     background-size: cover;

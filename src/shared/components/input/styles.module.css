@@ -15,25 +15,19 @@
 }
 
 .input::placeholder {
-  color: #AAAAAA;
+  color: #aaaaaa;
   font-family: 'dana-semibold';
   font-size: 1rem;
 }
 
 @media (min-width: 300px) and (max-width: 560px) {
-  .input::placeholder{
+  .input::placeholder {
     font-size: 0.5rem;
   }
 }
 
 @media (min-width: 560px) and (max-width: 780px) {
-}
-
-@media (min-width: 780px) and (max-width: 992px) {
-}
-
-@media (min-width: 992px) and (max-width: 1200px) {
-}
-
-@media (min-width: 1200px) {
+  .input::placeholder {
+    font-size: 0.7rem;
+  }
 }
