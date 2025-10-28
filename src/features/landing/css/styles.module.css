@@ -89,6 +89,9 @@
   :global(.swiper-button-prev) {
     display: none;
   }
+  .container{
+    padding: 0;
+  }
   .cardsWrapper {
     grid-template-columns: 1fr;
     max-width: fit-content;
@@ -100,6 +103,9 @@
   :global(.swiper-button-prev) {
     display: none;
   }
+  .container{
+    padding: 0;
+  }
   .cardsWrapper {
     grid-template-columns: 1fr;
     max-width: 70%;
@@ -110,6 +116,9 @@
   :global(.swiper-button-next),
   :global(.swiper-button-prev) {
     display: none;
+  }
+  .container{
+    padding: 0;
   }
   .cardsWrapper {
     grid-template-columns: 1fr 1fr;
