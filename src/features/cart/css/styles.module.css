@@ -41,7 +41,7 @@
   position: absolute;
   top: 3px;
   right: 3px;
-  background-color: #FA4D55;
+  background-color: #fa4d55;
   color: white;
   font-size: 0.7rem;
   border-radius: 3px;
@@ -270,13 +270,13 @@
     max-width: 320px;
   }
 
-  .drawerCartBadge{
+  .drawerCartBadge {
     font-size: 0.6rem;
     top: 8px;
     right: -2px;
   }
 
-  .cartDrawer{
+  .cartDrawer {
     display: none;
   }
 }
@@ -303,7 +303,7 @@
   }
 
   .cartDrawer {
-    width: 300px;
+    display: none;
   }
 }
 
@@ -321,7 +321,7 @@
   }
 
   .cartDrawer {
-    width: 320px;
+    display: none;
   }
 }
 

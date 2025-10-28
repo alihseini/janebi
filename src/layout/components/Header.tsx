@@ -198,10 +198,13 @@ const Header: React.FC = () => {
                   </div>
                 ) : (
                   <>
+                    <Button
+                      svgSrc="bx-user"
+                      onClick={() => setShowLoginModal(true)}
+                    />
                     <ShortDrawer
                       trigger={
                         <div className={styles.loginTrigger}>
-                          <Button svgSrc="bx-user" />
                           <div className={styles.loginTriggerText}>
                             <p>خوش آمدی</p>
                             <Button

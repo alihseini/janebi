@@ -105,34 +105,14 @@
 @media (min-width: 560px) and (max-width: 780px) {
   .rightButton,
   .leftButton {
-    width: 30px;
-    height: 45px;
-    font-size: 1.5rem;
-  }
-
-  .rightButton {
-    right: 5px;
-  }
-
-  .leftButton {
-    left: 5px;
+    display: none;
   }
 }
 
 @media (min-width: 780px) and (max-width: 992px) {
   .rightButton,
   .leftButton {
-    width: 35px;
-    height: 50px;
-    font-size: 1.8rem;
-  }
-
-  .rightButton {
-    right: 8px;
-  }
-
-  .leftButton {
-    left: 8px;
+    display: none;
   }
 }
 

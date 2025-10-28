@@ -89,18 +89,6 @@
   :global(.swiper-button-prev) {
     display: none;
   }
-
-  :global(.swiper-button-next::after),
-  :global(.swiper-button-prev::after) {
-    font-size: 12px;
-  }
-
-  :global(.swiper-button-next) {
-    right: 4px;
-  }
-  :global(.swiper-button-prev) {
-    left: 4px;
-  }
   .cardsWrapper {
     grid-template-columns: 1fr;
     max-width: fit-content;
@@ -110,14 +98,7 @@
 @media (min-width: 560px) and (max-width: 780px) {
   :global(.swiper-button-next),
   :global(.swiper-button-prev) {
-    width: 32px;
-    height: 32px;
-    padding: 8px;
-  }
-
-  :global(.swiper-button-next::after),
-  :global(.swiper-button-prev::after) {
-    font-size: 14px;
+    display: none;
   }
   .cardsWrapper {
     grid-template-columns: 1fr;
@@ -128,14 +109,7 @@
 @media (min-width: 780px) and (max-width: 992px) {
   :global(.swiper-button-next),
   :global(.swiper-button-prev) {
-    width: 36px;
-    height: 36px;
-    padding: 10px;
-  }
-
-  :global(.swiper-button-next::after),
-  :global(.swiper-button-prev::after) {
-    font-size: 16px;
+    display: none;
   }
   .cardsWrapper {
     grid-template-columns: 1fr 1fr;
