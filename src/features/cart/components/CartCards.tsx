@@ -49,16 +49,23 @@ const CartCards: React.FC<IProps> = ({
                   className={styles.cartImage}
                   onClick={() => cardClickHandler(product.id)}
                 />
-                <h4 onClick={() => cardClickHandler(product.id)}>
+                <div className={styles.productCellText}>
                   {shortenTitle(product.title)}
-                </h4>
+                  <div className={styles.colorDiv}>
+                    رنگ :
+                    <div className={styles.selectedColor}>
+                      <div className={styles.color}></div>
+                    </div>
+                  </div>
+                  <span>کد: {product.id}</span>
+                </div>
               </td>
 
-              <td data-label="قیمت واحد">
+              <td data-label="قیمت واحد" className={styles.price}>
                 {product.price.toLocaleString()} تومان
               </td>
 
-              <td data-label="تعداد">
+              <td data-label="تعداد" className={styles.counting}>
                 <ActionButtons
                   count={product.count}
                   productId={product.id}
@@ -69,7 +76,7 @@ const CartCards: React.FC<IProps> = ({
                 />
               </td>
 
-              <td data-label="مجموع">
+              <td data-label="مجموع" className={styles.totalPrice}>
                 {sumPrice(product.price, product.count).toLocaleString()} تومان
               </td>
             </tr>
