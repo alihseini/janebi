@@ -30,7 +30,7 @@
   transition: all 0.25s ease;
   z-index: 9999;
   width: max-content;
-  min-width: 150px;
+  min-width: 180px;
   max-width: 100%;
   box-sizing: border-box;
 }
