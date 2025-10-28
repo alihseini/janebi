@@ -524,6 +524,10 @@
     display: none;
   }
 
+  .mainContent{
+    padding-top: 80px;
+  }
+
   .categoriButton,
   .specialOffer,
   .highestSale,

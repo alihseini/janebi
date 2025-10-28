@@ -20,7 +20,7 @@
 .emptyCart {
   text-align: center;
   background-color: white;
-  padding: 100px;
+  padding: 80px; /* Reduced padding for better mobile view */
   border-radius: 10px;
   width: 100%;
   font-size: 1.1rem;
@@ -31,7 +31,7 @@
   width: 98%;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 15px; /* Reduced gap for better alignment */
 }
 
 /* ================= CART DRAWER ================= */
@@ -90,7 +90,7 @@
 
 .drawerItem {
   display: flex;
-  align-items: flex-end;
+  align-items: center; /* Centered items for better alignment */
   padding: 10px;
   gap: 0.75rem;
   border-bottom: 1px solid #eee;
@@ -117,10 +117,10 @@
 }
 
 .drawerFooter {
-  padding-top: 30px;
+  padding-top: 20px; /* Reduced padding for better spacing */
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem; /* Reduced gap for better alignment */
 }
 
 .viewDrawerCartBtn {
@@ -150,7 +150,7 @@
   border-radius: 10px;
   background-color: white;
   border: 1px solid var(--dark-gray);
-  overflow-x: hidden; /* هیچ وقت اسکرول نخوره */
+  overflow-x: hidden;
 }
 
 .cartTableWrapper h2 {
@@ -160,7 +160,7 @@
 .cartTable {
   width: 100%;
   border-collapse: collapse;
-  table-layout: auto; /* ستون‌ها منعطف باشند */
+  table-layout: auto;
   text-align: right;
 }
 
@@ -168,7 +168,7 @@
 .cartTable td {
   word-break: break-word;
   overflow-wrap: break-word;
-  padding: 20px 10px;
+  padding: 15px 8px; /* Reduced padding for better mobile layout */
 }
 
 .cartTable th {
@@ -188,9 +188,9 @@
 
 .cartImage {
   width: 100%;
-  max-width: 120px;
+  max-width: 100px; /* Adjusted for better mobile display */
   height: auto;
-  padding: 15px;
+  padding: 10px; /* Reduced padding */
   object-fit: cover;
   border-radius: 3px;
   cursor: pointer;
@@ -204,40 +204,40 @@
 
 .productCell {
   display: flex;
-  gap: 20px;
+  gap: 15px; /* Reduced gap for better alignment */
 }
 
 .productCellText {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 120px;
+  height: 100px; /* Adjusted height for better mobile view */
 }
 
 .productCellText span {
-  font-size: 0.8rem;
+  font-size: 0.75rem; /* Reduced font size for better mobile view */
   color: var(--darker-gray);
 }
 
 .productCellText p {
-  font-size: 0.9rem;
+  font-size: 0.85rem; /* Reduced font size for better mobile view */
 }
 
 .colorDiv {
   display: flex;
-  gap: 10px;
+  gap: 5px; /* Reduced gap for better alignment */
   align-items: center;
 }
 
 .color {
-  width: 20px;
-  height: 20px;
+  width: 15px; /* Adjusted size for better mobile view */
+  height: 15px; /* Adjusted size for better mobile view */
   border-radius: 50%;
   background-color: var(--primary);
 }
 
 .selectedColor {
-  padding: 3px;
+  padding: 2px; /* Reduced padding for better mobile view */
   border: 1px solid var(--primary);
   border-radius: 50%;
 }
@@ -277,64 +277,119 @@
 }
 
 /* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE FIXED ================= */
 @media (max-width: 560px) {
+  body {
+    background-color: var(--bg-light, #f6f6f6); /* رنگ پس‌زمینه نرم در موبایل */
+  }
+
   .cartContainer {
     flex-direction: column;
-    margin: 20px auto;
+    margin: 0px auto;
+    padding: 10px;
+    background: transparent; /* حذف زمینه سفید */
   }
 
   .cartContent {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    width: 100%;
   }
 
   .cartTableWrapper {
     width: 100%;
-    overflow-x: hidden;
+    border: none;
+    background: transparent; /* حذف بک‌گراند سفید */
+    overflow-x: visible;
   }
 
+  /* ساختار کارت‌مانند برای هر ردیف جدول */
   .cartTable,
   .cartTable thead,
   .cartTable tbody,
   .cartTable th,
   .cartTable td,
   .cartTable tr {
-    display: block; /* حالت کارت موبایل */
+    display: block;
+    width: 100%;
+  }
+
+  .cartTable thead {
+    display: none;
   }
 
   .cartTable tr {
+    background: #fff;
     margin-bottom: 15px;
-    border-bottom: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    padding: 12px;
   }
 
   .cartTable td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
     text-align: right;
-    padding-left: 50%;
-    position: relative;
   }
 
   .cartTable td::before {
-    content: attr(data-label); /* نمایش عنوان ستون در موبایل */
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-weight: bold;
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--darker-gray);
+    font-size: 0.8rem;
+  }
+
+  .productCell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cartImage {
+    max-width: 70px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #e1e1e1;
+  }
+
+  .productCellText {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .productCellText p {
+    font-size: 0.9rem;
+    color: var(--darkest-gray);
+  }
+
+  .productCellText span {
     font-size: 0.75rem;
     color: var(--darker-gray);
   }
 
-  .cartImage {
-    max-width: 80px;
-    height: auto;
-  }
-
   .checkoutWrapper {
     width: 100%;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border: none;
   }
 
   .checkout {
     width: 100%;
+    font-size: 1rem;
+    height: 45px;
+    border-radius: 8px;
+  }
+
+  .drawerCartBadge {
+    font-size: 0.65rem;
+    padding: 2px 5px;
   }
 }
 
@@ -342,16 +397,18 @@
   .cartContent {
     flex-direction: column;
     gap: 20px;
+    width: 100%;
   }
 
   .cartTableWrapper {
     width: 100%;
+    overflow-x: auto;
   }
 
   .cartTable td,
   .cartTable th {
-    padding: 15px 8px;
-    font-size: 0.75rem;
+    padding: 10px 6px;
+    font-size: 0.8rem;
   }
 
   .cartImage {
@@ -366,8 +423,8 @@
 @media (min-width: 781px) and (max-width: 992px) {
   .cartContent {
     flex-direction: row;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
   }
 
   .cartTableWrapper {
@@ -381,7 +438,7 @@
   .cartTable td,
   .cartTable th {
     font-size: 0.85rem;
-    padding: 20px 10px;
+    padding: 12px 8px;
   }
 
   .cartImage {
