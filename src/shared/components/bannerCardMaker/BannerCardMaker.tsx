@@ -16,13 +16,10 @@ const BannerCardMaker: React.FC<BannerCardMaker> = ({
     <div className={styles.card}>
       <h3 className={styles.title}>{title}</h3>
       <div className={styles.imagesContainer}>
-        <div className={styles.mainImage}>
-          <img src={mainImage} alt="main" />
-        </div>
+        <img src={mainImage} alt="main" />
         <div className={styles.smallImages}>
-          {smallImages.slice(0, 2).map((img, i) => (
-            <img key={i} src={img} alt={`small-${i}`} />
-          ))}
+          <img src={smallImages[0]} alt="1" />
+          <img src={smallImages[1]} alt="2" />
         </div>
       </div>
     </div>

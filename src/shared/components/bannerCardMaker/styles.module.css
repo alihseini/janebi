@@ -3,14 +3,12 @@
   flex-direction: column;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 20px;
   box-sizing: border-box;
+  padding: 20px;
   background-color: #fff;
   flex: 1 1 300px;
   margin: 10px;
-  min-width: 300px;
   max-width: 100%;
-  min-height: 400px;
 }
 
 .title {
@@ -21,34 +19,22 @@
 }
 
 .imagesContainer {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-}
-
-.mainImage {
-  flex: 2;
-}
-
-.mainImage img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .smallImages {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
 }
 
-.smallImages img {
+.imagesContainer img {
   width: 130px;
-  height: 130px;
+  height: 110px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -56,41 +42,47 @@
 @media (max-width: 560px) {
   .card {
     background-color: transparent;
-    padding: 10px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     border: none;
     min-height: auto;
-    margin: 5px 0;
   }
 
   .title {
-    font-size: 1rem;
-    text-align: center;
+    font-size: 0.7rem;
+    text-align: right;
+    width: fit-content;
     margin-bottom: 8px;
   }
 
   .imagesContainer {
     display: flex;
-    flex-direction: row; 
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
+    max-width: fit-content;
+    flex-direction: row;
   }
 
-  .mainImage,
   .smallImages {
-    flex: none;
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: 0;
   }
 
-  .mainImage img,
   .smallImages img {
-    width: 30vw;
-    height: 30vw;
+    background-color: white;
+    padding: 3px 0;
+  }
+
+  .imagesContainer img {
+    width: 25vw;
+    height: auto;
     object-fit: cover;
     border-radius: 8px;
+    margin-right: 8px;
+  }
+
+  .imagesContainer > img {
+    padding: 9px 0;
+    background-color: white;
   }
 }
-
