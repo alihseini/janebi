@@ -108,6 +108,17 @@
   transition: background-color 0.3s ease;
 }
 
+.closeButton {
+  width: fit-content;
+  background-color: var(--bg-red) !important;
+  transition: all 0.3s;
+}
+
+.closeButton:hover {
+  background-color: var(--tx-red) !important;
+  color: white !important;
+}
+
 .openModal button:hover {
   background-color: var(--primary);
 }
