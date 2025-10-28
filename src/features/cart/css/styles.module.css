@@ -1,10 +1,8 @@
 .cartContainer {
-  padding: 30px;
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: 95%;
-  margin: 0 auto;
+  justify-content: center;
+  width: 100%;
+  margin: 30px auto;
   border-radius: 8px;
 }
 
@@ -16,13 +14,17 @@
 
 .emptyCart {
   text-align: center;
+  background-color: white;
+  padding: 100px;
+  border-radius: 10px;
+  width: 100%;
   font-size: 1.1rem;
-  color: var(--dark-gray);
+  color: var(--darker-gray);
 }
 
 .cartContent {
+  width: 98%;
   display: flex;
-  gap: 20px;
   justify-content: space-between;
 }
 
@@ -132,9 +134,13 @@
   top: 0;
 }
 
+.emptyDrawerCart {
+  text-align: center;
+}
+
 /* ================= CART TABLE ================= */
 .cartTableWrapper {
-  width: 100%;
+  width: 75%;
   border-radius: 10px;
   background-color: white;
   border: 1px solid var(--dark-gray);
@@ -179,8 +185,7 @@
 /* ================= CHECKOUT ================= */
 .checkoutWrapper {
   background: #fff;
-  width: 300px;
-  max-width: 100%;
+  width: 23%;
   max-height: fit-content;
   border-radius: 10px;
   padding: 20px;
@@ -213,147 +218,13 @@
 }
 
 @media (max-width: 586px) {
-  .cartContainer {
-    padding: 15px;
-    gap: 15px;
-    width: 100%;
-  }
-
-  .cartContent {
-    flex-direction: column;
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-
-  .cartTableWrapper {
-    padding: 10px;
-    border: none;
-    width: 100%;
-  }
-
-  .cartTable {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .cartTable thead {
-    display: none;
-  }
-
-  .cartTable tbody tr {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 10px;
-    background-color: #fff;
-  }
-
-  .cartTable tbody tr td {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .cartImage {
-    width: 50px;
-    height: 50px;
-  }
-
-  .checkoutWrapper {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .cartDrawer {
-    max-width: 320px;
-  }
-
-  .drawerCartBadge {
-    font-size: 0.6rem;
-    top: 8px;
-    right: -2px;
-  }
-
-  .cartDrawer {
-    display: none;
-  }
 }
 
 @media (min-width: 587px) and (max-width: 780px) {
-  .cartContainer {
-    width: 95%;
-    padding: 20px;
-  }
-
-  .cartContent {
-    flex-direction: column;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .cartImage {
-    width: 50px;
-    height: 50px;
-  }
-
-  .checkoutWrapper {
-    width: 250px;
-  }
-
-  .cartDrawer {
-    display: none;
-  }
 }
 
 @media (min-width: 781px) and (max-width: 992px) {
-  .cartContainer {
-    width: 90%;
-  }
-
-  .checkoutWrapper {
-    width: 280px;
-  }
-
-  .cartContent {
-    flex-wrap: wrap;
-  }
-
-  .cartDrawer {
-    display: none;
-  }
-}
-
-@media (min-width: 993px) and (max-width: 1200px) {
-  .cartContainer {
-    width: 85%;
-  }
-
-  .cartContent {
-    flex-wrap: wrap;
-  }
-
-  .checkoutWrapper {
-    width: 300px;
-  }
-
-  .cartDrawer {
-    width: 340px;
-  }
 }
 
 @media (min-width: 1201px) {
-  .cartContainer {
-    width: 80%;
-  }
-
-  .checkoutWrapper {
-    width: 300px;
-  }
-
-  .cartDrawer {
-    width: 350px;
-  }
 }

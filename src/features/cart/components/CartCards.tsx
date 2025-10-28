@@ -27,7 +27,7 @@ const CartCards: React.FC<IProps> = ({
 
   return (
     <div className={styles.cartTableWrapper}>
-      <h2>سبد خرید شما</h2>
+      <h2>سبد خرید</h2>
 
       <table className={styles.cartTable}>
         <thead>
