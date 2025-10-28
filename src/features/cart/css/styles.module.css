@@ -39,6 +39,7 @@
 
 .drawerCartBadge {
   position: absolute;
+  font-family: 'dana-fanum-regular';
   top: 3px;
   right: 3px;
   background-color: #fa4d55;
