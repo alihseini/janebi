@@ -273,6 +273,10 @@
   padding: 0 auto;
 }
 
+.mobileLogo {
+  cursor: pointer;
+}
+
 /* drawer  */
 
 .mobileDrawerBackdrop {
@@ -524,7 +528,7 @@
     display: none;
   }
 
-  .mainContent{
+  .mainContent {
     padding-top: 80px;
   }
 
@@ -536,11 +540,11 @@
     padding: 2px 2px !important;
   }
 
-  .searchInput{
+  .searchInput {
     height: 25px !important;
   }
 
-  .searchButton{
+  .searchButton {
     height: 27px !important;
   }
 
