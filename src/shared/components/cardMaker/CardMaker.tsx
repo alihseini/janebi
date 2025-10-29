@@ -19,6 +19,7 @@ interface Product {
 interface CardMakerProps {
   product: Product;
   fullWidth?: boolean;
+  onClick: () => void;
 }
 
 const CardMaker: React.FC<CardMakerProps> = ({
@@ -60,7 +61,13 @@ const CardMaker: React.FC<CardMakerProps> = ({
       <ActionButtons
         count={count}
         productId={product.id}
-        addProduct={() => addProduct(product)}
+        addProduct={() =>
+          addProduct({
+            ...product,
+            count: 1,
+            name: product.title,
+          })
+        }
         removeProduct={removeProduct}
         increaseProduct={increaseProduct}
         decreaseProduct={decreaseProduct}
