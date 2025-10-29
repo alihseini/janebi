@@ -1,5 +1,5 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import type { Product, CartState, UseCartCache } from '../types/cart';
+import type { Product } from '../types/cart';
 
 interface IState {
   products: Product[];

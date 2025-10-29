@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../css/styles.module.css';
 import { useNavigate, useLocation, createSearchParams } from 'react-router';
 import Icons from '../../../shared/icons';

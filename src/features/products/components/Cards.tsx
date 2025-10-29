@@ -38,7 +38,7 @@ const Cards: React.FC<{ data: any[] }> = ({ data }) => {
       <ProductListTabs onTabChange={setTab} onCountChange={setCount} />
       <AutoGrid minWidth={250}>
         {filteredData.map((item) => (
-          <CardMaker key={item.id} product={item} fullWidth={true} />
+          <CardMaker key={item.id} product={item} fullWidth={true}  />
         ))}
       </AutoGrid>
     </div>

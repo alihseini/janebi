@@ -33,6 +33,10 @@
   gap: 15px;
 }
 
+.checkoutSection {
+  width: 20rem;
+}
+
 /* ================= CART DRAWER ================= */
 .cartDrawerWrapper {
   position: relative;
@@ -145,7 +149,7 @@
 
 /* ================= CART TABLE ================= */
 .cartTableWrapper {
-  width: 100%;
+  width: calc(100% - 20rem);
   border-radius: 10px;
   background-color: white;
   border: 1px solid var(--dark-gray);
@@ -245,6 +249,7 @@
 .checkoutWrapper {
   background: #fff;
   max-height: fit-content;
+  width: 100% !important;
   border-radius: 10px;
   padding: 20px;
   border: 1px solid var(--dark-gray);
@@ -288,6 +293,21 @@
   color: white !important;
 }
 
+.bottomCheckout > p {
+  width: 90%;
+  font-size: 0.8rem;
+  margin: 20px 0;
+}
+
+.bottomCheckoutBox {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 0.8rem;
+}
+
 @media (max-width: 560px) {
   body {
     background-color: var(--bg-light, #f6f6f6);
@@ -326,7 +346,6 @@
     display: block;
     width: 100%;
     font-size: 0.8rem;
-
   }
 
   .cartTable thead {
@@ -478,6 +497,9 @@
     font-size: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
+  .checkoutSection {
+    width: 100% !important;
+  }
 }
 
 @media (min-width: 781px) and (max-width: 992px) {
@@ -488,7 +510,7 @@
   }
 
   .cartTableWrapper {
-    width: 65%;
+    width: 100%;
   }
 
   .cartDrawer {
@@ -507,6 +529,10 @@
 
   .cartImage {
     max-width: 110px;
+  }
+
+  .checkoutSection {
+    width: 100% !important;
   }
 }
 

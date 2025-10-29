@@ -19,7 +19,7 @@ interface Product {
 interface CardMakerProps {
   product: Product;
   fullWidth?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const CardMaker: React.FC<CardMakerProps> = ({

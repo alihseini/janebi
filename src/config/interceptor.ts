@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { renewToken } from './fetchServices';
 import { toast } from 'react-toastify';
 
 const MAX_RETRY_ATTEMPTS = 3;

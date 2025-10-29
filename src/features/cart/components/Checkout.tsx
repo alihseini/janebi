@@ -20,9 +20,8 @@ const Checkout: React.FC<IProps> = ({ totalPrice, totalCount, onClear }) => {
         مبلغ کل: <strong>{totalPrice.toLocaleString()} تومان</strong>
       </p>
       <p className={styles.delivery}>
-        نحوه ارسال : <span>رایگان</span>{' '}
+        نحوه ارسال : <span>رایگان</span>
       </p>
-
       <div className={styles.actions}>
         <Button
           className={styles.checkoutButton}
