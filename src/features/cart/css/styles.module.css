@@ -325,6 +325,8 @@
   .cartTable tr {
     display: block;
     width: 100%;
+    font-size: 0.8rem;
+
   }
 
   .cartTable thead {
@@ -351,27 +353,29 @@
     content: attr(data-label);
     font-weight: 600;
     color: var(--darker-gray);
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 
   .productCell {
     display: flex;
     align-items: center;
-    gap: 10px;
+    flex-direction: row-reverse;
+    gap: 5px;
   }
 
   .cartImage {
-    max-width: 70px;
+    max-width: 80px;
     height: auto;
     border-radius: 10px;
     border: 1px solid #e1e1e1;
   }
 
   .productCellText {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
+    font-size: 0.8rem;
+    max-width: fit-content;
   }
 
   .productCellText p {
@@ -381,6 +385,7 @@
 
   .productCellText span {
     font-size: 0.75rem;
+    width: fit-content !important;
     color: var(--darker-gray);
   }
 

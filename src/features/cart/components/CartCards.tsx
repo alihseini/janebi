@@ -42,22 +42,24 @@ const CartCards: React.FC<IProps> = ({
         <tbody>
           {products.map((product) => (
             <tr key={product.id}>
-              <td className={styles.productCell} data-label="محصول">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className={styles.cartImage}
-                  onClick={() => cardClickHandler(product.id)}
-                />
-                <div className={styles.productCellText}>
-                  {shortenTitle(product.title)}
-                  <div className={styles.colorDiv}>
-                    رنگ :
-                    <div className={styles.selectedColor}>
-                      <div className={styles.color}></div>
+              <td data-label="محصول">
+                <div className={styles.productCell} >
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className={styles.cartImage}
+                    onClick={() => cardClickHandler(product.id)}
+                  />
+                  <div className={styles.productCellText}>
+                    {shortenTitle(product.title)}
+                    <div className={styles.colorDiv}>
+                      رنگ :
+                      <div className={styles.selectedColor}>
+                        <div className={styles.color}></div>
+                      </div>
                     </div>
+                    <span>کد: {product.id}</span>
                   </div>
-                  <span>کد: {product.id}</span>
                 </div>
               </td>
 
