@@ -29,7 +29,7 @@ const Checkout: React.FC<CheckoutProps> = ({
 
       <div className={styles.actions}>
         <Button
-          className={styles.checkout}
+          className={styles.checkoutButton}
           text="پرداخت"
           onClick={() => toast('در حال پرداخت...')}
         />

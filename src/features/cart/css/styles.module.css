@@ -265,12 +265,13 @@
   gap: 10px;
 }
 
-.checkout {
-  background-color: var(--light-gray);
+.checkoutButton {
+  background-color: var(--primary);
   width: 150px;
+  color: white !important;
 }
 
-.checkout:hover {
+.checkoutButton:hover {
   background-color: var(--dark-gray);
   color: #fff !important;
 }
