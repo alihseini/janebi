@@ -1,7 +1,13 @@
 import BannerCardMaker from '../../../shared/components/BannerCardMaker/BannerCardMaker';
 import styles from '../css/styles.module.css';
 
-const cardData = [
+interface BannerCard {
+  title: string;
+  mainImage: string;
+  smallImages: string[];
+}
+
+const cardData: BannerCard[] = [
   {
     title: 'پر فروش ترین ها',
     mainImage:

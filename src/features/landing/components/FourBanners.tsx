@@ -1,6 +1,6 @@
 import BannerMaker from '../../../shared/components/BannerMaker/BannerMaker';
 
-const images = [
+const images: string[] = [
   'https://janebi.com/janebi/9fd2/uploads/home-banner/car-charger.jpg',
   'https://janebi.com/janebi/9fd2/uploads/home-banner/car-accessories.jpg',
   'https://janebi.com/janebi/9fd2/uploads/home-banner/apple-watch-accessories.jpg',

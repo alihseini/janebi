@@ -7,11 +7,11 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 import styles from '../css/styles.module.css';
 
-interface ImageSwiperProps {
+interface IProps {
   images: string[];
 }
 
-const ImageSwiper: React.FC<ImageSwiperProps> = ({ images }) => {
+const ImageSwiper: React.FC<IProps> = ({ images }) => {
   const progressCircle = useRef<SVGSVGElement | null>(null);
   const progressContent = useRef<HTMLSpanElement | null>(null);
 

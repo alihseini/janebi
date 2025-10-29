@@ -7,6 +7,7 @@ import TripleBannerCards from './components/TripleBannerCards';
 import FourBanner from './components/FourBanners';
 import { useProducts } from '../products/services/useProducts';
 import { imageBanner, images } from './json/images';
+import type { Product } from './types/Landing';
 
 const Landing: React.FC = () => {
   const { data: products, isLoading, isError, error } = useProducts();
@@ -14,19 +15,21 @@ const Landing: React.FC = () => {
   if (isLoading) return <p>در حال بارگذاری...</p>;
   if (isError) return <p>خطا در دریافت داده: {(error as Error).message}</p>;
 
+  const productsList: Product[] = products ?? [];
+
   return (
     <div className={styles.container}>
       <ImageSwiper images={images} />
-      <CardList data={products} title="اجناس" button="نمایش همه" />
+      <CardList data={productsList} title="اجناس" button="نمایش همه" />
       <BannerMaker images={imageBanner} />
       <TripleBannerCards />
-      <CardList data={products} title="اجناس" button="نمایش همه" />
-      <CardList data={products} title="اجناس" button="نمایش همه" />
+      <CardList data={productsList} title="اجناس" button="نمایش همه" />
+      <CardList data={productsList} title="اجناس" button="نمایش همه" />
       <FourBanner />
-      <CardList data={products} title="اجناس" button="نمایش همه" />
-      <CardList data={products} title="اجناس" button="نمایش همه" />
-      <CardList data={products} title="اجناس" button="نمایش همه" />
-      <CardList data={products} title="اجناس" button="نمایش همه" />
+      <CardList data={productsList} title="اجناس" button="نمایش همه" />
+      <CardList data={productsList} title="اجناس" button="نمایش همه" />
+      <CardList data={productsList} title="اجناس" button="نمایش همه" />
+      <CardList data={productsList} title="اجناس" button="نمایش همه" />
     </div>
   );
 };
