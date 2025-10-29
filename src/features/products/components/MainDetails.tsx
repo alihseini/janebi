@@ -4,8 +4,13 @@ import ProductActions from '../../../shared/components/ActionButtons/ActionButto
 import { shortenTitle } from '../../../shared/utils/utils';
 import Icons from '../../../shared/icons';
 import { useState } from 'react';
+import type { Product } from '../../../shared/types/types';
 
-export default function MainDetails({ data }) {
+interface Iprops {
+  data: Product;
+}
+
+export default function MainDetails({ data }: Iprops) {
   const { state, addProduct, removeProduct, increaseProduct, decreaseProduct } =
     useCartCache();
 
@@ -23,7 +28,7 @@ export default function MainDetails({ data }) {
           name="heart-fill"
           onClick={handleLike}
           color={`${isLiked ? 'red' : 'gray'}`}
-          cursor='pointer'
+          cursor="pointer"
         />
         <img src={data.image} alt={data.title} width={200} />
       </div>
@@ -37,8 +42,8 @@ export default function MainDetails({ data }) {
             </div>
             <div className={styles.detailsRatings}>
               <div className={styles.detailsRate}>
-                <Icons name="bxs-star" color="#ced810" /> {data?.rating.rate}
-                <span>( خریداری شده: {data?.rating.count} نفر )</span>
+                <Icons name="bxs-star" color="#ced810" /> {data?.rating?.rate}
+                <span>( خریداری شده: {data?.rating?.count} نفر )</span>
               </div>
               <p>
                 دسته بندی : <span>{data?.category}</span>
@@ -76,7 +81,13 @@ export default function MainDetails({ data }) {
               <ProductActions
                 count={count}
                 productId={data.id}
-                addProduct={() => addProduct(data)}
+                addProduct={() =>
+                  addProduct({
+                    ...data,
+                    count: 1,
+                    name: data.title,
+                  })
+                }
                 removeProduct={removeProduct}
                 increaseProduct={increaseProduct}
                 decreaseProduct={decreaseProduct}

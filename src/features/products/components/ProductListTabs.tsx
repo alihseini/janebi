@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import styles from '../css/styles.module.css';
 
-interface Props {
+interface IProps {
   onTabChange: (tab: string) => void;
   onCountChange: (count: number) => void;
 }
 
-const ProductListTabs: React.FC<Props> = ({ onTabChange, onCountChange }) => {
+const ProductListTabs: React.FC<IProps> = ({ onTabChange, onCountChange }) => {
   const [activeTab, setActiveTab] = useState('جدیدترین ها');
   const [activeCount, setActiveCount] = useState(20);
 
