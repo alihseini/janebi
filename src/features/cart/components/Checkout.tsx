@@ -3,17 +3,13 @@ import styles from '../css/styles.module.css';
 import Button from '../../../shared/components/Button/Button';
 import { toast } from 'react-toastify';
 
-interface CheckoutProps {
+interface IProps {
   totalPrice: number;
   totalCount: number;
   onClear: () => void;
 }
 
-const Checkout: React.FC<CheckoutProps> = ({
-  totalPrice,
-  totalCount,
-  onClear,
-}) => {
+const Checkout: React.FC<IProps> = ({ totalPrice, totalCount, onClear }) => {
   return (
     <div className={styles.checkoutWrapper}>
       <h3>خلاصه سبد خرید</h3>

@@ -3,12 +3,15 @@ import styles from './css/styles.module.css';
 import { useCartCache } from '../cart/services/useCartCache';
 import CartCards from './components/CartCards';
 import Checkout from './components/Checkout';
+import type { Product } from './types/cart';
 
 const Cart: React.FC = () => {
   const { state, increaseProduct, decreaseProduct, removeProduct, clearCart } =
     useCartCache();
 
-  const { products = [], totalPrice, totalCount } = state || {};
+  const products: Product[] = state?.products ?? [];
+  const totalPrice: number = state?.totalPrice ?? 0;
+  const totalCount: number = state?.totalCount ?? 0;
 
   return (
     <div className={styles.cartContainer}>

@@ -1,11 +1,5 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  count?: number;
-}
+import type { Product, CartState, UseCartCache } from '../types/cart';
 
 interface IState {
   products: Product[];
@@ -15,13 +9,13 @@ interface IState {
 
 export const useCartCache = () => {
   const queryClient = useQueryClient();
-  const QUERY_KEY = ['cart_state'];
+  const QUERY_KEY = ['cart_state'] as const;
 
   const calculateTotalPrice = (products: Product[]) =>
     products.reduce((sum, p) => sum + p.price * (p.count || 1), 0);
 
   const calculateTotalCount = (products: Product[]) => products.length;
-  
+
   const getInitialState = (): IState => {
     const saved = localStorage.getItem('cart_state');
     if (saved) return JSON.parse(saved);

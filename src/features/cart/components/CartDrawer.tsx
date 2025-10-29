@@ -43,7 +43,7 @@ const CartDrawer: React.FC = () => {
             <div className={styles.drawerItems}>
               {products.map((p) => (
                 <div key={p.id} className={styles.drawerItem}>
-                  <img src={p.image} alt={p.id} />
+                  <img src={p.image} alt={p.title} />
                   <div className={styles.drawerInfo}>
                     <p>{shortenTitle(p.title)}</p>
                     <span>تعداد:{p.count}</span>

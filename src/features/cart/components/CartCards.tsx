@@ -10,7 +10,6 @@ interface IProps {
   onIncrease: (id: number) => void;
   onDecrease: (id: number) => void;
   onRemove: (id: number) => void;
-  onAdd: (product: Product) => void;
 }
 
 const CartCards: React.FC<IProps> = ({
@@ -18,7 +17,6 @@ const CartCards: React.FC<IProps> = ({
   onIncrease,
   onDecrease,
   onRemove,
-  onAdd,
 }) => {
   const navigate = useNavigate();
 
@@ -71,7 +69,6 @@ const CartCards: React.FC<IProps> = ({
                 <ActionButtons
                   count={product.count}
                   productId={product.id}
-                  addProduct={() => onAdd(product)}
                   removeProduct={onRemove}
                   increaseProduct={onIncrease}
                   decreaseProduct={onDecrease}
