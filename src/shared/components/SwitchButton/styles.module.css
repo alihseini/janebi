@@ -4,7 +4,7 @@
   padding: 20px;
   width: 100%;
   align-items: center;
-  border-bottom: 1px solid var(--dark-gray);
+  border-top: 1px solid var(--dark-gray);
 }
 
 .switchContainer p {
