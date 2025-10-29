@@ -413,14 +413,20 @@
 
   .productListTabs {
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
   }
 
   .productListTabs ul,
   .productListTabs div {
-    flex-direction: column;
+    font-size: 0.8rem !important;
+    width: auto;
     align-items: flex-start;
     margin-right: 10px;
+    flex-wrap: wrap;
+  }
+
+  .productListTabs ul li,.productListTabs div ul li{
+    font-size: 0.7rem;
   }
 
   .detailsContainer {
