@@ -1,8 +1,9 @@
-import React, { CSSProperties, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import type { CSSProperties } from 'react';
 import { ReactSVG } from 'react-svg';
 
 interface IconProps {
-  name: string;
+  name?: string;
   size?: number;
   color?: string;
   isFill?: boolean;

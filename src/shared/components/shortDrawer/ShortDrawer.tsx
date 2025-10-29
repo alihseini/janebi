@@ -2,15 +2,12 @@ import React, { useState } from 'react';
 import styles from './styles.module.css';
 import Icons from '../../icons';
 
-interface ShortDrawerProps {
+interface IProps {
   trigger: React.ReactNode;
-  items: { text: string; svgSrc: string; onClick?: () => void }[];
+  items: { text: string; svgSrc?: string; onClick?: () => void }[];
 }
 
-const ShortDrawer: React.FC<ShortDrawerProps> = ({
-  trigger,
-  items,
-}) => {
+const ShortDrawer: React.FC<IProps> = ({ trigger, items }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
