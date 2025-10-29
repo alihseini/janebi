@@ -114,8 +114,6 @@ const Filtering: React.FC = () => {
       <h4>
         <Icons name="bx-filter" /> فیلتر
       </h4>
-
-      {/* search */}
       <div className={styles.smallSearchSection}>
         <p>جستجو در نتایج</p>
         <Input
@@ -128,8 +126,6 @@ const Filtering: React.FC = () => {
           onKeyDown={handleKeyDown}
         />
       </div>
-
-      {/* دسته‌بندی */}
       <ul>
         {categoryList.map((cat) => (
           <li
@@ -141,8 +137,6 @@ const Filtering: React.FC = () => {
           </li>
         ))}
       </ul>
-
-      {/* برندها */}
       <div className={styles.brandSection}>
         <p>برند ها</p>
         <Input
@@ -169,8 +163,6 @@ const Filtering: React.FC = () => {
           )}
         </div>
       </div>
-
-      {/* رنج قیمت */}
       <div className={styles.rangeSection}>
         <TwoRangeSlider
           minRange={0}
@@ -179,8 +171,6 @@ const Filtering: React.FC = () => {
           onChange={handlePriceChange}
         />
       </div>
-
-      {/* سوئیچ‌ها */}
       <div className={styles.specialButtons}>
         <SwitchButton text="فقط آیتم های موجود" />
         <SwitchButton text="فقط آیتم های تخفیف دار" />
