@@ -4,7 +4,7 @@ function useDebouncedCallback(
   callback: (...args: any[]) => void,
   delay: number
 ) {
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const debouncedFunction = useCallback(
     (...args: any[]) => {
