@@ -7,7 +7,7 @@ import TripleBannerCards from './components/TripleBannerCards';
 import FourBanner from './components/FourBanners';
 import { useProducts } from '../products/services/useProducts';
 import { imageBanner, images } from './json/images';
-import type { Product } from './types/Landing';
+import type { Product } from '../../shared/types/types';
 
 const Landing: React.FC = () => {
   const { data: products, isLoading, isError, error } = useProducts();
