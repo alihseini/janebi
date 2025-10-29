@@ -7,7 +7,7 @@ import Button from '../../shared/components/Button/Button';
 interface LoginModalProps {
   isVisible: boolean;
   onClose: () => void;
-  onLoginSuccess: () => void;
+  onLoginSuccess: (id: string) => void;
 }
 
 const LoginModal: React.FC<LoginModalProps> = ({
@@ -18,7 +18,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const { mutate, isLoading } = useLogin(
+  const { mutate, isPending } = useLogin(
     { username, password },
     {
       onSuccess: (data) => {
@@ -64,8 +64,8 @@ const LoginModal: React.FC<LoginModalProps> = ({
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handleLogin} disabled={isLoading}>
-          {isLoading ? 'در حال ورود...' : 'ورود'}
+        <button onClick={handleLogin} disabled={isPending}>
+          {isPending ? 'در حال ورود...' : 'ورود'}
         </button>
       </div>
     </div>,
